@@ -8,7 +8,7 @@ Restrições: sem JavaScript e sem back-end nesta sprint.
 
 - /index.html
 - /css/style.css
-- /assets/
+- /assets/img
 - /docs/
 - README.md
 
