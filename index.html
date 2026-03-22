@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iara Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#" class="brand" aria-label="Iara Games - Página inicial">
+       <img src="./assets/img/logotipo-claro 2.svg" alt="Iara Games" class="brand-logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li>
+            <a class="active nav-link" href="#">
+              <img src="./assets/img/home-active.svg" alt="" aria-hidden="true" />
+              <span>Início</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-loja" href="#">
+              <img src="./assets/img/loja-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="./assets/img/loja-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Loja</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-biblioteca" href="#">
+              <img src="./assets/img/biblioteca-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="./assets/img/biblioteca-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Biblioteca</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-forum" href="#">
+              <img src="./assets/img/forum-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="./assets/img/forum-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Fórum</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-suporte" href="#">
+              <img src="./assets/img/suporte-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="./assets/img/suporte-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Suporte</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-sobre" href="#">
+              <img src="./assets/img/sobre-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="./assets/img/sobre-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Sobre</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-form" role="search">
+          <label for="search" class="sr-only">Buscar jogos</label>
+           <span class="search-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21 21-4.34-4.34" />
+              <circle cx="11" cy="11" r="8" />
+            </svg>
+          </span>
+          <input type="search" id="search" placeholder="Buscar jogos..." />
+        </form>
+
+        <a href="#" class="account-button">
+          <img src="./assets/img/avatar-placeholder-escuro.svg" alt="" aria-hidden="true" />
+          <span>Minha Conta</span>
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h1>Iara Games</h1>
+          <p>
+            Nas águas profundas da cultura brasileira, nascem jogos que o
+            mundo ainda não viu.
+          </p>
+          <p>A Iara Games existe para que eles cheguem até você.</p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Explorar jogos</a>
+            <a href="#" class="btn btn-secondary">Conheça os devs</a>
+          </div>
+
+          <div class="hero-features">
+            <article class="feature-card">
+              <img src="./assets/img/icone-logo claro.svg" alt="" aria-hidden="true" class="feature-icon" />
+              <h2>Jogos brasileiros</h2>
+              <span class="feature-arrow">
+                <img src="./assets/img/seta-circular-default amarela.svg" alt="" aria-hidden="true" />
+              </span>
+            </article>
+
+            <article class="feature-card">
+              <img src="./assets/img/icone-logo claro.svg" alt="" aria-hidden="true" class="feature-icon" />
+              <h2>Estúdios independentes</h2>
+              <span class="feature-arrow">
+                <img src="./assets/img/seta-circular-default amarela.svg" alt="" aria-hidden="true" />
+              </span>
+            </article>
+
+            <article class="feature-card">
+              <img src="./assets/img/icone-logo claro.svg" alt="" aria-hidden="true" class="feature-icon" />
+              <h2>Cultura em jogo</h2>
+              <span class="feature-arrow">
+                <img src="./assets/img/seta-circular-default amarela.svg" alt="" aria-hidden="true" />
+              </span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-frame"></div>
+          <div class="hero-character"></div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <p>Conheça nossos jogos</p>
+        <span class="scroll-indicator">
+          <img src="./assets/img/indicador-scroll default.svg" alt="" aria-hidden="true" />
+        </span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container panel panel-games">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow eyebrow-highlight">
+              <img src="./assets/img/flame.svg" alt="" aria-hidden="true" />
+              <span>Em destaque</span>
+            </span>
+            <h2>Jogos da Semana</h2>
+            <p>
+              Produção nacional independente. Cada título aqui chegou para
+              contar uma história.
+            </p>
+          </div>
+
+          <a href="#" class="section-link">Ver todos</a>
+        </div>
+
+        <div class="games-grid">
+          <article class="game-card">
+            <div class="game-image game-veu">
+              <span class="rating">★ 4.8</span>
+            </div>
+            <div class="game-info">
+              <div class="tags">
+                <span>Aventura</span>
+                <span>Puzzle</span>
+              </div>
+              <h3>Véu de Chuva</h3>
+              <p>Mangue Studio</p>
+              <div class="game-bottom">
+                <strong>R$ 18,90</strong>
+                <a href="#" aria-label="Adicionar Véu de Chuva">
+                  <img src="./assets/img/shopping-cart.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-image game-boto">
+              <span class="rating">★ 4.8</span>
+            </div>
+            <div class="game-info">
+              <div class="tags">
+                <span>Ação</span>
+                <span>Folclore</span>
+              </div>
+              <h3>O Chamado do Boto</h3>
+              <p>Igarapé Games</p>
+              <div class="game-bottom">
+                <strong>R$ 24,90</strong>
+                <a href="#" aria-label="Adicionar Boto">
+                  <img src="./assets/img/shopping-cart.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-image game-quilombo">
+              <span class="rating">★ 4.7</span>
+            </div>
+            <div class="game-info">
+              <div class="tags">
+                <span>Estratégia</span>
+                <span>Histórico</span>
+              </div>
+              <h3>Quilombo Quest</h3>
+              <p>Terra Firme Dev</p>
+              <div class="game-bottom">
+                <strong>R$ 31,90</strong>
+                <a href="#" aria-label="Adicionar Quilombo">
+                  <img src="./assets/img/shopping-cart.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-image game-sertao">
+              <span class="rating">★ 4.5</span>
+            </div>
+            <div class="game-info">
+              <div class="tags">
+                <span>Narrativa</span>
+                <span>Mistério</span>
+              </div>
+              <h3>Sertão Noir</h3>
+              <p>Caatinga Interactive</p>
+              <div class="game-bottom">
+                <strong>R$ 21,90</strong>
+                <a href="#" aria-label="Adicionar Sertão Noir">
+                  <img src="./assets/img/shopping-cart.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container panel-genres">
+  <div class="panel-genres-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
+      <path class="wave-fill" d="M0 220 V90 Q0 82 10 74 C40 58 80 40 120 34 C170 28 220 90 270 110 C320 130 370 68 420 40 C470 12 520 92 570 118 C620 144 670 62 720 36 C770 10 820 88 870 114 C920 140 970 70 1020 42 C1080 12 1140 52 1188 68 Q1198 73 1200 84 V220 H0 Z"></path>
+      <path class="wave-line" d="M0 220 V90 Q0 82 10 74 C40 58 80 40 120 34 C170 28 220 90 270 110 C320 130 370 68 420 40 C470 12 520 92 570 118 C620 144 670 62 720 36 C770 10 820 88 870 114 C920 140 970 70 1020 42 C1080 12 1140 52 1188 68 Q1198 73 1200 84 V220"></path>
+    </svg>
+  </div>
+
+  <div class="panel panel-genres-body">
+    <div class="section-heading section-heading-simple">
+      <div>
+        <span class="eyebrow eyebrow-explore">
+          <img src="./assets/img/trending-up.svg" alt="" aria-hidden="true" />
+          <span>Explorar</span>
+        </span>
+          <h2>Navegar por Gênero</h2>
+      </div>
+    </div>
+
+    <div class="genres-grid">
+      <a href="#" class="genre-card">
+        <img src="./assets/img/categoria-aventura.svg" alt="" aria-hidden="true" class="genre-icon-img" />
+        <strong>Aventura</strong>
+        <small>31 jogos</small>
+      </a>
+
+      <a href="#" class="genre-card">
+        <img src="./assets/img/categoria-acao.svg" alt="" aria-hidden="true" class="genre-icon-img" />
+        <strong>Ação</strong>
+        <small>31 jogos</small>
+      </a>
+
+      <a href="#" class="genre-card">
+        <img src="./assets/img/categoria-cozy.svg" alt="" aria-hidden="true" class="genre-icon-img" />
+        <strong>Cozy</strong>
+        <small>31 jogos</small>
+      </a>
+
+      <a href="#" class="genre-card">
+        <img src="./assets/img/categoria-puzzle.svg" alt="" aria-hidden="true" class="genre-icon-img" />
+        <strong>Puzzle</strong>
+        <small>31 jogos</small>
+      </a>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <section class="section">
+      <div class="container panel panel-devs">
+        <div class="section-heading section-heading-simple">
+          <div>
+          <span class="eyebrow eyebrow-community"><img src="./assets/img/users.svg" alt="" aria-hidden="true" />
+            <span>Comunidade</span></span>
+            <h2>Devs em Destaque</h2>
+            <p>Conheça os criadores por trás dos melhores jogos</p>
+          </div>
+        </div>
+
+        <div class="devs-grid">
+          <article class="dev-card">
+            <div class="dev-avatar-image">
+              <img src="./assets/img/avatar-dev 1.svg" alt="" aria-hidden="true" />
+            </div>
+            <h3>Tupiniquim Studios</h3>
+            <p>📍 Recife, PE</p>
+            <div class="dev-stats">
+              <div><strong>3</strong><span>Jogos</span></div>
+              <div><strong>1.2k</strong><span>Seguidores</span></div>
+            </div>
+            <a href="#">Ver perfil</a>
+          </article>
+
+          <article class="dev-card">
+            <div class="dev-avatar-image">
+              <img src="./assets/img/avatar-dev 2.svg" alt="" aria-hidden="true" />
+            </div>
+            <h3>Folclore Digital</h3>
+            <p>📍 Salvador, BA</p>
+            <div class="dev-stats">
+              <div><strong>2</strong><span>Jogos</span></div>
+              <div><strong>890</strong><span>Seguidores</span></div>
+            </div>
+            <a href="#">Ver perfil</a>
+          </article>
+
+          <article class="dev-card">
+            <div class="dev-avatar-image">
+              <img src="./assets/img/avatar-dev 3.svg" alt="" aria-hidden="true" />
+            </div>
+            <h3>Sertão Games</h3>
+            <p>📍 Fortaleza, CE</p>
+            <div class="dev-stats">
+              <div><strong>4</strong><span>Jogos</span></div>
+              <div><strong>2.1k</strong><span>Seguidores</span></div>
+            </div>
+            <a href="#">Ver perfil</a>
+          </article>
+
+          <article class="dev-card">
+            <div class="dev-avatar-image">
+              <img src="./assets/img/avatar-dev 4.svg" alt="" aria-hidden="true" />
+            </div>
+            <h3>EcoPlay</h3>
+            <p>📍 Cuiabá, MT</p>
+            <div class="dev-stats">
+              <div><strong>1</strong><span>Jogos</span></div>
+              <div><strong>450</strong><span>Seguidores</span></div>
+            </div>
+            <a href="#">Ver perfil</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section support-section">
+      <div class="container support-box">
+        <div class="support-image" aria-hidden="true"></div>
+
+        <div class="support-content">
+          <h2>Apoie a Iara</h2>
+          <p>
+            A Iara Games existe para que jogos brasileiros independentes
+            cheguem a mais gente — e para que mais devs tenham onde publicar.
+          </p>
+          <p>
+            Se você acredita nisso também, pode nos ajudar a crescer.
+          </p>
+          <a href="#" class="btn btn-support">Apoiar</a>
+        </div>
+      </div>
+
+      <div class="wave-decoration" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a href="#" class="brand footer-brand-logo">
+          <img src="./assets/img/logotipo-claro.svg" alt="Iara Games" class="brand-logo" />
+        </a>
+        <p>Jogos brasileiros independentes</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="#">Descobrir</a>
+        <a href="#">Devs</a>
+        <a href="#">Sobre</a>
+        <a href="#">Suporte</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2025 Iara Games. Orgulhosamente brasileiro. / Feito com orgulho no Brasil.</p>
+      <p>Os jogos e marcas pertencem aos seus respectivos criadores. / Todos os jogos pertencem aos seus respectivos desenvolvedores.</p>
+    </div>
+  </footer>
+</body>
+</html>
