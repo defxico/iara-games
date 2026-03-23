@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600;700;800&family=Inter:wght@400&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="./css/style.css" />
@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="container header-content">
       <a href="#" class="brand" aria-label="Iara Games - Página inicial">
-       <img src="./assets/img/logotipo-claro 2.svg" alt="Iara Games" class="brand-logo" />
+       <img src="./assets/img/logotipo-escuro.svg" alt="Iara Games" class="brand-logo" />
       </a>
 
       <nav class="main-nav" aria-label="Navegação principal">
@@ -68,11 +68,8 @@
       <div class="header-actions">
         <form class="search-form" role="search">
           <label for="search" class="sr-only">Buscar jogos</label>
-           <span class="search-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m21 21-4.34-4.34" />
-              <circle cx="11" cy="11" r="8" />
-            </svg>
+          <span class="search-icon" aria-hidden="true">
+            <img src="./assets/img/search.svg" alt="" aria-hidden="true" />
           </span>
           <input type="search" id="search" placeholder="Buscar jogos..." />
         </form>
@@ -104,34 +101,33 @@
 
           <div class="hero-features">
             <article class="feature-card">
-              <img src="./assets/img/icone-logo claro.svg" alt="" aria-hidden="true" class="feature-icon" />
+              <img src="./assets/img/icone-logo claro-v2.svg" alt="" aria-hidden="true" class="feature-icon" />
               <h2>Jogos brasileiros</h2>
               <span class="feature-arrow">
-                <img src="./assets/img/seta-circular-default amarela.svg" alt="" aria-hidden="true" />
+                <img src="./assets/img/seta-circular-default-branca.svg" alt="" aria-hidden="true" />
               </span>
             </article>
 
             <article class="feature-card">
-              <img src="./assets/img/icone-logo claro.svg" alt="" aria-hidden="true" class="feature-icon" />
+              <img src="./assets/img/icone-logo claro-v2.svg" alt="" aria-hidden="true" class="feature-icon" />
               <h2>Estúdios independentes</h2>
               <span class="feature-arrow">
-                <img src="./assets/img/seta-circular-default amarela.svg" alt="" aria-hidden="true" />
+                <img src="./assets/img/seta-circular-default-branca.svg" alt="" aria-hidden="true" />
               </span>
             </article>
 
             <article class="feature-card">
-              <img src="./assets/img/icone-logo claro.svg" alt="" aria-hidden="true" class="feature-icon" />
+              <img src="./assets/img/icone-logo claro-v2.svg" alt="" aria-hidden="true" class="feature-icon" />
               <h2>Cultura em jogo</h2>
               <span class="feature-arrow">
-                <img src="./assets/img/seta-circular-default amarela.svg" alt="" aria-hidden="true" />
+                <img src="./assets/img/seta-circular-default-branca.svg" alt="" aria-hidden="true" />
               </span>
             </article>
           </div>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <div class="hero-frame"></div>
-          <div class="hero-character"></div>
+          <div class="hero-avatar"></div>
         </div>
       </div>
 
@@ -152,10 +148,10 @@
               <span>Em destaque</span>
             </span>
             <h2>Jogos da Semana</h2>
-            <p>
-              Produção nacional independente. Cada título aqui chegou para
-              contar uma história.
-            </p>
+           <p>
+            Produção nacional independente. Cada título aqui chegou para
+            contar uma história.
+          </p>
           </div>
 
           <a href="#" class="section-link">Ver todos</a>
@@ -363,22 +359,33 @@
 
     <section class="section support-section">
       <div class="container support-box">
-        <div class="support-image" aria-hidden="true"></div>
-
         <div class="support-content">
-          <h2>Apoie a Iara</h2>
-          <p>
-            A Iara Games existe para que jogos brasileiros independentes
-            cheguem a mais gente — e para que mais devs tenham onde publicar.
-          </p>
-          <p>
-            Se você acredita nisso também, pode nos ajudar a crescer.
-          </p>
-          <a href="#" class="btn btn-support">Apoiar</a>
+          <span class="support-eyebrow">APOIE A IARA</span>
+          <h2>A Iara cresce junto com a cena que representa.</h2>
+          <p>A gente existe para que jogos brasileiros independentes cheguem a mais gente — e para que mais devs tenham onde publicar.</p>
+          <p>Se você acredita nisso também, pode nos ajudar a crescer.</p>
+          <a href="#" class="btn btn-support">Fazer parte</a>
+        </div>
+
+        <div class="support-metrics" aria-label="Indicadores da Iara Games">
+          <article class="support-metric-card">
+            <strong class="support-metric-value support-metric-value-gold">9</strong>
+            <span class="support-metric-label">jogos disponíveis</span>
+          </article>
+          <article class="support-metric-card">
+            <strong class="support-metric-value support-metric-value-gold">7</strong>
+            <span class="support-metric-label">estúdios parceiros</span>
+          </article>
+          <article class="support-metric-card">
+            <strong class="support-metric-value support-metric-value-cyan">6</strong>
+            <span class="support-metric-label">estados do Brasil</span>
+          </article>
+          <article class="support-metric-card">
+            <strong class="support-metric-value support-metric-value-cyan">100%</strong>
+            <span class="support-metric-label">produção nacional</span>
+          </article>
         </div>
       </div>
-
-      <div class="wave-decoration" aria-hidden="true"></div>
     </section>
   </main>
 
@@ -400,7 +407,7 @@
     </div>
 
     <div class="container footer-bottom">
-      <p>© 2025 Iara Games. Orgulhosamente brasileiro. / Feito com orgulho no Brasil.</p>
+      <p>© 2026 Iara Games. Orgulhosamente brasileira.</p>
       <p>Os jogos e marcas pertencem aos seus respectivos criadores. / Todos os jogos pertencem aos seus respectivos desenvolvedores.</p>
     </div>
   </footer>
