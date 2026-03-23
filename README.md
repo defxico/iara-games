@@ -2,7 +2,8 @@
 **Integrantes do Projeto**:  
 *Francisco Caetano Bernardes*  
 *Mariana Costa Cruz Maciel*  
-*Giovana Camargo Budin*  
+*Giovana Camargo Budin*
+*Amanda Ayumi Guedes Ueno*
 
 # Iara Games
 
