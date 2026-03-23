@@ -144,6 +144,11 @@ html {
   overflow-x: hidden;
 }
 
+section,
+footer {
+  scroll-margin-top: 110px;
+}
+
 body {
   font-family: "Inter", sans-serif;
   color: var(--color-text-on-dark);
