@@ -4,122 +4,178 @@
 *Mariana Costa Cruz Maciel*  
 *Giovana Camargo Budin*  
 
-## Contexto do Projeto
+# Iara Games
 
-A Iara Games é um projeto acadêmico desenvolvido no curso de Web Design, com o objetivo de conceber a visão inicial de uma plataforma digital voltada para jogos brasileiros.
+## 1. Contexto e Proposta
 
-Esta primeira sprint tem como foco estruturar a base conceitual, visual e de experiência do usuário da plataforma, sem implementação de funcionalidades dinâmicas, utilizando apenas HTML e CSS.
+A Iara Games é uma plataforma curadora voltada à descoberta e valorização de jogos independentes brasileiros, atuando como intermediadora entre jogadores e desenvolvedores.
+
+Inspirada na Iara do folclore nacional — uma figura encantadora que atrai e revela — a plataforma assume um papel ativo na experiência, apresentando e promovendo jogos como “tesouros” a serem descobertos.
+
+A proposta central é resolver um problema recorrente do mercado: a baixa visibilidade dos desenvolvedores brasileiros frente a plataformas globais saturadas.
+
+A Iara Games surge como um ambiente dedicado exclusivamente ao cenário nacional, promovendo:
+- visibilidade para desenvolvedores brasileiros  
+- descoberta facilitada de novos jogos  
+- integração entre jogadores e criadores  
+
+Frase-base do projeto:
+> Iara Games: Jogue o Brasil. Descubra o nosso ecossistema.
 
 ---
 
-## Proposta da Plataforma
+## 2. Benchmark de Mercado
 
-A Iara Games é uma plataforma dedicada exclusivamente a jogos nacionais, reunindo catálogo, comunidade e organização de biblioteca para valorizar criadores brasileiros e facilitar a descoberta de novos títulos.
-
-Inspirada na figura da Iara do folclore brasileiro, a proposta da plataforma é encantar e atrair usuários através de uma experiência visual imersiva, ao mesmo tempo em que fortalece o ecossistema de desenvolvedores nacionais.
-
----
-
-## Benchmark (Referência de Mercado)
-
-Para fundamentar as decisões de design e estrutura, foram analisadas plataformas de distribuição de jogos:
+Para embasar as decisões do projeto, foram analisadas plataformas consolidadas de distribuição de jogos.
 
 ### Steam
-- Uso eficiente de tags e filtros
-- Estrutura clara de catálogo e navegação
-- Sistema de avaliações da comunidade
+A Steam apresenta um ecossistema robusto com sistema eficiente de tags, avaliações da comunidade e grande volume de conteúdo.
 
-### (Adicionar 2 plataformas)
-- ...
-- ...
+Pontos aproveitados:
+- sistema de categorização por tags  
+- estrutura de avaliações e feedback da comunidade  
 
-### Direcionamento adotado
-Foram aproveitados:
-- sistema de categorização por tags
-- organização clara de catálogo
-
-Foram evitados:
-- excesso de informação visual
-- interface poluída
-- sensação de navegação caótica
+Pontos evitados:
+- excesso de informação visual  
+- sensação de plataforma sobrecarregada  
+- dificuldade de descoberta em meio ao volume massivo de jogos  
 
 ---
 
-## Decisões de Design (GDW)
+### Epic Games Store
+A Epic Games Store possui uma interface mais limpa e organizada, com foco em curadoria e destaque visual.
 
-### Paleta de Cores
-A identidade visual foi construída com base no conceito de “mergulho”:
+Pontos aproveitados:
+- interface mais simples e objetiva  
+- destaque visual para jogos selecionados  
 
-- Tons de água: azul profundo, ciano, turquesa, verde esmeralda
-- Destaques: ouro e acobreado
-
-Essa combinação cria contraste visual forte e reforça a identidade temática da plataforma.
-
-### Tipografia
-- Fonte principal: sans-serif moderna para garantir legibilidade
-- Logotipo com curvas suaves, remetendo ao fluxo da água
-
-### Decisões Visuais
-1. Uso de gradiente progressivo para simular profundidade ao longo do scroll
-2. Cantos arredondados e linhas fluidas, evitando rigidez visual
-3. Cards de conteúdo com destaque visual para jogos e seções
+Pontos evitados:
+- pouca profundidade em organização de conteúdo  
+- menor diversidade de filtros comparado à Steam  
 
 ---
 
-## UX e Acessibilidade
+### Itch.io
+O Itch.io é uma plataforma voltada a desenvolvedores independentes, com grande liberdade de publicação e forte presença de jogos experimentais.
 
-A interface foi projetada com foco em clareza, navegação intuitiva e acessibilidade:
+Pontos aproveitados:
+- valorização de desenvolvedores independentes  
+- diversidade de estilos e propostas  
 
-- Estrutura semântica com uso adequado de headings
-- Navegação clara com menu principal visível
-- Botões e links identificáveis visualmente
-- Uso de `aria-label` em elementos de navegação
-- Campo de busca com label acessível
-- Feedback visual de foco (focus-visible)
-- Uso de `alt` em imagens decorativas
-
-A organização da página foi pensada para guiar o usuário de forma progressiva, desde a apresentação da plataforma até a exploração do catálogo.
+Pontos evitados:
+- organização inconsistente  
+- dificuldade de navegação e descoberta estruturada  
 
 ---
 
-## Padrões e Boas Práticas (W3C)
+## 3. Design (GDW)
 
-Foram aplicadas boas práticas de desenvolvimento front-end:
+### 3.1 Paleta de Cores
 
-- HTML semântico
-- Estrutura hierárquica de headings
-- Separação entre estrutura (HTML) e estilo (CSS)
-- Código organizado e legível
+A paleta foi inspirada no conceito de “rio” e profundidade:
 
----
+- cores primárias: azul profundo, ciano, turquesa e verde-esmeralda  
+- cores de destaque: tons de ouro e acobreado  
 
-## Sustentabilidade Aplicada
-
-A sustentabilidade foi abordada sob a ótica de eficiência digital:
-
-- Página leve, sem uso de JavaScript
-- Estrutura simples e otimizada
-- Carregamento rápido
-- Responsividade básica para diferentes dispositivos
+Essa combinação cria contraste visual forte e reforça a identidade da marca, além de guiar o usuário nos elementos interativos.
 
 ---
 
-## Como Executar o Projeto
+### 3.2 Tipografia
 
-1. Fazer download ou clonar o repositório
-2. Abrir o arquivo `index.html` em qualquer navegador
+- fonte principal: sans-serif moderna, priorizando legibilidade  
+- elementos visuais e identidade: curvas sutis que remetem à fluidez da água  
 
----
-
-## Estrutura do Projeto
-
-- /index.html
-- /css/style.css
-- /assets/
-- README.md
+A escolha garante leitura confortável em diferentes tamanhos de tela.
 
 ---
 
-## Repositório
+### 3.3 Decisões Visuais
 
-https://github.com/defxico/iara-games
+Foram adotadas as seguintes diretrizes visuais:
+
+- uso de bordas arredondadas e elementos fluidos, evitando blocos rígidos  
+- transições suaves de cor para simular profundidade (efeito de mergulho)  
+- destaque visual para elementos interativos (botões e chamadas de ação)  
+- organização em seções bem definidas, facilitando a leitura da página  
+
+---
+
+## 4. UX e Acessibilidade
+
+A experiência do usuário foi pensada para ser intuitiva, fluida e alinhada ao conceito narrativo da plataforma.
+
+### 4.1 Usabilidade (UX)
+
+- navegação clara e previsível  
+- estrutura organizada em seções (hero, categorias, destaques, módulos)  
+- fluxo de leitura vertical contínuo  
+- experiência baseada em exploração progressiva (scroll como mergulho)  
+- revelação gradual de conteúdo, simulando profundidade  
+- foco em descoberta visual e curadoria, em vez de listagem massiva de conteúdo  
+- categorização de jogos para facilitar descoberta  
+- destaque para ações principais (explorar loja, acessar biblioteca)  
+- uso de progressão visual (clareza → profundidade) para orientar o usuário  
+
+---
+
+### 4.2 Acessibilidade
+
+Foram consideradas boas práticas para garantir melhor acesso ao conteúdo:
+
+- contraste adequado entre texto e fundo  
+- uso de tipografia legível (sans-serif)  
+- hierarquia clara de títulos e conteúdos  
+- uso de atributo `alt` em imagens informativas  
+- organização visual que reduz carga cognitiva e facilita a leitura da interface  
+- elementos interativos com destaque visual suficiente  
+
+---
+
+### 4.3 Identidade e Microcopy
+
+A linguagem da interface acompanha o conceito da plataforma:
+
+- uso de microcopy temática para reforçar identidade (ex: “Mergulhar” em vez de “Explorar”)  
+- adaptação da linguagem ao universo narrativo da Iara  
+- comunicação mais envolvente, evitando termos genéricos de interface  
+
+---
+
+## 5. Estrutura da Página Inicial
+
+A home foi estruturada como uma experiência vertical contínua:
+
+- header com navegação principal  
+- hero com apresentação da proposta  
+- área de busca e categorias  
+- destaques de jogos  
+- apresentação das áreas da plataforma (loja, biblioteca, fórum, suporte)  
+- seção de diferenciais  
+- rodapé com informações do projeto  
+
+O layout segue o conceito de “mergulho”, onde o usuário explora a plataforma progressivamente ao rolar a página.
+
+---
+
+## 6. Tecnologias Utilizadas
+
+- HTML5  
+- CSS3  
+
+O projeto foi desenvolvido como página estática, conforme exigência da sprint.
+
+---
+
+## 7. Repositório
+
+Link do repositório público:
+
+https://github.com/defxico/iara-games/
+
+---
+
+## 8. Informações do Projeto
+
+Projeto desenvolvido para a Sprint 01 — Iara Games  
+Curso: FIAP  
