@@ -1,0 +1,29 @@
+Proposta de revisão de contraste - Sprint 2
+As versões originais foram desenvolvidas com foco estético, priorizando leveza e refinamento. Na revisão de Sprint 2,
+identificamos oportunidades de melhoria de contraste e legibilidade seguindo as diretrizes WCAG 2.1, mantendo a
+identidade visual da Iara Games.
+
+Logotipo
+Foram propostas três versões do logotipo para contextos distintos de uso. A versão sobre fundo claro teve o peso
+visual aumentado para garantir contraste com o fundo branco ou areia. A versão sobre fundo escuro foi reforçada com
+maior presença do dourado. A terceira versão, nova nesta sprint, é uma variação em areia.
+
+IARA
+GAMES
+
+IARA
+GAMES
+
+IARA
+GAMES
+
+Setas
+As setas passaram de outline para versão preenchida com fundo colorido em ciano e dourado. A mudança aumenta o
+contraste com o background e torna as chamadas de ação mais evidentes, mantendo o conceito de vórtice fluvial.
+
+Indicador de scroll
+As chevrons originais em outline fino tinham baixa visibilidade sobre a fotografia de fundo. A versão proposta usa
+preenchimento sólido em camadas sobrepostas de dourado e ciano, reforçando o movimento de descida e a metáfora
+de mergulho da plataforma.
+
+

@@ -1,0 +1,18 @@
+<svg width="144" height="160" viewBox="0 0 144 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_173_491)">
+<path d="M4 0L72 38L140 0" stroke="#DCB24C" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.86" d="M4 14L72 52L140 14" stroke="#DCB24C" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.72" d="M4 28L72 66L140 28" stroke="#DCB24C" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.58" d="M4 42L72 80L140 42" stroke="#DCB24C" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.46" d="M4 56L72 94L140 56" stroke="#DCB24C" stroke-width="0.68" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.34" d="M4 70L72 108L140 70" stroke="#4DAFC2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.24" d="M4 84L72 122L140 84" stroke="#4DAFC2" stroke-width="0.52" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.15" d="M4 98L72 136L140 98" stroke="#4DAFC2" stroke-width="0.42" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.08" d="M4 112L72 150L140 112" stroke="#4DAFC2" stroke-width="0.3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_173_491">
+<rect width="144" height="160" fill="white"/>
+</clipPath>
+</defs>
+</svg>

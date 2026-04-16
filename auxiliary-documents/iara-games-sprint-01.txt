@@ -1,0 +1,564 @@
+IARA GAMES
+Sprint 01 — Uma Nova Jornada
+
+FIAP
+Francisco Caetano Bernardes
+Mariana Costa Cruz Maciel
+Giovana Camargo Budin
+Amanda Ayumi Guedes Ueno
+
+Março de 2026
+
+Sumário
+1. Contexto e Proposta
+1.1 O que é a Iara Games
+1.2 Problema que resolve
+1.3 Proposta da plataforma
+
+2. Benchmark de Mercado
+2.1 Steam
+2.2 Epic Games Store
+2.3 Itch.io
+
+3. Design (GDW)
+3.1 Paleta de Cores
+3.2 Tipografia
+3.3 Decisões Visuais
+
+4. UX e Acessibilidade
+4.1 Usabilidade
+4.2 Acessibilidade
+4.3 Identidade e Microcopy
+
+5. Estrutura da Página Inicial
+6. Tecnologias Utilizadas
+7. Repositório
+
+Iara Games — Sprint 01
+
+2
+
+1. Contexto e Proposta
+1.1 O que é a Iara Games
+A Iara Games é uma plataforma digital curadora voltada à descoberta, distribuição e
+valorização de jogos independentes brasileiros. Atua como intermediadora entre jogadores e
+desenvolvedores nacionais, criando um ecossistema dedicado exclusivamente ao cenário
+indie do Brasil.
+O nome e a identidade da plataforma são inspirados na Iara do folclore brasileiro, entidade
+das águas doces que habita rios, lagos e igaraés. Assim como a figura mítica atrai e encanta
+quem se aproxima das águas, a plataforma assume um papel ativo de revelação: apresenta
+jogos como tesouros a serem descobertos, trazendo visibilidade a obras que, de outra forma,
+permaneceriam ocultas em meio ao volume massivo de produções globais.
+A plataforma não é uma alternativa genérica à Steam ou Epic Games Store. É um espaço
+nichado,
+
+criado
+
+para
+
+um
+
+público
+
+específico:
+
+o
+
+gamer
+
+engajado,
+
+que
+
+conhece
+
+desenvolvedores pelo nome, acompanha a cena indie nacional e compreende o valor cultural
+e econômico de apoiar a produção brasileira.
+
+1.2 Problema que resolve
+Desenvolvedores brasileiros independentes enfrentam um desafio estrutural: a baixa
+visibilidade em plataformas globais saturadas. Em ambientes como Steam e Itch.io, jogos
+nacionais competem diretamente com milhares de títulos internacionais sem qualquer critério
+de curadoria geográfica ou cultural. O resultado é a invisibilidade sistêmica de produções
+com alto valor narrativo e identitário, criadas por estúdios que muitas vezes operam com
+recursos mínimos.
+Do lado do jogador, há uma dificuldade simétrica: a descoberta de jogos brasileiros é
+fragmentada e pouco estruturada. Não existe hoje uma plataforma que funcione como ponto
+de referência para quem quer conhecer e apoiar o que é feito no Brasil.
+
+1.3 Proposta da plataforma
+A Iara Games surge para preencher essa lacuna. A proposta central é criar um ambiente
+dedicado exclusivamente ao cenário nacional, com três pilares:
+• Visibilidade para desenvolvedores brasileiros: curadoria ativa, destaque semanal de títulos
+e perfis de estúdios.
+• Descoberta facilitada de novos jogos: categorização por gênero, região e estilo, com foco
+em exploração visual progressiva.
+• Integração entre jogadores e criadores: espaço de comunidade, fórum e canal direto entre
+público e devs.
+“Iara Games: Jogue o Brasil. Descubra o nosso ecossistema.”
+
+Iara Games — Sprint 01
+
+3
+
+2. Benchmark de Mercado
+Para embasar as decisões do projeto, foram analisadas três plataformas consolidadas de
+distribuição de jogos digitais. O objetivo foi identificar boas práticas a serem incorporadas e
+problemas recorrentes a serem evitados na Iara Games.
+
+2.1 Steam
+A Steam é a maior plataforma de distribuição de jogos do mundo, com mais de 50 mil títulos
+catalogados e uma base de usuários global. Seu sistema de tags, avaliações da comunidade
+e páginas de curadoria criaram um padrão de referência para o mercado. No entanto, o
+volume massivo de lançamentos diários torna a descoberta orgânica praticamente impossível
+para títulos independentes sem investimento em marketing.
+O que aproveitamos
+
+O que evitamos
+
++ Sistema de categorização por tags e filtros
+
+- Excesso de informação visual na página
+principal
+
++
+
+Estrutura
+
+de
+
+avaliações
+
+e
+
+feedback
+
+da
+
+- Sensação de plataforma sobrecarregada e sem
+
+comunidade
+
+identidade
+
++ Páginas de curadoria e listas de desejos
+
+- Dificuldade de descoberta em meio ao volume
+massivo de jogos
+
+2.2 Epic Games Store
+A Epic Games Store adotou uma estratégia de diferenciação pela simplicidade: interface mais
+limpa, catálogo menor e curadoria mais rigorosa. A iniciativa de jogos gratuitos mensais
+ampliou sua base de usuários, mas a plataforma ainda carece de profundidade em
+ferramentas de descoberta e organização de conteúdo para o público de nicho.
+O que aproveitamos
+
+O que evitamos
+
++ Interface mais simples, objetiva e com menos
+
+-
+
+ruído visual
+
+filtragem de conteúdo
+
++ Destaque visual para jogos selecionados na
+
+- Menor diversidade de ferramentas comparado
+
+página principal
+
+à Steam
+
+Pouca
+
+profundidade
+
+em
+
+organização
+
+e
+
+2.3 Itch.io
+O Itch.io é a plataforma mais próxima do público indie e experimental. Com grande liberdade
+de publicação e uma cultura de valorização de desenvolvedores independentes, tornou-se
+referência para jogos autorais. Porém, a ausência de curadoria estruturada e a interface
+pouco refinada dificultam a navegação e reduzem o alcance dos títulos publicados.
+O que aproveitamos
+
+Iara Games — Sprint 01
+
+O que evitamos
+
+4
+
++
+
+Valorização
+
+genuína
+
+de
+
+desenvolvedores
+
+- Organização inconsistente e interface com
+
+independentes
+
+baixa legibilidade
+
++ Diversidade de estilos, propostas e formatos
+
+-
+
+Dificuldade
+
+de
+
+navegação
+
+e
+
+descoberta
+
+estruturada
++ Cultura de apoio direto ao criador
+
+- Ausência de curadoria e identidade visual da
+plataforma
+
+Iara Games — Sprint 01
+
+5
+
+3. Design (GDW)
+3.1 Paleta de Cores
+A paleta da Iara Games foi construída a partir do conceito de topografia fluvial — os padrões,
+formas e fenômenos visuais das águas doces brasileiras. Cada cor tem origem num elemento
+específico desse universo e cumpre uma função precisa na hierarquia visual da interface.
+
+Escuro Profundo
+
+Petróleo
+
+Dourado
+
+#192728
+
+#3C5D66
+
+#BA9130
+
+Representa as águas fundas e escuras
+dos rios amazônicos. Usado como fundo
+principal da nav, do rodapé e de
+elementos de alto contraste. Âncora
+visualmente toda a identidade.
+
+O azul-esverdeado das águas profundas.
+Cor primária da identidade, presente em
+fundos de páginas internas, ícones de
+navegação e elementos estruturais.
+
+O reflexo do sol na superfície do rio ao
+entardecer. Cor de ação e destaque,
+usada em botões principais, ícones
+default e na tipografia do wordmark.
+
+Ciano Suave
+
+Ciano Neon
+
+Dourado Neon
+
+#9FCFDC
+
+#4DAFC2
+
+#DCB24C
+
+A translucidez da água em movimento.
+Usado em labels, elementos de destaque
+sutil e nos gradientes dos overlays
+gráficos.
+
+A luminescência da água em contato com
+a luz. Cor dos estados hover ativo e
+active em ícones de navegação,
+remetendo à estética synthwave.
+
+A intensificação do reflexo solar. Versão
+iluminada do dourado primário, aplicada
+em estados de interação com efeito glow.
+
+Areia
+
+Verde
+
+Vermelho
+
+#F2EFE8
+
+#4E9E7A
+
+#C95B52
+
+A areia das margens do rio. Base para
+textos sobre fundos escuros e para
+superfícies claras alternativas.
+
+O verde da vegetação ciliar. Reservado
+para
+feedbacks
+positivos
+como
+confirmações de compra e mensagens de
+sucesso.
+
+Alerta e atenção. Usado exclusivamente
+em mensagens de erro, campos inválidos
+e situações que exigem atenção imediata
+do usuário.
+
+3.2 Tipografia
+O sistema tipográfico utiliza duas famílias complementares: Sora para títulos e elementos de
+identidade, e Inter para corpo de texto e interface.
+A escolha da Sora é motivada por sua geometria arredondada, que remete à fluidez das
+águas e reforça a estética orgânica da plataforma. Seus pesos variados permitem criar uma
+hierarquia visual clara sem recorrer a famílias diferentes. A Inter, por sua vez, foi projetada
+especificamente para interfaces digitais: seu espaçamento generoso, altura de x elevada e
+excelente legibilidade em tamanhos pequenos a tornam ideal para corpo de texto em telas de
+diferentes resoluções. A combinação das duas famílias equilibra identidade e funcionalidade.
+Estilo
+
+Família / Peso / Tamanho
+
+H1 — Títulos principais
+
+Sora Extrabold 800 — 48px / 64px
+
+H2 — Subtítulos
+
+Sora Bold 700 — 32px / 40px
+
+Iara Games — Sprint 01
+
+6
+
+H3 — Cards e seções
+
+Sora Semibold 600 — 24px / 32px
+
+Body — Interface
+
+Inter Regular 400 — 16px / 24px
+
+Texto pequeno
+
+Inter Regular 400 — 14px / 20px
+
+Botões CTA
+
+Sora Semibold 600 — 16px
+
+3.3 Decisões Visuais
+As decisões visuais da Iara Games não são escolhas estéticas arbitrárias. Cada elemento
+gráfico tem origem num fenômeno da topografia fluvial e cumpre uma função conceitual
+precisa na identidade da plataforma.
+Topografia fluvial como linguagem visual
+Ripples, meandros, vórtices e a superfície da água são os fenômenos que estruturam toda a
+identidade gráfica. As linhas concêntricas do logo replicam os anéis de impacto de uma gota
+na superfície da água. Os overlays gráficos derivam de representações cartográficas de rios
+vistos de cima. A seta circular é um vórtice. Cada decisão gráfica é rastreada a um
+comportamento visual das águas doces.
+Estética Synthwave como posicionamento
+O synthwave não é ornamento, é posicionamento. Nos anos 80, era a linguagem visual do
+futuro imaginado. Revisitá-la hoje é um gesto de trazer o clássico para o contemporâneo.
+Para a Iara Games, isso se traduz com precisão: o folclore é antigo, oral, profundo, e o synth
+é a linguagem que o projeta para o digital e o tecnológico. Os neons dourado e ciano
+aparecem exclusivamente em estados de interação, como uma luminescência que surge ao
+toque.
+Bordas arredondadas e fluidez orgânica
+Border-radius generoso em todos os componentes reforça a estética orgânica. A escala vai
+de 8px em elementos pequenos como tags e badges até 32px em containers e botões pill.
+Superfícies maiores utilizam cantos assimétricos 32+16px que simulam a forma de uma gota,
+referência direta ao elemento água.
+Profundidade e mergulho progressivo
+O background da home é construído em camadas: fotografia de rio, gradiente de cor,
+overlays gráficos e a mascote. Essa composição cria profundidade visual que convida o
+usuário a mergulhar. A progressão da home para páginas internas replica esse movimento:
+do claro e aberto para o mais escuro e contido.
+Superfícies de água e glassmorphism
+Containers flutuantes utilizam fundo translucido com blur, replicando a sensação visual de
+uma camada de água sobre o background. O usuário enxerga através, mas com
+profundidade. É a superfície que separa dois mundos sem esconder nenhum dos dois.
+
+Iara Games — Sprint 01
+
+7
+
+Destaque de elementos interativos
+Botões CTA em dourado com hover em dourado neon e glow garantem visibilidade sem
+romper com a paleta. Ícones de navegação utilizam ciano neon com drop-shadow nos
+estados hover e active. A transição de cor e o efeito de luz sinalizam interatividade sem
+necessidade de indicadores textuais adicionais.
+
+Iara Games — Sprint 01
+
+8
+
+4. UX e Acessibilidade
+4.1 Usabilidade
+A experiência do usuário foi projetada para ser intuitiva, fluida e alinhada ao conceito
+narrativo da plataforma. A metáfora do mergulho estrutura toda a jornada: o usuário não
+navega por uma lista de produtos, ele explora um ambiente imersivo onde o conteúdo se
+revela progressivamente.
+Navegação clara e previsível
+A estrutura de navegação principal é composta por seis destinos: Início, Loja, Biblioteca,
+Fórum, Suporte e Sobre. A hierarquia é visível no header fixo, com destaque visual para o
+item ativo. O usuário sabe onde está e para onde pode ir sem esforço cognitivo adicional.
+Organização em seções com identidade própria
+A home é dividida em blocos semânticos distintos: hero de apresentação, jogos em
+destaque, estúdios parceiros, apoio à plataforma e rodapé. Cada seção tem visual e
+propósito próprios, evitando a sensação de página corrida sem estrutura.
+Scroll como mergulho
+O fluxo de leitura vertical contínuo simula a experiência de mergulho. O conteúdo mais
+superficial é apresentado no topo e a complexidade e o engajamento aumentam
+progressivamente conforme o usuário rola a página.
+Descoberta visual e curadoria ativa
+Em vez de listagem massiva, a plataforma apresenta uma seleção curada de jogos da
+semana com destaque visual para capa, categorias e avaliação. O objetivo é provocar
+descoberta genuína, não sobrecarregar o usuário com opções.
+Categorização e filtragem
+Jogos são organizados por gênero com ícones próprios: aventura, cozy, ação, puzzle, RPG e
+esporte. A categorização facilita a descoberta por afinidade e reduz o tempo de decisão do
+usuário.
+
+4.2 Acessibilidade
+As boas práticas de acessibilidade foram incorporadas como requisito de projeto, não como
+ajuste posterior. A meta é garantir que a experiência seja igualmente legível e navegável para
+o maior número possível de usuários.
+Contraste e legibilidade cromática
+A paleta foi construída com contraste adequado entre texto e fundo em todas as
+combinações de uso. Textos claros sobre fundos escuros e textos escuros sobre fundos
+claros respeitam as diretrizes de razão de contraste. Cores de feedback nunca são o único
+indicador visual de estado, sendo acompanhadas por ícones ou texto.
+
+Iara Games — Sprint 01
+
+9
+
+Tipografia e hierarquia visual
+O uso de famílias sans-serif com pesos distintos cria uma hierarquia clara sem depender
+exclusivamente de tamanho. Títulos, subtítulos, corpo e labels têm tratamentos visuais
+distintos que orientam a leitura e reduzem a carga cognitiva.
+Semântica e atributos de acessibilidade
+Imagens informativas utilizam atributo alt descritivo. A estrutura HTML segue hierarquia
+semântica correta com uso de heading levels, nav, main e footer. Elementos interativos têm
+área de toque adequada.
+Redução de carga cognitiva
+O design evita sobreposição excessiva de informações. Cada seção tem um propósito
+declarado e um número limitado de ações possíveis. A progressão de conteúdo segue a
+lógica de complexidade crescente, permitindo que o usuário absorva o ambiente antes de
+tomar decisões.
+
+4.3 Identidade e Microcopy
+A linguagem da interface é uma extensão da identidade da plataforma. O microcopy não é
+neutro: cada palavra foi escolhida para reforçar o universo narrativo da Iara e criar
+pertencimento no usuário que conhece e valoriza a cena indie nacional.
+Termos genéricos de interface foram substituídos por equivalentes que carregam o conceito
+da plataforma. “Mergulhar” no lugar de “Explorar”. “Descobrir” no lugar de “Ver mais”. “Fazer
+parte” no lugar de “Cadastrar”. Cada escolha é deliberada: quem lê transita por um espaço
+com personalidade própria.
+
+Iara Games — Sprint 01
+
+10
+
+5. Estrutura da Página Inicial
+A home foi estruturada como uma experiência vertical contínua, seguindo o conceito de
+mergulho. O usuário explora a plataforma progressivamente ao rolar a página, com cada
+seção revelando uma nova camada do ecossistema Iara Games.
+Seção
+
+Descrição
+
+Header
+
+Navegação principal com logo, links (Início, Loja, Biblioteca, Fórum, Suporte,
+Sobre), campo de busca e acesso à conta do usuário.
+
+Hero
+
+Apresentação da proposta com headline, subtexto e dois CTAs: Explorar
+jogos (primário) e Conhecer os devs (secundário). Mascote Iara à direita,
+integrada aos módulos gráficos com relação de profundidade entre planos.
+
+Áreas do piloto
+
+Três módulos com superfície de água e glassmorphism: Jogos brasileiros,
+Estúdios independentes e Cultura em jogo. Cada módulo tem ícone, título e
+seta circular de navegação.
+
+Jogos da Semana
+
+Cards de jogos com imagem de capa, tags de gênero, título, estúdio,
+avaliação e preço. Curadoria semanal com link para ver todos os títulos.
+
+Devs em Destaque
+
+Apresentação de estúdios independentes brasileiros com avatar quadrado,
+nome, cidade e link de perfil.
+
+Apoie a Iara
+
+Seção de engajamento com título, texto institucional, CTA ‘Fazer parte’ e grid
+2x2 de métricas. Overlay de meandros como fundo gráfico.
+
+Rodapé
+
+Logo, tagline, links de navegação, copyright e nota de propriedade intelectual
+dos jogos.
+
+Hero section e áreas do piloto
+
+Iara Games — Sprint 01
+
+11
+
+Seção Jogos da Semana
+
+Seção Apoie a Iara e rodapé
+
+Iara Games — Sprint 01
+
+12
+
+6. Tecnologias Utilizadas
+O projeto foi desenvolvido como página estática, conforme exigência da sprint, utilizando
+apenas HTML5 e CSS3 sem dependência de frameworks ou bibliotecas externas.
+Tecnologia
+
+Aplicação no projeto
+
+HTML5
+
+Estrutura semântica das páginas.
+
+CSS3
+
+Estilização e layout das páginas.
+
+7. Repositório
+O código-fonte do projeto está disponível publicamente no GitHub, organizado conforme
+estrutura definida na sprint: assets/img/, css/, docs/ e index.html.
+https://github.com/defxico/iara-games
+
+Iara Games — Sprint 01
+
+13
+
+

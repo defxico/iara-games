@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iara Games | Cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600;700;800&family=Inter:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="internal-page signup-page">
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="../index.html#inicio" class="brand" aria-label="Iara Games - Página inicial">
+        <img src="../assets/img/logotipo revisado claro.svg" alt="Iara Games" class="brand-logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a class="nav-link" href="../index.html#inicio">Início</a></li>
+          <li><a class="nav-link" href="../index.html#loja">Loja</a></li>
+          <li><a class="nav-link" href="../index.html#forum">Criadores</a></li>
+          <li><a class="nav-link active" href="./cadastro.html" aria-current="page">Cadastro</a></li>
+          <li><a class="nav-link" href="./perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="./cadastro.html" class="btn btn-secondary header-signup-link" aria-current="page">Criar conta</a>
+        <a href="./perfil.html" class="account-button">
+          <img src="../assets/img/avatar-placeholder-escuro.svg" alt="" aria-hidden="true" />
+          <span>Ver perfil</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="signup-hero" aria-label="Cadastro">
+      <div class="container signup-hero-content">
+        <h1>Crie sua conta</h1>
+        <p>Conecte-se com jogadores e desenvolvedores de todo o Brasil!</p>
+      </div>
+    </section>
+
+    <section class="signup-form-section" aria-label="Formulário de cadastro">
+      <div class="container">
+        <div class="signup-card">
+          <form class="signup-form" action="#" method="post" novalidate>
+
+            <fieldset class="signup-fieldset">
+              <legend class="signup-legend">Dados de acesso</legend>
+              <div class="form-grid">
+                <div class="field-group">
+                  <label for="nome-completo">Seu nome completo</label>
+                  <input id="nome-completo" name="nome-completo" type="text" autocomplete="name" placeholder="Como você se chama?" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="nome">Seu nome de usuário na plataforma</label>
+                  <input id="nome" name="nome" type="text" autocomplete="username" placeholder="Como vai aparecer para outros usuários" required />
+                </div>
+
+                <div class="field-group field-group-col1">
+                  <label for="email">Seu melhor e-mail</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="senha">Crie uma senha segura</label>
+                  <input id="senha" name="senha" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required aria-describedby="senha-hint" />
+                  <span id="senha-hint" class="field-help">Use pelo menos 8 caracteres nesta demonstração.</span>
+                </div>
+
+                <div class="field-group">
+                  <label for="confirmar-senha">Repita sua senha</label>
+                  <input id="confirmar-senha" name="confirmar-senha" type="password" autocomplete="new-password" placeholder="Confirme a senha" required />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="signup-fieldset signup-fieldset-sep">
+              <legend class="signup-legend">Seu contexto de jogo</legend>
+              <div class="form-grid">
+                <div class="field-group">
+                  <label for="cidade">Cidade</label>
+                  <input id="cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Sua cidade" />
+                </div>
+
+                <div class="field-group">
+                  <label for="estado">Estado</label>
+                  <select id="estado" name="estado" autocomplete="address-level1" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                  </select>
+                </div>
+
+                <div class="field-group field-group-full">
+                  <label for="bio">O que você busca na Iara Games?</label>
+                  <textarea id="bio" name="bio" placeholder="Ex.: descobrir jogos brasileiros com curadoria e acompanhar estúdios independentes."></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="signup-fieldset signup-fieldset-sep">
+              <legend class="signup-legend">Preferências iniciais</legend>
+              <div class="choice-grid signup-choice-grid">
+                <label class="choice-card signup-choice-card" for="genero-aventura">
+                  <input id="genero-aventura" name="generos" type="checkbox" value="aventura" />
+                  <span>
+                    <strong>Aventura</strong>
+                    Narrativas de exploração, atmosfera e descoberta.
+                  </span>
+                </label>
+
+                <label class="choice-card signup-choice-card" for="genero-puzzle">
+                  <input id="genero-puzzle" name="generos" type="checkbox" value="puzzle" />
+                  <span>
+                    <strong>Puzzle</strong>
+                    Jogos de leitura sistêmica, ritmo e experimentação.
+                  </span>
+                </label>
+
+                <label class="choice-card signup-choice-card" for="plataforma-pc">
+                  <input id="plataforma-pc" name="plataformas" type="checkbox" value="pc" />
+                  <span>
+                    <strong>PC e notebook</strong>
+                    Para quem pesquisa, compara e joga com mais frequência em casa.
+                  </span>
+                </label>
+
+                <label class="choice-card signup-choice-card" for="plataforma-mobile">
+                  <input id="plataforma-mobile" name="plataformas" type="checkbox" value="mobile" />
+                  <span>
+                    <strong>Mobile</strong>
+                    Para acessos rápidos, descoberta e acompanhamento diário.
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="signup-fieldset signup-fieldset-sep">
+              <legend class="signup-legend">Consentimentos</legend>
+              <label class="checkbox-row" for="aceite-termos">
+                <input id="aceite-termos" name="aceite-termos" type="checkbox" required />
+                <span class="consent-copy">Li e aceito os termos desta demonstração acadêmica e a política de privacidade da plataforma.</span>
+              </label>
+
+              <label class="checkbox-row" for="aceite-novidades">
+                <input id="aceite-novidades" name="aceite-novidades" type="checkbox" />
+                <span class="consent-copy">Quero receber novidades sobre jogos brasileiros, estúdios e curadorias semanais.</span>
+              </label>
+            </fieldset>
+
+            <div class="signup-actions" role="group" aria-label="Ações do formulário">
+              <a href="../index.html" class="btn signup-btn-cancel">Cancelar</a>
+              <button type="submit" class="btn signup-btn-submit">Criar conta</button>
+            </div>
+
+            <p class="signup-login-cta">Já tem uma conta? <a href="./perfil.html">Fazer login</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a href="../index.html#inicio" class="brand footer-brand-logo">
+          <img src="../assets/img/logotipo revisado claro branco.svg" alt="Iara Games" class="brand-logo" />
+        </a>
+        <p>Jogos brasileiros independentes</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="../index.html#loja">Descobrir</a>
+        <a href="./cadastro.html">Cadastro</a>
+        <a href="./perfil.html">Perfil</a>
+        <a href="../index.html#suporte">Suporte</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Iara Games. Orgulhosamente brasileira.</p>
+      <p>Os jogos e marcas pertencem aos seus respectivos criadores.</p>
+    </div>
+  </footer>
+</body>
+</html>
