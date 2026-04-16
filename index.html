@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="container header-content">
       <a href="#inicio" class="brand" aria-label="Iara Games - Página inicial">
-       <img src="./assets/img/logotipo-escuro.svg" alt="Iara Games" class="brand-logo" />
+       <img src="./assets/img/logotipo revisado claro.svg" alt="Iara Games" class="brand-logo" />
       </a>
 
       <nav class="main-nav" aria-label="Navegação principal">
@@ -78,7 +78,7 @@
 
         <a href="./pages/perfil.html" class="account-button">
           <img src="./assets/img/avatar-placeholder-escuro.svg" alt="" aria-hidden="true" />
-          <span>Meu Perfil</span>
+          <span>Meu perfil</span>
         </a>
 
       </div>
@@ -86,10 +86,10 @@
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
       <div class="hero-content">
         <div class="hero-copy">
-          <h1>Iara Games</h1>
+          <h1 id="hero-titulo">Iara Games</h1>
           <p>
             Nas águas profundas da cultura brasileira, nascem jogos que o
             mundo ainda não viu.
@@ -104,25 +104,25 @@
           <div class="hero-features">
             <article class="feature-card">
               <img src="./assets/img/icone-logo claro-v2.svg" alt="" aria-hidden="true" class="feature-icon" />
-              <h2>Jogos brasileiros</h2>
+              <p class="feature-label">Jogos brasileiros</p>
               <span class="feature-arrow">
-                <img src="./assets/img/seta-circular-default-branca.svg" alt="" aria-hidden="true" />
+                <img src="./assets/img/seta-circular-revisado amarela.svg" alt="" aria-hidden="true" />
               </span>
             </article>
 
             <article class="feature-card">
               <img src="./assets/img/icone-logo claro-v2.svg" alt="" aria-hidden="true" class="feature-icon" />
-              <h2>Estúdios independentes</h2>
+              <p class="feature-label">Estúdios independentes</p>
               <span class="feature-arrow">
-                <img src="./assets/img/seta-circular-default-branca.svg" alt="" aria-hidden="true" />
+                <img src="./assets/img/seta-circular-revisado amarela.svg" alt="" aria-hidden="true" />
               </span>
             </article>
 
             <article class="feature-card">
               <img src="./assets/img/icone-logo claro-v2.svg" alt="" aria-hidden="true" class="feature-icon" />
-              <h2>Cultura em jogo</h2>
+              <p class="feature-label">Cultura em jogo</p>
               <span class="feature-arrow">
-                <img src="./assets/img/seta-circular-default-branca.svg" alt="" aria-hidden="true" />
+                <img src="./assets/img/seta-circular-revisado amarela.svg" alt="" aria-hidden="true" />
               </span>
             </article>
           </div>
@@ -136,12 +136,12 @@
       <div class="hero-scroll">
         <p>Mergulhe nos destaques</p>
         <span class="scroll-indicator">
-          <img src="./assets/img/indicador-scroll default.svg" alt="" aria-hidden="true" />
+          <img src="./assets/img/indicador-scroll-revisado.svg" alt="" aria-hidden="true" />
         </span>
       </div>
     </section>
 
-    <section class="section" id="loja">
+    <section class="section" id="loja" aria-labelledby="loja-titulo">
       <div class="container panel panel-games">
         <div class="section-heading">
           <div>
@@ -149,7 +149,7 @@
               <img src="./assets/img/flame.svg" alt="" aria-hidden="true" />
               <span>Em destaque</span>
             </span>
-            <h2>Jogos da Semana</h2>
+            <h2 id="loja-titulo">Jogos da Semana</h2>
            <p>
              Uma seleção curada de títulos brasileiros independentes para começar sua
              jornada pela Iara Games.
@@ -243,7 +243,7 @@
       </div>
     </section>
 
-    <section class="section" id="biblioteca">
+    <section class="section" id="biblioteca" aria-labelledby="biblioteca-titulo">
       <div class="container panel-genres">
   <div class="panel-genres-wave" aria-hidden="true">
     <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
@@ -259,7 +259,7 @@
           <img src="./assets/img/trending-up.svg" alt="" aria-hidden="true" />
           <span>Descoberta</span>
         </span>
-          <h2>Navegar por Gênero</h2>
+          <h2 id="biblioteca-titulo">Navegar por Gênero</h2>
           <p>Explore gêneros e caminhos de descoberta dentro do catálogo inicial.</p>
       </div>
     </div>
@@ -293,13 +293,13 @@
 </div>
     </section>
 
-    <section class="section" id="forum">
+    <section class="section" id="forum" aria-labelledby="forum-titulo">
       <div class="container panel panel-devs">
         <div class="section-heading section-heading-simple">
           <div>
           <span class="eyebrow eyebrow-community"><img src="./assets/img/users.svg" alt="" aria-hidden="true" />
             <span>Comunidade</span></span>
-            <h2>Criadores em Destaque</h2>
+            <h2 id="forum-titulo">Criadores em Destaque</h2>
             <p>Estúdios e desenvolvedores que ajudam a revelar a força do cenário brasileiro.</p>
           </div>
         </div>
@@ -310,12 +310,12 @@
               <img src="./assets/img/avatar-dev 1.svg" alt="" aria-hidden="true" />
             </div>
             <h3>Tupiniquim Studios</h3>
-            <p>📍 Recife, PE</p>
+            <p><span aria-hidden="true">📍</span> Recife, PE</p>
             <div class="dev-stats">
               <div><strong>3</strong><span>Jogos</span></div>
               <div><strong>1.2k</strong><span>Seguidores</span></div>
             </div>
-            <a href="#">Ver perfil</a>
+            <a href="#" aria-label="Ver perfil de Tupiniquim Studios">Ver perfil</a>
           </article>
 
           <article class="dev-card">
@@ -323,12 +323,12 @@
               <img src="./assets/img/avatar-dev 2.svg" alt="" aria-hidden="true" />
             </div>
             <h3>Folclore Digital</h3>
-            <p>📍 Salvador, BA</p>
+            <p><span aria-hidden="true">📍</span> Salvador, BA</p>
             <div class="dev-stats">
               <div><strong>2</strong><span>Jogos</span></div>
               <div><strong>890</strong><span>Seguidores</span></div>
             </div>
-            <a href="#">Ver perfil</a>
+            <a href="#" aria-label="Ver perfil de Folclore Digital">Ver perfil</a>
           </article>
 
           <article class="dev-card">
@@ -336,12 +336,12 @@
               <img src="./assets/img/avatar-dev 3.svg" alt="" aria-hidden="true" />
             </div>
             <h3>Sertão Games</h3>
-            <p>📍 Fortaleza, CE</p>
+            <p><span aria-hidden="true">📍</span> Fortaleza, CE</p>
             <div class="dev-stats">
               <div><strong>4</strong><span>Jogos</span></div>
               <div><strong>2.1k</strong><span>Seguidores</span></div>
             </div>
-            <a href="#">Ver perfil</a>
+            <a href="#" aria-label="Ver perfil de Sertão Games">Ver perfil</a>
           </article>
 
           <article class="dev-card">
@@ -349,33 +349,31 @@
               <img src="./assets/img/avatar-dev 4.svg" alt="" aria-hidden="true" />
             </div>
             <h3>EcoPlay</h3>
-            <p>📍 Cuiabá, MT</p>
+            <p><span aria-hidden="true">📍</span> Cuiabá, MT</p>
             <div class="dev-stats">
               <div><strong>1</strong><span>Jogos</span></div>
               <div><strong>450</strong><span>Seguidores</span></div>
             </div>
-            <a href="#">Ver perfil</a>
+            <a href="#" aria-label="Ver perfil de EcoPlay">Ver perfil</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="conta">
+    <section class="section" id="conta" aria-labelledby="conta-titulo">
       <div class="container panel panel-account">
         <div class="section-heading">
           <div>
             <span class="eyebrow eyebrow-highlight">
-              <img src="./assets/img/users.svg" alt="" aria-hidden="true" />
-              <span>Sprint 02</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BA9130" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Novas implementações</span>
             </span>
-            <h2>Seu espaço dentro da Iara</h2>
+            <h2 id="conta-titulo">Seu espaço dentro da Iara</h2>
             <p>
               A evolução da plataforma agora inclui cadastro de usuário e uma área de perfil
               pensada para descoberta, pertencimento e curadoria da cena indie brasileira.
             </p>
           </div>
-
-          <a href="./pages/perfil.html" class="section-link">Abrir perfil</a>
         </div>
 
         <div class="account-grid">
@@ -412,11 +410,11 @@
       </div>
     </section>
 
-    <section class="section support-section" id="suporte">
+    <section class="section support-section" id="suporte" aria-labelledby="suporte-titulo">
       <div class="container support-box">
         <div class="support-content">
           <span class="support-eyebrow">APOIE A IARA</span>
-          <h2>A Iara cresce junto com a cena que representa.</h2>
+          <h2 id="suporte-titulo">A Iara cresce junto com a cena que representa.</h2>
           <p>A gente existe para que jogos brasileiros independentes cheguem a mais gente — e para que mais devs tenham onde publicar.</p>
           <p>Se você acredita nisso também, pode nos ajudar a crescer.</p>
           <a href="#sobre" class="btn btn-support">Fortalecer a Iara</a>
@@ -448,7 +446,7 @@
     <div class="container footer-top">
       <div class="footer-brand">
         <a href="#inicio" class="brand footer-brand-logo">
-          <img src="./assets/img/logotipo-claro.svg" alt="Iara Games" class="brand-logo" />
+          <img src="./assets/img/logotipo revisado claro branco.svg" alt="Iara Games" class="brand-logo" />
         </a>
         <p>Jogos brasileiros independentes</p>
       </div>

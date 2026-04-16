@@ -21,28 +21,73 @@
 
       <nav class="main-nav" aria-label="Navegação principal">
         <ul>
-          <li><a class="nav-link" href="../index.html#inicio">Início</a></li>
-          <li><a class="nav-link" href="../index.html#loja">Loja</a></li>
-          <li><a class="nav-link" href="../index.html#forum">Criadores</a></li>
-          <li><a class="nav-link active" href="./cadastro.html" aria-current="page">Cadastro</a></li>
-          <li><a class="nav-link" href="./perfil.html">Perfil</a></li>
+          <li>
+            <a class="nav-link" href="../index.html#inicio">
+              <img src="../assets/img/home-active.svg" alt="" aria-hidden="true" />
+              <span>Início</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-loja" href="../index.html#loja">
+              <img src="../assets/img/loja-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="../assets/img/loja-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Loja</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-biblioteca" href="../index.html#biblioteca">
+              <img src="../assets/img/biblioteca-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="../assets/img/biblioteca-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Biblioteca</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-forum" href="../index.html#forum">
+              <img src="../assets/img/forum-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="../assets/img/forum-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Fórum</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-suporte" href="../index.html#suporte">
+              <img src="../assets/img/suporte-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="../assets/img/suporte-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Suporte</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link nav-sobre" href="../index.html#sobre">
+              <img src="../assets/img/sobre-default off white.svg" alt="" aria-hidden="true" class="icon-default" />
+              <img src="../assets/img/sobre-hover off white.svg" alt="" aria-hidden="true" class="icon-hover" />
+              <span>Sobre</span>
+            </a>
+          </li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <form class="search-form" role="search">
+          <label for="search" class="sr-only">Buscar jogos</label>
+          <span class="search-icon" aria-hidden="true">
+            <img src="../assets/img/search.svg" alt="" aria-hidden="true" />
+          </span>
+          <input type="search" id="search" placeholder="Buscar jogos..." />
+        </form>
+
         <a href="./cadastro.html" class="btn btn-secondary header-signup-link" aria-current="page">Criar conta</a>
+
         <a href="./perfil.html" class="account-button">
           <img src="../assets/img/avatar-placeholder-escuro.svg" alt="" aria-hidden="true" />
-          <span>Ver perfil</span>
+          <span>Meu perfil</span>
         </a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="signup-hero" aria-label="Cadastro">
+    <section class="signup-hero" aria-labelledby="cadastro-titulo">
       <div class="container signup-hero-content">
-        <h1>Crie sua conta</h1>
+        <h1 id="cadastro-titulo">Crie sua conta</h1>
         <p>Conecte-se com jogadores e desenvolvedores de todo o Brasil!</p>
       </div>
     </section>
@@ -50,7 +95,7 @@
     <section class="signup-form-section" aria-label="Formulário de cadastro">
       <div class="container">
         <div class="signup-card">
-          <form class="signup-form" action="#" method="post" novalidate>
+          <form class="signup-form" action="#" method="get" novalidate>
 
             <fieldset class="signup-fieldset">
               <legend class="signup-legend">Dados de acesso</legend>
