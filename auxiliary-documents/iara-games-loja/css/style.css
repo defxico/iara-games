@@ -1,0 +1,592 @@
+/* ==========================================================================
+   1. VARIÁVEIS E GERAL
+   ========================================================================== */
+:root {
+    --bg-color: #3C5D66;
+    --nav-bg: #3C5D66;
+    --gold: #d4a017;
+    --cream: #f1ede4;
+    --dark-bg: #1a2629;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: white;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1350px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVBAR
+   ========================================================================== */
+.navbar {
+    background-color: var(--nav-bg);
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-content {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-right: 30px;
+}
+
+/* Navegação Central */
+.main-nav {
+    display: flex;
+    gap: 0.5px;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #cbd5e0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Lógica de Hover nos Ícones */
+.nav-item .icon-hover { display: none; }
+.nav-item:hover .icon-default,
+.nav-item.active .icon-default { display: none; }
+.nav-item:hover .icon-hover,
+.nav-item.active .icon-hover { display: block; }
+
+/* Header Direita (Busca e Perfil) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: auto;
+    pointer-events: none;
+}
+
+.search-icon img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+.search-form input {
+    width: 230px;
+    height: 42px;
+    padding: 0 16px 0 42px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background-color: #bcc5c5;
+    color: #2b2b2b;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.user-profile .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--gold);
+    object-fit: cover;
+}
+
+.arrow-down {
+    border: solid #ffffff;
+    border-width: 0 1.5px 1.5px 0;
+    display: inline-block;
+    padding: 2.5px;
+    transform: rotate(45deg);
+    margin-bottom: 3px;
+}
+
+/* ==========================================================================
+   3. HERO SECTIONS
+   ========================================================================== */
+.hero-store {
+    background-image: linear-gradient(rgba(61, 90, 97, 0.8), rgba(61, 90, 97, 0.8)), url('/assets/img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.hero-banner {
+    padding: 60px 0;
+    background: linear-gradient(to right, rgba(61, 90, 97, 0.9), rgba(61, 90, 97, 0.2));
+}
+
+/* ==========================================================================
+   4. FILTROS SUPERIORES (BARRA DE BUSCA LARGA)
+   ========================================================================== */
+.store-filter-bar {
+    margin-top: -90px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.search-container-large {
+    background-color: rgba(250, 244, 244, 0.5);
+    padding: 8px 12px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    background-color: var(--cream);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 48px;
+}
+
+.search-icon-inner {
+    width: 20px;
+    margin-right: 10px;
+    opacity: 0.7;
+}
+
+.search-input-wrapper input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.view-selector {
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    padding: 4px;
+    height: 48px;
+    align-items: center;
+}
+
+.view-btn {
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 38px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-btn.active { background-color: #ebe5d9c2; }
+
+.category-filters {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cat-tag {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cat-tag.active {
+    background-color: var(--dark-bg);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   5. LAYOUT PRINCIPAL (SIDEBAR + GRID)
+   ========================================================================== */
+.store-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 30px;
+    padding-top: 40px;
+    align-items: start;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #4a6b74;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.filter-group h3 {
+    color: #1a2629;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+.rating-item {
+    display: flex;       /* Alinha a estrela e o texto na mesma linha */
+    align-items: center; /* Centraliza verticalmente a estrela com o número */
+    gap: 12px;           /* Ajuste este valor para aumentar ou diminuir o espaço */
+    
+    margin-bottom: 12px; /* Espaço entre as linhas da lista */
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.rating-item:hover {
+    color: var(--gold);  /* Efeito visual opcional ao passar o mouse */
+}
+
+/* Checkboxes Customizados */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--gold);
+    border-color: var(--gold);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after { display: block; }
+
+/* National Card */
+.national-card {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #5d6d67;
+    border: 1px solid var(--gold);
+    border-radius: 15px;
+}
+
+.card-title, .national-card p {
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   6. GRID DE JOGOS (CARDS)
+   ========================================================================== */
+.game-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.game-card {
+    background-color: #6e888fb4 ;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.game-image-wrapper {
+    position: relative;
+    height: 180px;
+}
+
+.game-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.884);
+    padding: 2px 8px;
+    border-radius: 8px;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.game-info { padding: 15px; }
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: var(--cream);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.game-title {
+    color: #1a2629; /* Usa a variável dourada que você já criou */
+    font-size: 1.4rem; /* Aproveite para ajustar o tamanho se precisar */
+    margin: 10px 0;    /* Dá um respiro entre as tags e o nome do estúdio */
+}
+
+.game-developer {
+    color: #1a2629;
+}
+
+
+.game-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.game-price {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.buy-btn {
+    background-color: var(--gold);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: var(--bg-color); /* Mantém o mesmo tom de azul-petróleo */
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Alinhamento da Logo e Menu Superior */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 190px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Navegação do Rodapé */
+.footer-nav {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--gold);
+}
+
+/* Linha Divisória */
+.footer-divider {
+    display: block;           /* Garante que ela ocupe uma linha própria */
+    width: 100%;              /* Ocupa toda a largura horizontal */
+    height: 1px;              /* Define a espessura da linha */
+    border: none;             /* Remove bordas padrão */
+    background-color: rgb(255, 255, 255); /* Cor e transparência */
+    margin: 20px 0 15px 0;    /* Espaço: 40px em cima, 20px embaixo */
+    clear: both;              /* Garante que nada fique ao lado dela */
+}
+
+/* Textos Legais Inferiores */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin:0;
+    line-height: 1.5;
+}
+
+.copyright {
+    flex: 1;
+}
+
+.legal-disclaimer {
+    flex: 2;
+    text-align: right;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .footer-top, .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .legal-disclaimer {
+        text-align: center;
+    }
+}

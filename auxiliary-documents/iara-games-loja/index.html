@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iara Games - Header</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="/assets/img/logowordmark-amarelo.svg" alt="Iara Logo">
+            </div>
+
+            <nav class="main-nav">
+                <a href="#" class="nav-item active">
+                    <img src="/assets/img/home-default.svg" class="icon" alt="Início">
+                    <span>Início</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/assets/img/loja-default.svg" class="icon icon-default" alt="Loja">
+                    <img src="/assets/img/loja-hover.svg" class="icon icon-hover" alt="Loja">
+                    <span>Loja</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/assets/img/biblioteca-default.svg" class="icon icon-default" alt="Biblioteca">
+                    <img src="/assets/img/biblioteca-hover.svg" class="icon icon-hover" alt="Biblioteca">
+                    <span>Biblioteca</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/assets/img/fo╠ürum-default.svg" class="icon icon-default" alt="Fórum">
+                    <img src="/assets/img/forum-active.svg" class="icon icon-hover" alt="Fórum">
+                    <span>Fórum</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/assets/img/suporte-default.svg" class="icon icon-default" alt="Suporte">
+                    <img src="/assets/img/suporte-hover.svg" class="icon icon-hover" alt="Suporte">
+                    <span>Suporte</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/assets/img/sobre-default.svg" class="icon icon-default" alt="Sobre">
+                    <img src="/assets/img/sobre-hover.svg" class="icon icon-hover" alt="Sobre">
+                    <span>Sobre</span>
+                </a>
+            </nav>
+
+            <div class="header-right">
+                <form class="search-form" role="search">
+                    <label for="search" class="sr-only">Buscar jogos</label>
+                    <span class="search-icon" aria-hidden="true">
+                        <img src="./assets/img/search.svg" alt="" aria-hidden="true" />
+                    </span>
+                    <input type="search" id="search" placeholder="Buscar jogos..." />
+                </form>
+                <div class="user-profile">
+                    <img src="/assets/img/avatar-placeholder-escuro.svg" alt="User" class="avatar">
+                    <span>Minha Conta</span>
+                    <i class="arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-store">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>Loja de Jogos</h1>
+                <p>Descubra o melhor do game dev independente brasileiro</p>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Títulos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">120+</span>
+                    <span class="stat-label">Devs</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">48</span>
+                    <span class="stat-label">Promoções</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hero-banner">
+    </section>
+
+    <main class="container">
+
+        <div class="store-filter-bar">
+            <div class="search-container-large">
+                <div class="search-input-wrapper">
+                    <img src="./assets/img/search.svg" alt="Busca" class="search-icon-inner">
+                    <input type="text" placeholder="Buscar jogos, desenvolvedores ou gêneros...">
+                </div>
+
+                <div class="view-selector">
+                    <button class="view-btn active">
+                        <img src="./assets/img/grid-icon.svg" alt="Grid">
+                    </button>
+                    <button class="view-btn">
+                        <img src="./assets/img/list-icon.svg" alt="Lista">
+                    </button>
+                </div>
+            </div>
+
+            <div class="category-filters">
+                <button class="cat-tag active">Todos</button>
+                <button class="cat-tag">Aventura</button>
+                <button class="cat-tag">Ação</button>
+                <button class="cat-tag">Cozy</button>
+                <button class="cat-tag">Puzzle</button>
+            </div>
+        </div>
+
+    </main>
+
+    <main class="container store-layout">
+        <aside class="sidebar">
+            <div class="filter-header">
+                <img src="/assets/img/icon-filter.svg" class="sidebar-icon" alt="Filtro">
+                <h3>Filtros</h3>
+            </div>
+
+            <div class="filter-group">
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Jogos Grátis
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Em Promoção
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Avaliação Mínima</h3>
+                <div class="rating-list">
+                    <div class="rating-item"><span class="star">⭐</span> 4.5+</div>
+                    <div class="rating-item"><span class="star">⭐</span> 4+</div>
+                    <div class="rating-item"><span class="star">⭐</span> 3.5+</div>
+                    <div class="rating-item"><span class="star">⭐</span> 3+</div>
+                </div>
+            </div>
+
+            <div class="national-card">
+                <div class="card-header">
+                    <span class="flag">BAN</span>
+                    <span class="card-title">Orgulho nacional</span>
+                </div>
+                <p>Todos os jogos são desenvolvidos por criadores independentes brasileiros.</p>
+            </div>
+        </aside>
+
+<main class="game-grid-container">
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="/assets/img/exemplo.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags">
+                <span class="tag">Aventura</span>
+                <span class="tag">RPG</span>
+            </div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="game-image-wrapper">
+            <img src="./assets/img/game-capa.jpg" alt="Amazônia" class="game-img">
+            <span class="rating-badge">⭐ 4.8</span>
+        </div>
+        <div class="game-info">
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">RPG</span></div>
+            <h3 class="game-title">Amazônia: O Despertar</h3>
+            <p class="game-developer">Tupiniquim Studios</p>
+            <p class="game-reviews">2.340 avaliações</p>
+            <div class="game-footer">
+                <span class="game-price">R$ 49,90</span>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+</main>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="/assets/img/logowordmark-amarelo.svg" alt="Iara Games" class="footer-logo">
+                <p>Jogos brasileiros independentes</p>
+            </div>
+            
+            <nav class="footer-nav">
+                <a href="#">DESCOBRIR</a>
+                <a href="#">DEVS</a>
+                <a href="#">SOBRE</a>
+                <a href="#">SUPORTE</a>
+            </nav>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Iara Games. Orgulhosamente brasileiro. / Feito com orgulho no Brasil.</p>
+            <p class="legal-disclaimer">Os jogos e marcas pertencem aos seus respectivos criadores. / Todos os jogos pertencem aos seus respectivos desenvolvedores.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
