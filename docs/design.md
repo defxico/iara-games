@@ -1,5 +1,39 @@
 # Iara Games — Design System
-## Sprint 1 · Março 2026
+## Sprint 1 e Sprint 2 · Março-Abril 2026
+
+---
+
+## Evolução de Design na Sprint 2
+
+A Sprint 2 expandiu o sistema visual da Iara Games com foco em maturidade de produto e experiência de uso. Mantivemos os fundamentos da Sprint 1 e evoluímos o design para suportar novas áreas internas, formulário de cadastro e página de perfil, com coerência visual entre home e páginas secundárias.
+
+### O que evoluiu
+
+- Arquitetura de informação com navegação mais clara entre descoberta, conta e perfil.
+- Padrões semânticos para páginas internas (landmarks e hierarquia de títulos).
+- Uso extensivo de grid para organização de conteúdo em home, cadastro e perfil.
+- Componentização visual de cards, painéis e blocos de estatísticas.
+- Reforço de estados de foco e legibilidade para acessibilidade.
+
+### Decisões de UX e UI aplicadas na Sprint 2
+
+- Formulário de cadastro dividido por contexto (acesso, perfil de uso, preferências e consentimentos), reduzindo carga cognitiva.
+- Página de perfil organizada em blocos funcionais (resumo, indicadores, biblioteca, atividade e contexto lateral).
+- Continuidade de linguagem visual entre home e páginas internas para reduzir fricção de navegação.
+- Microcopy objetiva em botões e chamadas de ação para favorecer tomada de decisão rápida.
+
+### Estrutura técnica que suporta o design
+
+- HTML semântico com header, nav, main, section, article, aside, form, fieldset, legend e footer.
+- Grid responsivo para hero, catálogo, gêneros, cards de comunidade, cadastro e dashboard de perfil.
+- Tokens de cor, tipografia, espaçamento, borda e elevação aplicados de forma consistente.
+
+### Escopo acadêmico da Sprint 2
+
+- Evolução visual e estrutural clara em relação à Sprint 1.
+- Formulário estático sem back-end, com cuidados de usabilidade.
+- Nova área interna de perfil alinhada à persona principal do projeto.
+- Coerência com proposta de valor: foco exclusivo em jogos nacionais.
 
 ---
 
