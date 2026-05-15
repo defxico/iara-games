@@ -3312,17 +3312,17 @@ input:focus-visible {
 
   .hero-visual {
     min-height: 360px;
-    margin-top: -220px;
+    margin-top: -290px;
     position: relative;
     z-index: 1;
     pointer-events: none;
   }
 
   .hero-avatar {
-    width: min(92vw, 520px);
-    top: -310px;
+    width: min(110vw, 520px);
+    top: -350px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-47%);
     opacity: 0.55;
   }
 
