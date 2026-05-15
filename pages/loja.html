@@ -61,8 +61,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../index.html#forum">
-                <img src="../assets/img/accessibility-update/nav/forum-active.svg" alt="" aria-hidden="true" class="icon-default" />
-                <img src="../assets/img/accessibility-update/nav/forum-active.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <img src="../assets/img/accessibility-update/nav/forum-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/forum-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
                 <span>Fórum</span>
               </a>
             </li>
@@ -182,13 +182,13 @@
             </div>
 
             <div class="shop-filters" role="toolbar" aria-label="Filtros da loja">
-              <button type="button" class="btn btn-sm shop-filter-chip active">Todos</button>
-              <button type="button" class="btn btn-sm shop-filter-chip">Aventura</button>
-              <button type="button" class="btn btn-sm shop-filter-chip">Ação</button>
-              <button type="button" class="btn btn-sm shop-filter-chip">Cozy</button>
-              <button type="button" class="btn btn-sm shop-filter-chip">Puzzle</button>
-              <button type="button" class="btn btn-sm shop-filter-chip">RPG</button>
-              <button type="button" class="btn btn-sm shop-filter-chip">Esporte</button>
+              <button type="button" class="btn btn-sm shop-filter-chip active" aria-pressed="true">Todos</button>
+              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Aventura</button>
+              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Ação</button>
+              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Cozy</button>
+              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Puzzle</button>
+              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">RPG</button>
+              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Esporte</button>
             </div>
           </div>
         </div>
@@ -523,6 +523,7 @@
     (() => {
       const results = document.querySelector("[data-shop-results]");
       const viewButtons = document.querySelectorAll("[data-shop-view]");
+      const filterChips = document.querySelectorAll(".shop-filter-chip");
 
       if (!results || !viewButtons.length) return;
 
@@ -540,6 +541,18 @@
 
       viewButtons.forEach((button) => {
         button.addEventListener("click", () => setView(button.dataset.shopView));
+      });
+
+      const setActiveChip = (button) => {
+        filterChips.forEach((chip) => {
+          const active = chip === button;
+          chip.classList.toggle("active", active);
+          chip.setAttribute("aria-pressed", String(active));
+        });
+      };
+
+      filterChips.forEach((chip) => {
+        chip.addEventListener("click", () => setActiveChip(chip));
       });
     })();
   </script>
