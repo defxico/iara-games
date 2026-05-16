@@ -1,4 +1,4 @@
-# Projeto - Iara Games
+# Projeto - Iara Games - Sprint 2
 
 **Integrantes do Projeto**
 Francisco Caetano Bernardes
