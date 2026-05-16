@@ -166,6 +166,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 section,
 footer {
   scroll-margin-top: 110px;
@@ -2912,7 +2916,7 @@ flex-shrink: 0;
 .support-section {
   padding: var(--space-64) 0 var(--space-96);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   background: transparent;
 }
 
@@ -3319,10 +3323,10 @@ input:focus-visible {
   }
 
   .hero-avatar {
-    width: min(110vw, 520px);
+    width: min(100%, 520px);
     top: -350px;
     left: 50%;
-    transform: translateX(-47%);
+    transform: translateX(-50%);
     opacity: 0.55;
   }
 
