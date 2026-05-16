@@ -1,4 +1,4 @@
-# Iara Games
+# Iara Games - Sprint 03
 
 Plataforma de marketplace de jogos brasileiros independentes.  
 Projeto acadêmico desenvolvido na FIAP — Sprint 03 · Maio de 2026.
