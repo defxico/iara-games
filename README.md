@@ -1,4 +1,4 @@
-# Copilot Windows Launcher
+# Projeto - Iara Games
 
 **Integrantes do Projeto**
 Francisco Caetano Bernardes
