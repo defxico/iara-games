@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iara Games | Perfil do jogador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600;700;800&family=Inter:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="internal-page profile-page">
+  <header class="site-header navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a href="../index.html#inicio" class="navbar-brand brand" aria-label="Iara Games - Página inicial">
+        <img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" class="brand-logo" />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#profileNavbar"
+        aria-controls="profileNavbar"
+        aria-expanded="false"
+        aria-label="Abrir navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="profileNavbar">
+        <div class="main-nav me-lg-auto">
+          <ul class="navbar-nav align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#inicio">
+                <img src="../assets/img/accessibility-update/nav/home-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/home-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-loja" href="./loja.html">
+                <img src="../assets/img/accessibility-update/nav/loja-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/loja-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Loja</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-biblioteca" href="../index.html#biblioteca">
+                <img src="../assets/img/accessibility-update/nav/biblioteca-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/biblioteca-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Biblioteca</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-forum" href="../index.html#forum">
+                <img src="../assets/img/accessibility-update/nav/forum-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/forum-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Fórum</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-suporte" href="../index.html#suporte">
+                <img src="../assets/img/accessibility-update/nav/suporte-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/suporte-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Suporte</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-sobre" href="../index.html#sobre">
+                <img src="../assets/img/accessibility-update/nav/sobre-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/sobre-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Sobre</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="header-actions ms-lg-auto">
+          <form class="site-search input-group" role="search">
+            <label for="search-profile" class="sr-only">Buscar jogos</label>
+            <button class="input-group-text search-submit-btn" type="submit" aria-label="Buscar">
+              <img src="../assets/img/search.svg" alt="" aria-hidden="true" />
+            </button>
+            <input type="search" id="search-profile" class="form-control" placeholder="Buscar jogos..." />
+          </form>
+
+          <a href="./perfil.html" class="btn btn-primary account-button" aria-current="page">
+            <img src="../assets/img/avatar-placeholder-escuro.svg" alt="" aria-hidden="true" />
+            <span>Rafael Costa</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="internal-main profile-dashboard-main">
+    <div class="container profile-dashboard-shell">
+      <section class="profile-summary" aria-labelledby="perfil-titulo">
+        <div class="profile-summary-avatar" aria-hidden="true">
+          <span>R</span>
+        </div>
+
+        <div class="profile-summary-card">
+          <div class="profile-summary-head">
+            <div>
+              <h1 id="perfil-titulo">Rafael 'Tupi' Costa</h1>
+              <p class="profile-handle">@JogadorBR2099</p>
+            </div>
+
+            <div class="profile-summary-actions" aria-label="Ações do perfil">
+              <a href="./cadastro.html" class="profile-icon-button" aria-label="Editar perfil">
+                <img src="../assets/img/perfil-page-icons/edit icon.svg" alt="" aria-hidden="true" />
+              </a>
+              <a href="../index.html#forum" class="profile-icon-button" aria-label="Compartilhar perfil">
+                <img src="../assets/img/perfil-page-icons/share icon.svg" alt="" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          <p class="profile-bio">
+            Apaixonado por jogos indie brasileiros e sempre em busca de novas aventuras e apoiando devs nacionais.
+          </p>
+
+          <div class="profile-meta-row">
+            <span class="profile-meta-item">
+              <img src="../assets/img/perfil-page-icons/localizacao-icon.svg" alt="" aria-hidden="true" class="profile-meta-icon" />
+              São Paulo, SP
+            </span>
+            <span class="profile-meta-item">
+              <img src="../assets/img/perfil-page-icons/calendario-icon.svg" alt="" aria-hidden="true" class="profile-meta-icon" />
+              Membro desde Janeiro 2024
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-kpis" aria-label="Indicadores do perfil">
+        <article class="card profile-kpi-card profile-kpi-green">
+          <strong>4</strong>
+          <div class="profile-kpi-text">
+            <img src="../assets/img/perfil-page-icons/controler game icon.svg" alt="" aria-hidden="true" class="profile-kpi-icon" />
+            <span>Jogos</span>
+          </div>
+        </article>
+        <article class="card profile-kpi-card profile-kpi-blue">
+          <strong>352h</strong>
+          <div class="profile-kpi-text">
+            <img src="../assets/img/perfil-page-icons/clock icon.svg" alt="" aria-hidden="true" class="profile-kpi-icon" />
+            <span>Tempo de Jogo</span>
+          </div>
+        </article>
+        <article class="card profile-kpi-card profile-kpi-gold">
+          <strong>124</strong>
+          <div class="profile-kpi-text">
+            <img src="../assets/img/perfil-page-icons/trophy icon.svg" alt="" aria-hidden="true" class="profile-kpi-icon" />
+            <span>Conquistas</span>
+          </div>
+        </article>
+        <article class="card profile-kpi-card profile-kpi-purple">
+          <strong>4</strong>
+          <div class="profile-kpi-text">
+            <img src="../assets/img/perfil-page-icons/users white.svg" alt="" aria-hidden="true" class="profile-kpi-icon" />
+            <span>Amigos</span>
+          </div>
+        </article>
+      </section>
+
+      <div class="profile-dashboard-grid">
+        <div class="profile-dashboard-main-column">
+          <section class="card profile-panel" aria-labelledby="jogos-destaque-titulo">
+            <div class="profile-panel-title-row">
+              <div class="profile-panel-title-left">
+                <img src="../assets/img/perfil-page-icons/star icon.svg" alt="" aria-hidden="true" class="profile-panel-title-icon" />
+                <h2 id="jogos-destaque-titulo">Jogos em Destaque</h2>
+              </div>
+            </div>
+
+            <div class="profile-featured-grid">
+              <article class="profile-featured-card">
+                <div class="profile-featured-thumb profile-game-amazonia"></div>
+                <div class="profile-featured-copy">
+                  <strong>Amazonia: O Despertar</strong>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/clock icon.svg" alt="" aria-hidden="true" />142h</span>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/trophy icon.svg" alt="" aria-hidden="true" />45/50</span>
+                </div>
+              </article>
+
+              <article class="profile-featured-card">
+                <div class="profile-featured-thumb profile-game-cyber"></div>
+                <div class="profile-featured-copy">
+                  <strong>Cyber Favela 2099</strong>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/clock icon.svg" alt="" aria-hidden="true" />89h</span>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/trophy icon.svg" alt="" aria-hidden="true" />32/48</span>
+                </div>
+              </article>
+
+              <article class="profile-featured-card">
+                <div class="profile-featured-thumb profile-game-saci"></div>
+                <div class="profile-featured-copy">
+                  <strong>Saci: O Protetor</strong>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/clock icon.svg" alt="" aria-hidden="true" />67h</span>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/trophy icon.svg" alt="" aria-hidden="true" />28/35</span>
+                </div>
+              </article>
+
+              <article class="profile-featured-card">
+                <div class="profile-featured-thumb profile-game-cangaco"></div>
+                <div class="profile-featured-copy">
+                  <strong>Cangaceiro Lendário</strong>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/clock icon.svg" alt="" aria-hidden="true" />54h</span>
+                  <span class="profile-featured-stat"><img src="../assets/img/perfil-page-icons/trophy icon.svg" alt="" aria-hidden="true" />19/30</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="card profile-panel" aria-labelledby="badges-titulo">
+            <div class="profile-panel-title-row">
+              <div class="profile-panel-title-left">
+                <img src="../assets/img/perfil-page-icons/bagde icon green.svg" alt="" aria-hidden="true" class="profile-panel-title-icon" />
+                <h2 id="badges-titulo">Badges Conquistadas</h2>
+              </div>
+            </div>
+
+            <div class="profile-badges-grid">
+              <article class="profile-badge-card">
+                <img src="../assets/img/perfil-page-icons/pioneiro icon.svg" alt="" aria-hidden="true" class="profile-badge-icon" />
+                <strong>Pioneiro</strong>
+                <span>Membro desde o lançamento</span>
+              </article>
+              <article class="profile-badge-card">
+                <img src="../assets/img/perfil-page-icons/colecionador icon.svg" alt="" aria-hidden="true" class="profile-badge-icon" />
+                <strong>Colecionador</strong>
+                <span>10+ jogos na biblioteca</span>
+              </article>
+              <article class="profile-badge-card">
+                <img src="../assets/img/perfil-page-icons/maratonista icon.svg" alt="" aria-hidden="true" class="profile-badge-icon" />
+                <strong>Maratonista</strong>
+                <span>100+ horas jogadas</span>
+              </article>
+              <article class="profile-badge-card">
+                <img src="../assets/img/perfil-page-icons/caçador icon.svg" alt="" aria-hidden="true" class="profile-badge-icon" />
+                <strong>Caçador</strong>
+                <span>50+ conquistas desbloqueadas</span>
+              </article>
+              <article class="profile-badge-card">
+                <img src="../assets/img/perfil-page-icons/apoiador icon.svg" alt="" aria-hidden="true" class="profile-badge-icon" />
+                <strong>Apoiador</strong>
+                <span>Comprou de 5+ devs diferentes</span>
+              </article>
+              <article class="profile-badge-card">
+                <img src="../assets/img/perfil-page-icons/guardiao icon.svg" alt="" aria-hidden="true" class="profile-badge-icon" />
+                <strong>Guardião</strong>
+                <span>Membro verificado</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="card profile-panel" aria-labelledby="atividade-titulo">
+            <div class="profile-panel-title-row">
+              <div class="profile-panel-title-left">
+                <img src="../assets/img/perfil-page-icons/trend icon blue.svg" alt="" aria-hidden="true" class="profile-panel-title-icon" />
+                <h2 id="atividade-titulo">Atividade Recente</h2>
+              </div>
+            </div>
+
+            <div class="profile-activity-list">
+              <article class="profile-activity-item">
+                <img src="../assets/img/perfil-page-icons/trophy-bg-icon.svg" alt="" aria-hidden="true" class="profile-activity-icon" />
+                <div>
+                  <strong>Desbloqueou 'Guardião da Floresta'</strong>
+                  <p>Amazonia: O Despertar</p>
+                  <span>2h atrás</span>
+                </div>
+              </article>
+              <article class="profile-activity-item">
+                <img src="../assets/img/perfil-page-icons/controler-bg-icon.svg" alt="" aria-hidden="true" class="profile-activity-icon" />
+                <div>
+                  <strong>Jogou por 3 horas</strong>
+                  <p>Cyber Favela 2099</p>
+                  <span>5h atrás</span>
+                </div>
+              </article>
+              <article class="profile-activity-item">
+                <img src="../assets/img/perfil-page-icons/textbox-bg-icon.svg" alt="" aria-hidden="true" class="profile-activity-icon" />
+                <div>
+                  <strong>Deixou uma avaliação positiva</strong>
+                  <p>Saci: O Protetor</p>
+                  <span>1d atrás</span>
+                </div>
+              </article>
+              <article class="profile-activity-item">
+                <img src="../assets/img/perfil-page-icons/users-bg-icon.svg" alt="" aria-hidden="true" class="profile-activity-icon" />
+                <div>
+                  <strong>Adicionou Maria Santos como amiga</strong>
+                  <p>Nova conexão na comunidade</p>
+                  <span>2d atrás</span>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="profile-dashboard-side-column">
+          <section class="card profile-panel profile-friends-panel" aria-labelledby="amigos-titulo">
+            <div class="profile-panel-title-row profile-panel-title-split">
+              <div class="profile-panel-title-left">
+                <img src="../assets/img/perfil-page-icons/users green.svg" alt="" aria-hidden="true" class="profile-panel-title-icon" />
+                <h2 id="amigos-titulo">Amigos</h2>
+              </div>
+              <span>4</span>
+            </div>
+
+            <ul class="profile-friends-list">
+              <li class="profile-friend-item">
+                <span class="profile-friend-avatar avatar-blue">J</span>
+                <div>
+                  <strong>João Silva</strong>
+                  <span class="friend-status friend-online">Online</span>
+                </div>
+              </li>
+              <li class="profile-friend-item">
+                <span class="profile-friend-avatar avatar-pink">M</span>
+                <div>
+                  <strong>Maria Santos</strong>
+                  <span class="friend-status friend-online">Online</span>
+                </div>
+              </li>
+              <li class="profile-friend-item">
+                <span class="profile-friend-avatar avatar-purple">P</span>
+                <div>
+                  <strong>Pedro Costa</strong>
+                  <span class="friend-status friend-away">Away</span>
+                </div>
+              </li>
+              <li class="profile-friend-item">
+                <span class="profile-friend-avatar avatar-orange">A</span>
+                <div>
+                  <strong>Ana Lima</strong>
+                  <span class="friend-status friend-offline">Offline</span>
+                </div>
+              </li>
+            </ul>
+
+            <a href="../index.html#forum" class="btn btn-primary profile-panel-button">Ver todos os amigos</a>
+          </section>
+
+          <section class="card profile-panel profile-stats-panel" aria-labelledby="estatisticas-laterais-titulo">
+            <div class="profile-panel-title-row">
+              <div class="profile-panel-title-left">
+                <img src="../assets/img/perfil-page-icons/trend icon white.svg" alt="" aria-hidden="true" class="profile-panel-title-icon" />
+                <h2 id="estatisticas-laterais-titulo">Estatísticas</h2>
+              </div>
+            </div>
+
+            <div class="profile-progress-group">
+              <div class="profile-progress-copy">
+                <span>Taxa de Conclusão</span>
+                <strong>78%</strong>
+              </div>
+              <div class="progress profile-progress-bar" role="progressbar" aria-label="Taxa de Conclusão" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 78%"></div></div>
+            </div>
+
+            <div class="profile-progress-group">
+              <div class="profile-progress-copy">
+                <span>Conquistas Raras</span>
+                <strong>12</strong>
+              </div>
+              <div class="progress profile-progress-bar profile-progress-bar-gold" role="progressbar" aria-label="Conquistas Raras" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 46%"></div></div>
+            </div>
+
+            <div class="profile-favorite-game">
+              <span>Jogo Favorito</span>
+              <strong>Amazonia: O Despertar</strong>
+              <small>142 horas jogadas</small>
+            </div>
+          </section>
+
+          <section class="card profile-panel profile-level-panel" aria-labelledby="nivel-titulo">
+            <div class="profile-level-badge">42</div>
+            <h2 id="nivel-titulo">Nível 42</h2>
+            <p>850 / 1000 XP para o próximo nível</p>
+            <div class="progress profile-progress-bar profile-progress-bar-xp" role="progressbar" aria-label="Progresso de XP" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 85%"></div></div>
+            <small>Continue jogando para ganhar mais XP!</small>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a href="../index.html#inicio" class="brand footer-brand-logo">
+          <img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" class="brand-logo" />
+        </a>
+        <p>Jogos brasileiros independentes</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="./loja.html">Descobrir</a>
+        <a href="./cadastro.html">Cadastro</a>
+        <a href="./perfil.html">Perfil</a>
+        <a href="../index.html#suporte">Suporte</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Iara Games. Orgulhosamente brasileira. Feito com orgulho no Brasil.</p>
+      <p>Os jogos e marcas pertencem aos seus respectivos criadores.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
