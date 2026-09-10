@@ -8,3 +8,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Backups (too large for GitHub, > 100MB limit)
+iara-games-main.zip

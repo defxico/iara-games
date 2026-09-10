@@ -53,44 +53,33 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../index.html#biblioteca">
-                <img src="../assets/img/accessibility-update/nav/biblioteca-default.svg" alt="" aria-hidden="true" class="icon-default" />
-                <img src="../assets/img/accessibility-update/nav/biblioteca-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
-                <span>Biblioteca</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="../index.html#forum">
                 <img src="../assets/img/accessibility-update/nav/forum-default.svg" alt="" aria-hidden="true" class="icon-default" />
                 <img src="../assets/img/accessibility-update/nav/forum-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
-                <span>Fórum</span>
+                <span>Criadores</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../index.html#suporte">
-                <img src="../assets/img/accessibility-update/nav/suporte-default.svg" alt="" aria-hidden="true" class="icon-default" />
-                <img src="../assets/img/accessibility-update/nav/suporte-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
-                <span>Suporte</span>
+              <a class="nav-link nav-sobre" href="../index.html#sobre">
+                <img src="../assets/img/accessibility-update/nav/sobre-default.svg" alt="" aria-hidden="true" class="icon-default" />
+                <img src="../assets/img/accessibility-update/nav/sobre-hover.svg" alt="" aria-hidden="true" class="icon-hover" />
+                <span>Sobre</span>
               </a>
             </li>
           </ul>
         </div>
 
         <div class="header-actions ms-lg-auto">
-          <form class="search-form" role="search">
+          <form class="site-search input-group" role="search">
             <label for="search-shop" class="sr-only">Buscar jogos</label>
-            <span class="search-icon" aria-hidden="true">
+            <button class="input-group-text search-submit-btn" type="submit" aria-label="Buscar">
               <img src="../assets/img/search.svg" alt="" aria-hidden="true" />
-            </span>
-            <input type="search" id="search-shop" placeholder="Buscar jogos..." />
+            </button>
+            <input type="search" id="search-shop" class="form-control" placeholder="Buscar jogos..." />
           </form>
 
-          <a href="./cadastro.html" class="btn btn-secondary header-signup-link">Criar conta</a>
-
-          <a href="./perfil.html" class="account-button">
-            <img src="../assets/img/avatar-placeholder-escuro.svg" alt="" aria-hidden="true" />
-            <span>Meu perfil</span>
-          </a>
+          <a href="./perfil.html" class="btn btn-outline-light header-login-link">Entrar</a>
+          <a href="./cadastro.html" class="btn btn-outline-light header-signup-link">Criar conta</a>
         </div>
       </div>
     </div>
@@ -108,7 +97,7 @@
           </nav>
 
           <div class="row align-items-end g-4">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-10">
               <span class="eyebrow eyebrow-highlight">
                 <img src="../assets/img/flame.svg" alt="" aria-hidden="true" />
                 <span>Catálogo em destaque</span>
@@ -120,75 +109,74 @@
               </p>
             </div>
 
-            <div class="col-12 col-lg-4 text-lg-end">
-              <p class="mb-2">Referência do Figma: desktop + mobile</p>
-              <strong>9 jogos em destaque</strong>
-            </div>
           </div>
 
           <div class="shop-toolbar">
             <div class="shop-primary-controls">
-              <form class="shop-primary-search" role="search" aria-label="Buscar no catálogo da loja">
+              <form class="shop-primary-search input-group" role="search" aria-label="Buscar no catálogo da loja">
                 <label for="shop-primary-search-input" class="sr-only">Buscar no catálogo</label>
-                <span class="shop-primary-search-icon" aria-hidden="true">
+                <span class="input-group-text shop-primary-search-icon" aria-hidden="true">
                   <img src="../assets/img/search.svg" alt="" aria-hidden="true" />
                 </span>
                 <input
                   type="search"
                   id="shop-primary-search-input"
+                  class="form-control"
                   placeholder="Buscar jogos, desenvolvedores ou gêneros..."
                 />
               </form>
 
-              <div class="shop-view-actions">
-                <div class="shop-view-toggle" role="group" aria-label="Alternar visualização da lista de jogos">
-                  <button type="button" class="shop-view-btn is-active" data-shop-view="grid" aria-pressed="true" title="Visualização em grade">
-                    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                      <rect x="2" y="2" width="6" height="6" rx="1.5"></rect>
-                      <rect x="12" y="2" width="6" height="6" rx="1.5"></rect>
-                      <rect x="2" y="12" width="6" height="6" rx="1.5"></rect>
-                      <rect x="12" y="12" width="6" height="6" rx="1.5"></rect>
-                    </svg>
-                    <span class="sr-only">Ver em grade</span>
-                  </button>
-                  <button type="button" class="shop-view-btn" data-shop-view="list" aria-pressed="false" title="Visualização em lista">
-                    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                      <rect x="2" y="3" width="3" height="3" rx="1"></rect>
-                      <rect x="2" y="9" width="3" height="3" rx="1"></rect>
-                      <rect x="2" y="15" width="3" height="3" rx="1"></rect>
-                      <rect x="7" y="3" width="11" height="3" rx="1"></rect>
-                      <rect x="7" y="9" width="11" height="3" rx="1"></rect>
-                      <rect x="7" y="15" width="11" height="3" rx="1"></rect>
-                    </svg>
-                    <span class="sr-only">Ver em lista</span>
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  class="btn btn-sm shop-filter-offcanvas-btn d-lg-none"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#shopFiltersOffcanvas"
-                  aria-controls="shopFiltersOffcanvas"
-                >
-                  Filtros
-                </button>
-              </div>
+              <button
+                type="button"
+                class="btn btn-sm shop-filter-offcanvas-btn d-lg-none"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#shopFiltersOffcanvas"
+                aria-controls="shopFiltersOffcanvas"
+              >
+                Filtros
+              </button>
             </div>
 
             <div class="shop-summary">
               <strong>Filtrar por gênero</strong>
-              <span>Escolha a categoria que melhor combina com sua jornada.</span>
+              <span>Escolha a categoria que melhor combina com sua jornada</span>
             </div>
 
             <div class="shop-filters" role="toolbar" aria-label="Filtros da loja">
-              <button type="button" class="btn btn-sm shop-filter-chip active" aria-pressed="true">Todos</button>
-              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Aventura</button>
-              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Ação</button>
-              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Cozy</button>
-              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Puzzle</button>
-              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">RPG</button>
-              <button type="button" class="btn btn-sm shop-filter-chip" aria-pressed="false">Esporte</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip active" aria-pressed="true">Todos</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Aventura</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Ação</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Cozy</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Puzzle</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">RPG</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Esporte</button>
+            </div>
+
+            <strong class="shop-results-count">9 jogos em destaque</strong>
+
+            <div class="shop-view-actions">
+              <div class="shop-view-toggle" role="group" aria-label="Alternar visualização da lista de jogos">
+                <button type="button" class="shop-view-btn is-active" data-shop-view="grid" aria-pressed="true" title="Visualização em grade">
+                  <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                    <rect x="2" y="2" width="6" height="6" rx="1.5"></rect>
+                    <rect x="12" y="2" width="6" height="6" rx="1.5"></rect>
+                    <rect x="2" y="12" width="6" height="6" rx="1.5"></rect>
+                    <rect x="12" y="12" width="6" height="6" rx="1.5"></rect>
+                  </svg>
+                  <span class="sr-only">Ver em grade</span>
+                </button>
+                <button type="button" class="shop-view-btn" data-shop-view="list" aria-pressed="false" title="Visualização em lista">
+                  <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                    <rect x="2" y="3" width="3" height="3" rx="1"></rect>
+                    <rect x="2" y="9" width="3" height="3" rx="1"></rect>
+                    <rect x="2" y="15" width="3" height="3" rx="1"></rect>
+                    <rect x="7" y="3" width="11" height="3" rx="1"></rect>
+                    <rect x="7" y="9" width="11" height="3" rx="1"></rect>
+                    <rect x="7" y="15" width="11" height="3" rx="1"></rect>
+                  </svg>
+                  <span class="sr-only">Ver em lista</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

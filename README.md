@@ -1,182 +1,160 @@
-# Copilot Windows Launcher
+# Iara Games - Sprint 4
 
-**Integrantes do Projeto**
-Francisco Caetano Bernardes
-Mariana Costa Cruz Maciel
-Giovana Camargo Budin
-Amanda Ayumi Guedes Ueno
+Plataforma de marketplace de jogos brasileiros independentes.  
+Projeto acadêmico desenvolvido na FIAP — Sprint 4 · Junho de 2026.
 
-## 1. Contexto da Sprint
+**Equipe**  
+Francisco Caetano Bernardes · Mariana Costa Cruz Maciel · Giovana Camargo Budin · Amanda Ayumi Guedes Ueno
 
-Na Sprint 02, o projeto Iara Games evoluiu da etapa inicial de identidade e home para uma versão mais estruturada, com foco em legibilidade, tangibilidade e direcionamento claro ao usuário real.
+---
 
-O trabalho foi dividido entre frentes paralelas de pesquisa, estratégia e interface, resultando em um conjunto integrado de entregas acadêmicas e de produto:
+## Resumo da Sprint
 
-- persona validada com dados reais de pesquisa
-- documento ESG alinhado ao posicionamento da marca
-- revisão visual de UI (logo, ícones e mascote)
-- nova página de perfil do usuário
-- formulário de cadastro funcional sem back-end
-- estruturação com HTML semântico e CSS Grid responsivo
+Nesta Sprint 4 o foco foi refinar a base front-end a partir do feedback da Sprint 3:
 
-**Tema central da sprint**
-Melhorar o que já existia visualmente e começar a definir, com base em dados, para quem a plataforma existe e por quê.
+> "Bom trabalho! O projeto apresenta excelente qualidade visual. O uso do Bootstrap foi bem aplicado em grids, componentes e navegação responsiva. Mas, como melhoria, o projeto poderia reduzir redundâncias no CSS e aproveitar mais os estilos nativos do framework para simplificar manutenção e escalabilidade do código."
 
-## 2. Design Thinking
+A entrega desta sprint foi direcionada para responder exatamente esse ponto, mantendo a identidade visual da Iara Games e simplificando a estrutura de HTML e CSS.
 
-O processo foi conduzido com base em Design Thinking, conectando pesquisa, definição de problema, ideação, prototipação e reflexão.
+---
 
-### Etapas mapeadas
+## O Que Foi Feito
 
-- **Empatia:** questionário com 38 respondentes em 5 blocos temáticos.
-- **Definição:** descarte da proto-persona da Sprint 01 e formulação de problema focado em visibilidade e descoberta.
-- **Ideação:** documentação das decisões de produto para persona, ESG e UI.
-- **Prototipação:** criação/atualização dos artefatos visuais e páginas da plataforma.
-- **Reflexão:** registro de aprendizados e ajuste de direção com base em evidência.
+### 1. Redução de redundâncias no CSS
 
-## 3. ESG — Responsabilidade e Propósito
+- Reescrita do arquivo [`css/style.css`](./css/style.css) com foco apenas nos componentes realmente usados nas páginas atuais.
+- Remoção de reimplementações desnecessárias de estruturas que o Bootstrap já fornece, como base de botões, formulários, cards, progress bars e grupos de input.
+- Consolidação de estilos compartilhados de header, footer, cards, painéis e formulários.
+- Redução do tamanho do stylesheet principal de aproximadamente **3390 linhas para cerca de 2000 linhas**.
 
-A Iara Games se posiciona como plataforma cultural brasileira e estrutura seus compromissos ESG como parte da identidade, não como apêndice institucional.
+### 2. Maior aproveitamento do Bootstrap
 
-### Ambiental
+Foram priorizados componentes nativos do framework com overrides leves de marca:
 
-Compromisso com preservação de biomas, bacias hidrográficas e fauna nativa ligada ao imaginário dos jogos publicados.
+- `btn`, `btn-primary`, `btn-outline-light`
+- `card`
+- `form-control`
+- `form-select`
+- `input-group`
+- `badge`
+- `progress`
+- `breadcrumb`
+- `pagination`
+- `offcanvas`
 
-### Social
+### 3. Refino das páginas
 
-Compromisso com formação de novos criadores via iniciativas de educação e oficinas em fases futuras, com apoio de estúdios parceiros.
+#### Home — `index.html`
 
-### Governança
+- Cards de jogos, gêneros, comunidade e conta aproximados da estrutura nativa de `card`.
+- Tags e avaliações ajustadas para usar `badge`.
+- Busca do header migrada para `input-group`.
+- CTA de suporte padronizado como botão Bootstrap.
 
-Curadoria não neutra, transparência de critérios e prestação de contas progressiva à comunidade.
+#### Loja — `pages/loja.html`
 
-## 4. Persona — Rafael Melo
+- Barra principal de busca migrada para `input-group`.
+- Filtros por gênero padronizados com botões Bootstrap.
+- Estrutura de cards mantida com menor dependência de CSS customizado.
+- Offcanvas, breadcrumb e paginação preservados com tema visual da marca.
 
-### 4.1 Base da pesquisa
+#### Cadastro — `pages/cadastro.html`
 
-A Sprint 02 substituiu a proto-persona hipotética por uma persona compradora validada com dados reais.
+- Campos continuam com `form-control`, `form-select` e `form-check`, agora tratados como base do formulário em vez de inputs redesenhados do zero.
+- Ações principais padronizadas com variantes Bootstrap.
+- Cards de preferência mantidos com identidade visual, mas em estrutura mais simples.
 
-- formulário aplicado: https://iara-pesquisa.netlify.app
-- respostas válidas: 38
-- foco da pesquisa: perfil, hábitos, relação com jogos brasileiros e receptividade à plataforma
+#### Perfil — `pages/perfil.html`
 
-### 4.2 Perfil consolidado
+- KPIs e painéis migrados para uma base consistente com `card`.
+- Barras de progresso ajustadas para o componente nativo `progress`.
+- Botões e ações internas alinhados ao padrão compartilhado do projeto.
 
-Rafael Melo, 29 anos, São Paulo, analista de marketing.
+---
 
-- frequência: joga quase todos os dias
-- gasto mensal: faixa de R$50-R$100
-- plataformas: PC/notebook, console e mobile
+## Páginas do Projeto
 
-### 4.3 Dores e objetivos
+- Home: [`index.html`](./index.html)
+- Loja: [`pages/loja.html`](./pages/loja.html)
+- Cadastro: [`pages/cadastro.html`](./pages/cadastro.html)
+- Perfil: [`pages/perfil.html`](./pages/perfil.html)
 
-**Dores**
+---
 
-- cena brasileira pouco visível nas vitrines que ele já usa
-- falta de curadoria confiável
-- ausência de comunidade dedicada
-- não sabe por onde começar no indie nacional
-
-**Objetivos com a Iara**
-
-- ter um ponto de entrada confiável
-- confiar em curadoria com critério
-- pertencer a uma comunidade com identidade cultural
-- apoiar devs nacionais como consequência da boa experiência
-
-### 4.4 Jornada e oportunidades
-
-Foi mapeada jornada em 5 fases: descoberta, consideração, decisão, uso e retenção.
-
-As hipóteses priorizadas na sprint focam:
-
-- vitrine editorial curada
-- avaliações verificadas pela comunidade
-- entrada personalizada (onboarding)
-- perfil público e comunidade por jogo/estúdio
-- página de estúdio com bastidores e aproximação entre jogador e dev
-
-## 5. Atualizações de UI
-
-### 5.1 Logo
-
-Revisão de contraste e peso de stroke com base em acessibilidade (WCAG 2.1), incluindo variações para fundos escuros, claros e versão areia.
-
-### 5.2 Ícones e componentes
-
-- setas de navegação com preenchimento (mais contraste)
-- indicador de scroll com maior visibilidade no hero
-- revisão de estados de ícones (default, hover, active)
-
-### 5.3 Mascote Iara
-
-Refinamento da avatar/mascote para maior coesão com o sistema visual:
-
-- paleta alinhada às cores oficiais
-- traço compatível com a linguagem dos ícones
-- integração com overlays de topografia fluvial
-
-### 5.4 Tela de perfil
-
-Criação da segunda página da plataforma (além da home), conectada ao fluxo de cadastro e orientada por personalização:
-
-- identificação do usuário
-- biblioteca e histórico
-- preferências e descoberta
-- participação em comunidade
-
-## 6. Formulários
-
-Formulário de cadastro sem back-end, organizado em 4 blocos:
-
-1. **Dados de acesso:** nome completo, nome de usuário, e-mail, senha e confirmação.
-2. **Contexto de jogo:** cidade, estado e objetivo de uso da plataforma.
-3. **Preferências iniciais:** gêneros e plataformas.
-4. **Consentimentos:** aceite obrigatório de termos e opção de novidades.
-
-Ações previstas no fluxo:
-
-- cancelar
-- criar conta
-- link para quem já possui conta
-
-## 7. HTML Semântico e Grid
-
-As três páginas da Sprint 02 estão estruturadas com base em HTML5 semântico e organização visual em CSS Grid:
-
-- [index.html](index.html)
-- [pages/cadastro.html](pages/cadastro.html)
-- [pages/perfil.html](pages/perfil.html)
-
-### Estrutura semântica aplicada
-
-Uso consistente de:
-
-- `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`
-- `form`, `fieldset`, `legend`
-- hierarquia de headings sem saltos
-- atributos de acessibilidade (`aria-labelledby`, `aria-label`, `aria-current`, `role="search"` etc.)
-
-### Grid e responsividade
-
-Layouts principais organizados por Grid em home, cadastro e perfil, com colapso responsivo via breakpoints de 900px e 640px.
-
-## 8. Repositório GitHub e Vídeo-pitch
-
-**Repositório público**
-
-https://github.com/defxico/iara-games.git
-
-**Vídeo-pitch Sprint 02**
-
-https://videopitch-iara.netlify.app
-
-## 9. Tecnologias utilizadas
+## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
-- Google Fonts (Sora e Inter)
+- Bootstrap 5.3.3
+- Google Fonts: Sora e Inter
 
-## 10. Resultado da Sprint 02
+---
 
-A Sprint 02 consolidou a Iara Games como uma versão mais madura da plataforma, com evolução clara de interface, foco em usuário validado por pesquisa, critérios de ESG conectados ao produto e estrutura técnica alinhada ao escopo acadêmico da entrega.
+## Resultado da Sprint 4
+
+O projeto manteve a qualidade visual destacada pela avaliação anterior, mas agora com uma base mais limpa, mais padronizada e mais próxima do fluxo nativo do Bootstrap. Isso melhora:
+
+- manutenção do código
+- consistência entre páginas
+- escalabilidade para próximas sprints
+- clareza entre estilo de marca e estrutura de framework
+
+---
+
+## Repositório
+
+```text
+https://github.com/defxico/iara-games
+```
+
+---
+
+## Sprint 4 - Redesign de Interacao
+
+### Fonte da implementacao
+
+Esta etapa executa o caminho HTML/CSS definido em `auxiliary-documents/sprint-4-documents/sprint 4.md`, usando como referencia principal o PDF `IARA_Games_Analise_DI_v3.pdf`. O caminho de Figma nao foi usado nesta entrega.
+
+### Patches aplicados
+
+1. **Estados de conta no header**
+   - Paginas publicas em estado deslogado: Home, Loja e Cadastro.
+   - Navegacao publica sem acesso direto a Biblioteca.
+   - Header deslogado com acoes `Entrar` e `Criar conta`.
+   - Perfil como experiencia logada, exibindo `Rafael Costa` no botao de conta.
+
+2. **Refinos da Home apontados no PDF**
+   - Hero com titulo orientado a valor, em vez de apenas nome da marca.
+   - Remocao dos cards de feature que pareciam clicaveis sem acao.
+   - Mascote renderizada como imagem com texto alternativo.
+   - Indicador de scroll convertido em link funcional para os destaques.
+   - Header com busca submetivel e comportamento sticky.
+
+3. **Cards, CTAs e conteudo**
+   - Cards de jogos com titulo clicavel.
+   - Botao de carrinho explica a necessidade de conta antes de levar ao cadastro.
+   - Avaliacoes ajustadas com contagem para reduzir aparencia de placeholder.
+   - Secao interna de "Novas implementacoes" removida da Home.
+   - CTA de criacao de conta movido para contexto de descoberta de jogos.
+   - Secao de apoio revisada para nao sugerir metricas definitivas sem lastro.
+
+4. **Ajustes visuais de suporte**
+   - Tags com contraste reforcado.
+   - Hover/focus nos cards de jogos.
+   - Container do CTA de conta responsivo.
+   - Busca do header com botao visualmente interativo.
+
+### Correcoes finais
+
+- Remocao do estado hardcoded `active` e `aria-current="page"` do link `Início` na Home, deixando o Scrollspy controlar o estado ativo.
+- Manutencao do header como `sticky` tambem no mobile.
+- Adicao de hover/focus para `.genre-card` e `.dev-card`.
+- Variacao das contagens exibidas nos cards de genero para reduzir aparencia de placeholder.
+- Remocao de CSS morto das classes `.panel-account`, `.account-card`, `.account-card-list` e `.account-btn-outline`, que nao sao usadas no codigo ativo.
+- Atualizacao da documentacao para refletir a reducao do CSS para `cerca de 2000 linhas`.
+
+### Decisoes de escopo
+
+- A Home continua exibindo a secao de generos, mas ela nao aparece como item de navegacao para conta deslogada.
+- A pagina `pages/perfil.html` foi mantida como simulacao estatica de usuario logado.
+- As referencias das pastas `conta logada` e `conta nao logada` foram usadas apenas para orientar estado de conta, sem substituir a base atual do projeto.
