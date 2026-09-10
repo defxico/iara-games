@@ -1,10 +1,45 @@
-# Iara Games - Sprint 04
+# Iara Games
 
-Redesign de interação da plataforma de marketplace de jogos brasileiros independentes.
-Projeto acadêmico desenvolvido na FIAP — Sprint 04 · Junho de 2026.
+Plataforma de marketplace de jogos brasileiros independentes.
+Projeto acadêmico desenvolvido na FIAP.
 
 **Equipe**
 Amanda Ayumi Guedes Ueno · Francisco Caetano Bernardes · Giovana Camargo Budin · Mariana Costa Cruz Maciel
+
+**Página publicada:** https://defxico.github.io/iara-games/
+
+---
+
+## Sprint 5 — Interatividade em Ação (JavaScript)
+
+A Sprint 5 evoluiu o protótipo HTML/CSS da Sprint 4 adicionando comportamentos dinâmicos com
+JavaScript puro, em um arquivo externo único: [`js/main.js`](./js/main.js). A documentação
+completa (problema resolvido, implementação e capturas de antes/depois de cada funcionalidade)
+está em [`docs/sprint-5-documentacao.html`](./docs/sprint-5-documentacao.html).
+
+### Funcionalidades implementadas
+
+1. **Filtro de jogos por gênero** ([`pages/loja.html`](./pages/loja.html)) — os chips de gênero
+   agora filtram de verdade os cards exibidos, atualizam o contador de resultados e mostram uma
+   mensagem quando nenhum jogo corresponde ao filtro.
+2. **Validação de formulário em tempo real** ([`pages/cadastro.html`](./pages/cadastro.html)) —
+   nome, e-mail, senha, confirmação de senha e estado são validados enquanto o usuário preenche,
+   com mensagens de erro/confirmação inline; o envio mostra uma confirmação visual de sucesso.
+3. **Feedback ao adicionar ao carrinho** ([`pages/loja.html`](./pages/loja.html)) — clicar no
+   botão de carrinho (antes um link morto) agora mostra um toast explicando que é preciso criar
+   conta para comprar, com link direto para o cadastro.
+
+### Como testar
+
+Abra a [página publicada](https://defxico.github.io/iara-games/) e:
+
+- Na **Loja**, clique nos chips de gênero (Aventura, Ação, Cozy, Puzzle, RPG, Esporte) para ver a
+  lista de jogos filtrar, e clique no ícone de carrinho de qualquer jogo para ver o toast de
+  feedback.
+- No **Cadastro**, preencha os campos com dados inválidos (e-mail sem `@`, senha curta, senhas
+  diferentes) para ver a validação em tempo real, depois com dados válidos para ver a confirmação.
+
+Localmente, basta servir a raiz do projeto com qualquer servidor estático (ex.: `python -m http.server`) e abrir `index.html` — não há build nem dependências além do CDN do Bootstrap.
 
 ---
 
