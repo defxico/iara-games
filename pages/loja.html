@@ -143,16 +143,17 @@
             </div>
 
             <div class="shop-filters" role="toolbar" aria-label="Filtros da loja">
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip active" aria-pressed="true">Todos</button>
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Aventura</button>
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Ação</button>
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Cozy</button>
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Puzzle</button>
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">RPG</button>
-              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false">Esporte</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip active" aria-pressed="true" data-genre-filter="todos">Todos</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false" data-genre-filter="aventura">Aventura</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false" data-genre-filter="acao">Ação</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false" data-genre-filter="cozy">Cozy</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false" data-genre-filter="puzzle">Puzzle</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false" data-genre-filter="rpg">RPG</button>
+              <button type="button" class="btn btn-sm btn-outline-light rounded-pill shop-filter-chip" aria-pressed="false" data-genre-filter="esporte">Esporte</button>
             </div>
 
-            <strong class="shop-results-count">9 jogos em destaque</strong>
+            <strong class="shop-results-count" data-shop-count aria-live="polite">9 jogos em destaque</strong>
+            <p class="shop-empty-state" data-shop-empty hidden>Nenhum jogo encontrado para este filtro. Tente outra categoria.</p>
 
             <div class="shop-view-actions">
               <div class="shop-view-toggle" role="group" aria-label="Alternar visualização da lista de jogos">
@@ -231,7 +232,7 @@
           <div class="col-12 col-lg-8 col-xl-9">
             <div class="shop-results is-grid" data-shop-results>
               <div class="row g-4 shop-grid">
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="aventura">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-véu de chuva.png" class="card-img-top shop-card-image" alt="Capa do jogo Véu de Chuva" />
                     <div class="card-body">
@@ -252,7 +253,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="acao">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-boto.png" class="card-img-top shop-card-image" alt="Capa do jogo O Chamado do Boto" />
                     <div class="card-body">
@@ -273,7 +274,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="rpg">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-encantado.png" class="card-img-top shop-card-image" alt="Capa do jogo Encantado" />
                     <div class="card-body">
@@ -294,7 +295,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="cozy">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-linha de varal.png" class="card-img-top shop-card-image" alt="Capa do jogo Linha de Varal" />
                     <div class="card-body">
@@ -315,7 +316,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="puzzle">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-maré.png" class="card-img-top shop-card-image" alt="Capa do jogo Maré" />
                     <div class="card-body">
@@ -336,7 +337,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="esporte">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-quarta feira.png" class="card-img-top shop-card-image" alt="Capa do jogo Quarta Feira" />
                     <div class="card-body">
@@ -357,7 +358,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="narrativa">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-sertão noir.png" class="card-img-top shop-card-image" alt="Capa do jogo Sertão Noir" />
                     <div class="card-body">
@@ -378,7 +379,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="aventura">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-várzea.png" class="card-img-top shop-card-image" alt="Capa do jogo Várzea" />
                     <div class="card-body">
@@ -399,7 +400,7 @@
                   </div>
                 </article>
 
-                <article class="col-12 col-md-6 col-xl-4">
+                <article class="col-12 col-md-6 col-xl-4" data-genre="puzzle">
                   <div class="card shop-card h-100">
                     <img src="../assets/img/card-jogo-baldeação.png" class="card-img-top shop-card-image" alt="Capa do jogo Baldeação" />
                     <div class="card-body">
@@ -507,42 +508,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    (() => {
-      const results = document.querySelector("[data-shop-results]");
-      const viewButtons = document.querySelectorAll("[data-shop-view]");
-      const filterChips = document.querySelectorAll(".shop-filter-chip");
-
-      if (!results || !viewButtons.length) return;
-
-      const setView = (view) => {
-        const isList = view === "list";
-        results.classList.toggle("is-list", isList);
-        results.classList.toggle("is-grid", !isList);
-
-        viewButtons.forEach((button) => {
-          const active = button.dataset.shopView === view;
-          button.classList.toggle("is-active", active);
-          button.setAttribute("aria-pressed", String(active));
-        });
-      };
-
-      viewButtons.forEach((button) => {
-        button.addEventListener("click", () => setView(button.dataset.shopView));
-      });
-
-      const setActiveChip = (button) => {
-        filterChips.forEach((chip) => {
-          const active = chip === button;
-          chip.classList.toggle("active", active);
-          chip.setAttribute("aria-pressed", String(active));
-        });
-      };
-
-      filterChips.forEach((chip) => {
-        chip.addEventListener("click", () => setActiveChip(chip));
-      });
-    })();
-  </script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

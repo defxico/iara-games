@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iara Games — Sprint 5: Interatividade em Ação</title>
+<style>
+  :root {
+    --brand: #ba9130;
+    --brand-dark: #8a6a20;
+    --ink: #1c2a2b;
+    --muted: #5b6b6c;
+    --border: #dcd7c8;
+    --bg-soft: #f7f5ee;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  header.doc-header {
+    border-bottom: 3px solid var(--brand);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  header.doc-header h1 {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+  }
+
+  header.doc-header p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .meta-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 24px 0 36px;
+  }
+
+  .meta-box dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 8px;
+    column-gap: 12px;
+  }
+
+  .meta-box dt { font-weight: 600; color: var(--muted); }
+  .meta-box dd { margin: 0; }
+  .meta-box a { color: var(--brand-dark); }
+
+  h2.feature-title {
+    font-size: 1.35rem;
+    margin: 48px 0 4px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  .feature-number {
+    display: inline-block;
+    background: var(--brand);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  h3.sub {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 22px 0 6px;
+  }
+
+  code {
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  .shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+
+  .shots.triple { grid-template-columns: 1fr 1fr 1fr; }
+
+  figure {
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-soft);
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  figcaption strong { color: var(--ink); }
+
+  ul.plain { margin: 6px 0; padding-left: 20px; }
+  ul.plain li { margin-bottom: 4px; }
+
+  footer.doc-footer {
+    margin-top: 60px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 0 8mm; max-width: none; }
+    h2.feature-title { break-before: page; }
+    h2.feature-title:first-of-type { break-before: avoid; }
+    figure { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="doc-header">
+      <h1>Sprint 5 — Interatividade em Ação: Evoluindo a Plataforma com JavaScript</h1>
+      <p>Iara Games · Documentação das implementações de JavaScript</p>
+    </header>
+
+    <div class="meta-box">
+      <dl>
+        <dt>Grupo</dt>
+        <dd>Amanda Ayumi Guedes Ueno · Francisco Caetano Bernardes · Giovana Camargo Budin · Mariana Costa Cruz Maciel</dd>
+        <dt>Repositório</dt>
+        <dd><a href="https://github.com/defxico/iara-games">github.com/defxico/iara-games</a></dd>
+        <dt>Página publicada</dt>
+        <dd><a href="https://defxico.github.io/iara-games/">defxico.github.io/iara-games</a></dd>
+        <dt>Arquivo JS</dt>
+        <dd><code>js/main.js</code>, carregado por <code>index.html</code>, <code>pages/loja.html</code> e <code>pages/cadastro.html</code></dd>
+      </dl>
+    </div>
+
+    <p>
+      Na Sprint 4, o grupo analisou problemas reais de interação na Home usando as categorias de
+      Alan Cooper. Nesta sprint, o mesmo tipo de análise foi aplicado ao restante do protótipo
+      (HTML/CSS) para encontrar comportamentos que pareciam prontos mas não reagiam a nenhuma ação
+      do usuário. Foram identificados e resolvidos três problemas reais com JavaScript, descritos
+      a seguir.
+    </p>
+
+    <!-- FEATURE 1 -->
+    <h2 class="feature-title"><span class="feature-number">1</span>Filtro de jogos por gênero (Loja)</h2>
+
+    <h3 class="sub">Problema de interação resolvido</h3>
+    <p>
+      Na página da Loja, os chips de filtro por gênero (“Aventura”, “Ação”, “Cozy”, “Puzzle”, “RPG”,
+      “Esporte”) mudavam apenas a própria aparência ao serem clicados — a grade de jogos abaixo não
+      mudava em nada. O usuário clicava esperando ver só os jogos daquele gênero e via a lista
+      inteira continuar igual, sem nenhuma explicação.
+    </p>
+
+    <h3 class="sub">Como foi implementado</h3>
+    <ul class="plain">
+      <li>Cada card de jogo (<code>&lt;article&gt;</code>) recebeu um atributo <code>data-genre</code> com o gênero primário do jogo.</li>
+      <li>Cada chip recebeu <code>data-genre-filter</code> com o mesmo valor.</li>
+      <li>Um listener de <code>click</code> em cada chip roda <code>classList.toggle("is-hidden", ...)</code> em cada card, comparando <code>data-genre</code> com o filtro ativo.</li>
+      <li>O texto “X jogos encontrados” (elemento já existente na página) é atualizado dinamicamente via <code>textContent</code>, e uma mensagem de “nenhum jogo encontrado” aparece caso o filtro zere a lista.</li>
+    </ul>
+
+    <h3 class="sub">Como o usuário percebe</h3>
+    <p>
+      Ao clicar em um gênero, a grade recalcula na hora: só os jogos daquele gênero continuam
+      visíveis, e o contador acima confirma quantos itens restaram.
+    </p>
+
+    <div class="shots">
+      <figure>
+        <img src="./screenshots/sprint-5/filtro-antes.jpg" alt="Antes: chip Aventura ativo mas grade continua mostrando jogos de todos os gêneros" />
+        <figcaption><strong>Antes</strong> — chip “Aventura” selecionado, mas a grade continua mostrando jogos de Ação e RPG junto.</figcaption>
+      </figure>
+      <figure>
+        <img src="./screenshots/sprint-5/filtro-depois.jpg" alt="Depois: grade mostra só 2 jogos de aventura com contador atualizado" />
+        <figcaption><strong>Depois</strong> — só os 2 jogos de Aventura aparecem, e o contador mostra “2 jogos encontrados”.</figcaption>
+      </figure>
+    </div>
+
+    <!-- FEATURE 2 -->
+    <h2 class="feature-title"><span class="feature-number">2</span>Validação de formulário em tempo real (Cadastro)</h2>
+
+    <h3 class="sub">Problema de interação resolvido</h3>
+    <p>
+      O formulário de cadastro já tinha o atributo <code>novalidate</code> (sinal de que esperava
+      validação customizada), mas nenhum campo era validado. Um e-mail sem “@”, uma senha de 3
+      caracteres ou senhas que não coincidiam podiam ser digitados sem nenhum aviso — o usuário só
+      descobriria o problema depois, ao tentar usar a conta.
+    </p>
+
+    <h3 class="sub">Como foi implementado</h3>
+    <ul class="plain">
+      <li>Listeners de <code>input</code>/<code>change</code> em nome, e-mail, senha, confirmação de senha e estado.</li>
+      <li>Cada campo é validado isoladamente (regex de e-mail, tamanho mínimo de senha, comparação de senha/confirmação) e recebe as classes <code>is-valid</code>/<code>is-invalid</code>, além de uma mensagem inline no elemento <code>.field-help</code> correspondente.</li>
+      <li>Um listener de <code>submit</code> no formulário chama <code>preventDefault()</code>, revalida tudo de uma vez e só then mostra a confirmação — como não há backend, o “sucesso” é só visual.</li>
+    </ul>
+
+    <h3 class="sub">Como o usuário percebe</h3>
+    <p>
+      Ao digitar um e-mail ou senha inválidos, o campo mostra o erro imediatamente, sem precisar
+      enviar o formulário. Ao corrigir, aparece uma confirmação visual. Com tudo certo, o envio
+      mostra uma mensagem de conta criada.
+    </p>
+
+    <div class="shots">
+      <figure>
+        <img src="./screenshots/sprint-5/validacao-antes.jpg" alt="Antes: e-mail e senha inválidos sem nenhuma indicação de erro" />
+        <figcaption><strong>Antes</strong> — e-mail sem “@” e senha de 3 caracteres, sem nenhuma indicação de erro.</figcaption>
+      </figure>
+      <figure>
+        <img src="./screenshots/sprint-5/validacao-depois-erro.jpg" alt="Depois: mensagens de erro inline abaixo dos campos inválidos" />
+        <figcaption><strong>Depois</strong> — mensagens de erro aparecem embaixo de cada campo assim que o usuário digita.</figcaption>
+      </figure>
+    </div>
+    <div class="shots" style="margin-top:16px;">
+      <figure>
+        <img src="./screenshots/sprint-5/validacao-depois-sucesso.jpg" alt="Depois: mensagem de conta criada com sucesso ao enviar formulário válido" />
+        <figcaption><strong>Depois (bônus)</strong> — com todos os campos válidos, o envio mostra a confirmação de conta criada.</figcaption>
+      </figure>
+    </div>
+
+    <!-- FEATURE 3 -->
+    <h2 class="feature-title"><span class="feature-number">3</span>Feedback ao “Adicionar ao carrinho” (Loja)</h2>
+
+    <h3 class="sub">Problema de interação resolvido</h3>
+    <p>
+      Os botões de carrinho na Loja eram links mortos (<code>href="#"</code>): clicar não fazia
+      nada. Isso é inconsistente com a Home, onde o mesmo botão já explica (via tooltip) que é
+      preciso criar conta para comprar — na Loja, o usuário deslogado só via o clique não dar em
+      nada, sem entender por quê.
+    </p>
+
+    <h3 class="sub">Como foi implementado</h3>
+    <ul class="plain">
+      <li>Listener de <code>click</code> em cada botão de carrinho, com <code>preventDefault()</code>.</li>
+      <li>O nome do jogo é extraído do próprio <code>aria-label</code> do botão (já existia no HTML).</li>
+      <li>Um elemento de toast é criado dinamicamente com <code>document.createElement</code> e inserido no <code>&lt;body&gt;</code>, com uma transição CSS de entrada/saída controlada por uma classe (<code>is-visible</code>) e removida automaticamente após alguns segundos com <code>setTimeout</code>.</li>
+    </ul>
+
+    <h3 class="sub">Como o usuário percebe</h3>
+    <p>
+      Ao clicar em qualquer botão de carrinho na Loja, uma mensagem aparece no rodapé da tela
+      explicando que é preciso criar conta, com um link direto para o cadastro — em vez de um
+      clique que não faz nada.
+    </p>
+
+    <div class="shots">
+      <figure>
+        <img src="./screenshots/sprint-5/carrinho-antes.jpg" alt="Antes: clique no botão de carrinho não gera nenhuma resposta visual" />
+        <figcaption><strong>Antes</strong> — clique no ícone de carrinho não produz nenhuma resposta visível.</figcaption>
+      </figure>
+      <figure>
+        <img src="./screenshots/sprint-5/carrinho-depois.jpg" alt="Depois: toast explicando que é preciso criar conta para comprar" />
+        <figcaption><strong>Depois</strong> — um toast explica o motivo e oferece um link direto para criar conta.</figcaption>
+      </figure>
+    </div>
+
+    <footer class="doc-footer">
+      Iara Games · Projeto acadêmico FIAP · Sprint 5 · Setembro de 2026
+    </footer>
+  </div>
+</body>
+</html>

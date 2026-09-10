@@ -103,7 +103,8 @@
               <div class="form-grid">
                 <div class="field-group">
                   <label for="nome-completo">Seu nome completo</label>
-                  <input id="nome-completo" name="nome-completo" type="text" class="form-control" autocomplete="name" placeholder="Como você se chama?" required />
+                  <input id="nome-completo" name="nome-completo" type="text" class="form-control" autocomplete="name" placeholder="Como você se chama?" required aria-describedby="nome-completo-help" />
+                  <span id="nome-completo-help" class="field-help"></span>
                 </div>
 
                 <div class="field-group">
@@ -113,7 +114,8 @@
 
                 <div class="field-group field-group-col1">
                   <label for="email">Seu melhor e-mail</label>
-                  <input id="email" name="email" type="email" class="form-control" autocomplete="email" placeholder="seuemail@exemplo.com" required />
+                  <input id="email" name="email" type="email" class="form-control" autocomplete="email" placeholder="seuemail@exemplo.com" required aria-describedby="email-help" />
+                  <span id="email-help" class="field-help"></span>
                 </div>
 
                 <div class="field-group">
@@ -124,8 +126,8 @@
 
                 <div class="field-group">
                   <label for="confirmar-senha">Repita sua senha</label>
-                  <input id="confirmar-senha" name="confirmar-senha" type="password" class="form-control" autocomplete="new-password" placeholder="Confirme a senha" required />
-                  <span class="field-help field-help-placeholder" aria-hidden="true">&nbsp;</span>
+                  <input id="confirmar-senha" name="confirmar-senha" type="password" class="form-control" autocomplete="new-password" placeholder="Confirme a senha" required aria-describedby="confirmar-senha-help" />
+                  <span id="confirmar-senha-help" class="field-help"></span>
                 </div>
               </div>
             </fieldset>
@@ -236,6 +238,11 @@
 
             <p class="signup-login-cta">Já tem uma conta? <a href="./perfil.html">Fazer login</a></p>
           </form>
+
+          <div class="signup-success" data-signup-success role="status" aria-live="polite" hidden>
+            <strong>Conta criada com sucesso!</strong>
+            <p>Isso é uma demonstração acadêmica — nenhum dado foi salvo de verdade.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -264,5 +271,6 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
