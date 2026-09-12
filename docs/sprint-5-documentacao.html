@@ -314,7 +314,18 @@
   .summary-list dt { font-family: "Sora", sans-serif; font-weight: 700; font-size: 0.82rem; color: var(--teal-deep); margin-top: 10px; }
   .summary-list dd { margin: 2px 0 0; font-size: 0.78rem; color: var(--ink-muted); }
 
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
   @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
     body { background: none; }
     .page { margin: 0; box-shadow: none; page-break-after: always; }
   }
