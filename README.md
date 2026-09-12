@@ -4,7 +4,7 @@ Plataforma de marketplace de jogos brasileiros independentes.
 Projeto acadêmico desenvolvido na FIAP.
 
 **Equipe**
-Amanda Ayumi Guedes Ueno · Francisco Caetano Bernardes · Giovana Camargo Budin · Mariana Costa Cruz Maciel
+Amanda Ayumi Guedes Ueno · Ana Rubia de Oliveira Freire · Francisco Caetano Bernardes · Giovana Camargo Budin · Mariana Costa Cruz Maciel
 
 **Página publicada:** https://defxico.github.io/iara-games/
 
