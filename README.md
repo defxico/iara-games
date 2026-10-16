@@ -4,16 +4,54 @@ Plataforma de marketplace de jogos brasileiros independentes.
 Projeto acadêmico desenvolvido na FIAP.
 
 **Equipe**
-Amanda Ayumi Guedes Ueno · Ana Rubia de Oliveira Freire · Francisco Caetano Bernardes · Giovana Camargo Budin · Mariana Costa Cruz Maciel
+Amanda Ayumi Guedes Ueno · Ana Rubia de Oliveira Freire · Francisco Caetano Bernardes · Giovana Camargo Budin
 
 **Página publicada:** https://defxico.github.io/iara-games/
+**Biblioteca publicada:** https://defxico.github.io/iara-games/pages/biblioteca.html
+**PDF da entrega:** [`pdf/iara-games-sprint-06.pdf`](./pdf/iara-games-sprint-06.pdf)
+
+---
+
+## Sprint 6 (Fase 6) — React e Biblioteca
+
+As cinco áreas navegáveis da plataforma (Início, Loja, Cadastro, Perfil e Biblioteca) são renderizadas por componentes React. A migração mantém a identidade visual e os fluxos anteriores de catálogo, cadastro e perfil. Vite gera as páginas estáticas para publicação no GitHub Pages.
+
+### Biblioteca
+
+A Biblioteca permite buscar jogos, filtrar por situação, ordenar a coleção, alternar entre visualização em grade ou lista, favoritar títulos e atualizar progresso. O estado fica salvo no `localStorage` do navegador. É uma demonstração acadêmica sem autenticação, compras ou sincronização entre dispositivos.
+
+### Rodar localmente
+
+```bash
+npm install
+npm run dev
+```
+
+Abra o endereço exibido pelo Vite no terminal. O Live Preview do VS Code serve arquivos estáticos e não compila esta aplicação React.
+
+Para gerar os arquivos de publicação:
+
+```bash
+npm run build
+```
+
+O fluxo em `.github/workflows/deploy.yml` publica o conteúdo de `dist` no GitHub Pages a cada atualização de `main`.
+
+### Organização React
+
+- `src/pages/`: componentes das páginas da plataforma.
+- `src/shared/`: cabeçalho e rodapé compartilhados.
+- `src/main.jsx`: escolhe a página para a rota HTML atual.
+- `src/library.css`: estilos responsivos da Biblioteca.
+- `pages/*.html` e `index.html`: pontos de entrada do Vite.
 
 ---
 
 ## Sprint 5 — Interatividade em Ação (JavaScript)
 
 A Sprint 5 evoluiu o protótipo HTML/CSS da Sprint 4 adicionando comportamentos dinâmicos com
-JavaScript puro, em um arquivo externo único: [`js/main.js`](./js/main.js). A documentação
+JavaScript puro, em um arquivo externo único: [`js/main.js`](./js/main.js). Esse arquivo registra
+a implementação da etapa anterior; as áreas atuais são renderizadas por React. A documentação
 completa (problema resolvido, implementação e capturas de antes/depois de cada funcionalidade)
 está em [`docs/sprint-5-documentacao.html`](./docs/sprint-5-documentacao.html).
 
@@ -39,7 +77,7 @@ Abra a [página publicada](https://defxico.github.io/iara-games/) e:
 - No **Cadastro**, preencha os campos com dados inválidos (e-mail sem `@`, senha curta, senhas
   diferentes) para ver a validação em tempo real, depois com dados válidos para ver a confirmação.
 
-Localmente, basta servir a raiz do projeto com qualquer servidor estático (ex.: `python -m http.server`) e abrir `index.html` — não há build nem dependências além do CDN do Bootstrap.
+Na versão da Sprint 5, bastava servir a raiz com um servidor estático. Para rodar a versão atual, use os comandos da seção "Rodar localmente" acima.
 
 ---
 

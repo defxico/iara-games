@@ -11,3 +11,5 @@ Thumbs.db
 
 # Backups (too large for GitHub, > 100MB limit)
 iara-games-main.zip
+node_modules/
+dist/
