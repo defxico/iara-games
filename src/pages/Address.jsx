@@ -1,16 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CepField from '../components/CepField.jsx';
+import { readEndereco, removeEndereco, saveEndereco } from '../services/enderecoStorage.js';
 
-const storageKey = 'iara-entrega';
-const campos = ['cep', 'logradouro', 'bairro', 'localidade', 'uf', 'numero', 'complemento'];
 const vazio = { logradouro: '', bairro: '', localidade: '', uf: '', numero: '', complemento: '' };
-
-function readSaved() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey));
-    return saved && typeof saved === 'object' && campos.every(campo => typeof saved[campo] === 'string') ? saved : null;
-  } catch { return null; }
-}
 
 function validate(form) {
   return {
@@ -21,10 +13,10 @@ function validate(form) {
   };
 }
 
-export default function Delivery() {
-  const [saved, setSaved] = useState(readSaved);
+export default function Address() {
+  const [saved, setSaved] = useState(readEndereco);
   const [form, setForm] = useState(() => {
-    const initial = readSaved();
+    const initial = readEndereco();
     return initial ? Object.fromEntries(Object.keys(vazio).map(campo => [campo, initial[campo]])) : vazio;
   });
   const [status, setStatus] = useState('idle');
@@ -45,12 +37,12 @@ export default function Delivery() {
     const first = Object.keys(next).find(campo => next[campo]);
     if (first) { formRef.current.elements.namedItem(first)?.focus(); return; }
     const address = { cep: String(new FormData(formRef.current).get('cep') || ''), ...form, uf: form.uf.trim().toUpperCase() };
-    try { localStorage.setItem(storageKey, JSON.stringify(address)); } catch { /* O resumo continua visível sem armazenamento local. */ }
+    saveEndereco(address);
     setSaved(address);
   }
 
   function remove() {
-    try { localStorage.removeItem(storageKey); } catch { /* Sem armazenamento local, só limpamos a tela. */ }
+    removeEndereco();
     setSaved(null);
     setForm(vazio);
     setErrors({});
@@ -63,18 +55,18 @@ export default function Delivery() {
   </div>;
 
   return <main>
-    <section className="signup-hero" aria-labelledby="entrega-titulo">
+    <section className="signup-hero" aria-labelledby="endereco-titulo">
       <div className="container signup-hero-content">
-        <h1 id="entrega-titulo">Endereço de entrega</h1>
-        <p>Digite o CEP e a gente completa o resto. Dados consultados na API ViaCEP.</p>
+        <h1 id="endereco-titulo">Meu endereço</h1>
+        <p>Digite o CEP e a gente completa o resto. Dados consultados na API ViaCEP e mostrados no seu perfil.</p>
       </div>
     </section>
-    <section className="signup-form-section" aria-label="Formulário de entrega">
+    <section className="signup-form-section" aria-label="Formulário de endereço">
       <div className="container">
         <div className="signup-card">
           <form className="signup-form" ref={formRef} onSubmit={handleSubmit} noValidate>
             <fieldset className="signup-fieldset">
-              <legend className="signup-legend">Onde você quer receber?</legend>
+              <legend className="signup-legend">Onde você mora?</legend>
               <div className="form-grid">
                 <CepField onResolved={onResolved} onStatusChange={setStatus} />
                 <div className="field-group" aria-hidden="true" />
@@ -87,13 +79,14 @@ export default function Delivery() {
               </div>
             </fieldset>
             <div className="signup-actions" role="group" aria-label="Ações do formulário">
+              <a href="./perfil.html" className="btn btn-outline-light signup-btn-cancel">Voltar ao perfil</a>
               <button type="submit" className="btn btn-primary signup-btn-submit" disabled={loading}>Salvar endereço</button>
             </div>
           </form>
           {saved && <div className="signup-success delivery-summary" role="status" aria-live="polite">
             <strong>Endereço salvo neste navegador</strong>
             <p>{saved.logradouro}, {saved.numero}{saved.complemento ? ` — ${saved.complemento}` : ''}<br />{saved.bairro ? `${saved.bairro} · ` : ''}{saved.localidade}/{saved.uf} · CEP {saved.cep}</p>
-            <button type="button" className="btn btn-outline-light btn-sm" onClick={remove}>Remover endereço</button>
+            <div className="delivery-summary-actions"><a href="./perfil.html" className="btn btn-primary btn-sm">Ver no perfil</a><button type="button" className="btn btn-outline-light btn-sm" onClick={remove}>Remover endereço</button></div>
           </div>}
         </div>
       </div>

@@ -85,10 +85,11 @@ export default function Signup() {
             <fieldset className="signup-fieldset signup-fieldset-sep">
               <legend className="signup-legend">Seu contexto de jogo</legend>
               <div className="form-grid">
-                <CepField id="cep" name="cep" label="CEP (opcional)" onResolved={fillFromCep} />
+                <CepField id="cep" name="cep" label="CEP (opcional)" className="field-group-col1" onResolved={fillFromCep} />
                 <div className="field-group">
                   <label htmlFor="cidade">Cidade</label>
                   <input id="cidade" name="cidade" type="text" className="form-control" autoComplete="address-level2" placeholder="Sua cidade" />
+                  <span className="field-help field-help-placeholder" aria-hidden="true" />
                 </div>
                 <div className="field-group">
                   <label htmlFor="estado">Estado</label>
@@ -184,6 +185,7 @@ export default function Signup() {
           <div className="signup-success" data-signup-success role="status" aria-live="polite" hidden={!success}>
             <strong>Conta criada com sucesso!</strong>
             <p>Isso é uma demonstração acadêmica — nenhum dado foi salvo de verdade.</p>
+            <a href="./endereco.html" className="btn btn-primary btn-sm">Cadastrar meu endereço</a>
           </div>
         </div>
       </div>

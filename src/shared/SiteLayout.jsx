@@ -8,7 +8,6 @@ export function SiteHeader({ page }) {
     { name: 'Início', href: `${root}index.html#inicio`, icon: 'home', key: 'home' },
     { name: 'Loja', href: pageHref('loja'), icon: 'loja', key: 'loja' },
     { name: 'Biblioteca', href: pageHref('biblioteca'), icon: 'biblioteca', key: 'biblioteca' },
-    { name: 'Entrega', href: pageHref('entrega'), icon: 'loja', key: 'entrega' },
     { name: 'Criadores', href: `${root}index.html#forum`, icon: 'forum' },
     { name: 'Sobre', href: `${root}index.html#sobre`, icon: 'sobre' },
   ];
@@ -52,7 +51,7 @@ export function SiteFooter({ page }) {
   return <footer className="site-footer" id="sobre"><div className="container footer-top">
     <div className="footer-brand"><a href={`${root}index.html#inicio`} className="brand footer-brand-logo"><img src={`${root}assets/img/accessibility-update/logotipo/logowordmark-areia.svg`} alt="Iara Games" className="brand-logo" /></a><p>Jogos brasileiros independentes</p></div>
     <nav className="footer-nav" aria-label="Navegação do rodapé">
-      <a href={`${root}pages/loja.html`}>Descobrir</a><a href={`${root}pages/biblioteca.html`}>Biblioteca</a><a href={`${root}pages/entrega.html`}>Entrega</a><a href={`${root}pages/cadastro.html`}>Cadastro</a><a href={`${root}pages/perfil.html`}>Perfil</a><a href={`${root}index.html#suporte`}>Suporte</a>
+      <a href={`${root}pages/loja.html`}>Descobrir</a><a href={`${root}pages/biblioteca.html`}>Biblioteca</a><a href={`${root}pages/endereco.html`}>Endereço</a><a href={`${root}pages/cadastro.html`}>Cadastro</a><a href={`${root}pages/perfil.html`}>Perfil</a><a href={`${root}index.html#suporte`}>Suporte</a>
     </nav>
   </div><div className="container footer-bottom"><p>© 2026 Iara Games. Orgulhosamente brasileira.</p><p>Os jogos e marcas pertencem aos seus respectivos criadores.</p></div></footer>;
 }

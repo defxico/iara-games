@@ -26,7 +26,7 @@ export default defineConfig({
         cadastro: resolve('pages/cadastro.html'),
         perfil: resolve('pages/perfil.html'),
         biblioteca: resolve('pages/biblioteca.html'),
-        entrega: resolve('pages/entrega.html'),
+        endereco: resolve('pages/endereco.html'),
       },
     },
   },

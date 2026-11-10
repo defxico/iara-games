@@ -8,7 +8,7 @@ const MENSAGENS = {
   REDE: 'Não foi possível consultar agora. Preencha manualmente ou tente de novo.',
 };
 
-export default function CepField({ id = 'cep', name = 'cep', label = 'CEP', onResolved, onStatusChange }) {
+export default function CepField({ id = 'cep', name = 'cep', label = 'CEP', className = '', onResolved, onStatusChange }) {
   const [value, setValue] = useState('');
   const { status, data, error, search } = useCep();
   const helpId = `${id}-help`;
@@ -27,7 +27,7 @@ export default function CepField({ id = 'cep', name = 'cep', label = 'CEP', onRe
     : status === 'error' ? MENSAGENS[error]
     : 'Digite os 8 números do CEP.';
 
-  return <div className="field-group">
+  return <div className={`field-group ${className}`.trim()}>
     <label htmlFor={id}>{label}</label>
     <input id={id} name={name} type="text" inputMode="numeric" autoComplete="postal-code" maxLength={9} className="form-control" placeholder="00000-000" value={value} onChange={handleChange} aria-describedby={helpId} aria-invalid={status === 'error'} />
     <span id={helpId} className={`field-help ${status === 'error' ? 'field-help-error' : status === 'success' ? 'field-help-success' : ''}`} aria-live="polite">{message}</span>
