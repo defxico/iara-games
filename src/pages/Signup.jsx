@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import CepField from '../components/CepField.jsx';
 
 function validate(form) {
   const data = new FormData(form);
@@ -17,6 +18,14 @@ function validate(form) {
 export default function Signup() {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
+  const formRef = useRef(null);
+  function fillFromCep({ localidade, uf }) {
+    const form = formRef.current;
+    if (!form) return;
+    form.elements.namedItem('cidade').value = localidade;
+    form.elements.namedItem('estado').value = uf;
+    setErrors(current => (current.estado ? { ...current, estado: '' } : current));
+  }
   function handleSubmit(event) {
     event.preventDefault();
     const next = validate(event.currentTarget);
@@ -42,7 +51,7 @@ export default function Signup() {
     <section className="signup-form-section" aria-label="Formulário de cadastro">
       <div className="container">
         <div className="signup-card">
-          <form className="signup-form" onSubmit={handleSubmit} onChange={handleChange} noValidate hidden={success}>
+          <form className="signup-form" ref={formRef} onSubmit={handleSubmit} onChange={handleChange} noValidate hidden={success}>
             <fieldset className="signup-fieldset">
               <legend className="signup-legend">Dados de acesso</legend>
               <div className="form-grid">
@@ -76,6 +85,7 @@ export default function Signup() {
             <fieldset className="signup-fieldset signup-fieldset-sep">
               <legend className="signup-legend">Seu contexto de jogo</legend>
               <div className="form-grid">
+                <CepField id="cep" name="cep" label="CEP (opcional)" onResolved={fillFromCep} />
                 <div className="field-group">
                   <label htmlFor="cidade">Cidade</label>
                   <input id="cidade" name="cidade" type="text" className="form-control" autoComplete="address-level2" placeholder="Sua cidade" />
