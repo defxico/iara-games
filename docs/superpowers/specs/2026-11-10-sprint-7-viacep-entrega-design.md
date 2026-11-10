@@ -1,4 +1,4 @@
-# Sprint 7 — Área "Entrega" com API ViaCEP
+# Sprint 7 — Área "Endereço" com API ViaCEP
 
 **Data:** 2026-11-10
 **Repositório:** https://github.com/defxico/iara-games
@@ -13,7 +13,7 @@ Estado atual do repositório (Sprint 6): React 19 + Vite, cinco páginas HTML de
 ## Decisões
 
 - **API:** ViaCEP (`https://viacep.com.br/ws/{cep}/json/`). Pública, sem chave, com CORS liberado.
-- **Área:** nova página "Entrega" (`pages/entrega.html`), mais reaproveitamento do campo de CEP no Cadastro.
+- **Área:** nova página "Endereço" (`pages/endereco.html`), mais reaproveitamento do campo de CEP no Cadastro.
 - **Consumo:** `fetch` nativo, sem bibliotecas de dados.
 - **Deploy:** GitHub Pages, que já está configurado. O enunciado aceita "qualquer plataforma de sua escolha", então Vercel não é obrigatória.
 
@@ -28,10 +28,10 @@ Pagamento, cálculo de frete, login, mapa e backend próprio.
 | `src/services/viacep.js` | `buscarCep(cep, { signal })`: normaliza o CEP, valida 8 dígitos, chama a ViaCEP e devolve `{ logradouro, bairro, localidade, uf }` ou lança erro tipado (`CEP_INVALIDO`, `NAO_ENCONTRADO`, `REDE`) | `fetch` |
 | `src/hooks/useCep.js` | Estado `idle \| loading \| success \| error` e dados. Busca ao completar 8 dígitos e cancela a requisição anterior com `AbortController` | `viacep.js` |
 | `src/components/CepField.jsx` | Campo com máscara `00000-000`, mensagens com `aria-live`, callback `onResolved(endereco)` | `useCep` |
-| `src/pages/Delivery.jsx` | Página Entrega: `CepField` mais rua, bairro, cidade, UF, número e complemento; salva em `localStorage` (chave `iara-entrega`) | `CepField` |
+| `src/pages/Address.jsx` | Página Entrega: `CepField` mais rua, bairro, cidade, UF, número e complemento; salva em `localStorage` (chave `iara-endereco`) | `CepField` |
 | `src/pages/Signup.jsx` | Recebe `CepField` e preenche Cidade e Estado (campos continuam editáveis) | `CepField` |
 
-Integração: `src/main.jsx` e `vite.config.js` registram a página `entrega`. `SiteHeader` e `SiteFooter` ganham o link "Entrega". As páginas existentes não mudam de visual, exceto o campo de CEP no Cadastro.
+Integração: `src/main.jsx` e `vite.config.js` registram a página `entrega`. `SiteHeader` e `SiteFooter` ganham o link "Endereço". As páginas existentes não mudam de visual, exceto o campo de CEP no Cadastro.
 
 ## Fluxo de dados
 
@@ -80,4 +80,13 @@ Sem Testing Library: o ganho não compensa a dependência neste tamanho de proje
 - README: seção "Sprint 7" no topo, no formato das anteriores, com links do PDF e da área publicada.
 - `package.json`: versão `7.0.0`. Capturas em `docs/screenshots/sprint-7/`.
 
-**Ordem de execução:** serviço e testes → hook → componente → página Entrega → integração no Cadastro e no header → build e deploy → capturas e PDF. O PDF só é gerado depois de o deploy estar verificado, para o link e as imagens refletirem o site real.
+**Ordem de execução:** serviço e testes → hook → componente → página Endereço → integração no Cadastro e no header → build e deploy → capturas e PDF. O PDF só é gerado depois de o deploy estar verificado, para o link e as imagens refletirem o site real.
+
+## Atualização (2026-11-10): Entrega → Endereço, ligada à conta
+
+Revisão após a primeira implementação: a página passou de "Entrega" para **Endereço** (`pages/endereco.html`, `src/pages/Address.jsx`, chave `iara-endereco`), porque frete e compra estão fora de escopo e o nome anterior sugeria o contrário. Ela agora faz parte do fluxo de conta:
+
+- Cadastro: depois do sucesso, o botão "Cadastrar meu endereço" leva à página. O campo de CEP continua como atalho para Cidade e Estado, em linha própria.
+- Perfil: mostra o endereço salvo (ou "Adicionar endereço") com link para editar.
+- Armazenamento compartilhado em `src/services/enderecoStorage.js` (`readEndereco`, `saveEndereco`, `removeEndereco`).
+- Navegação: link no rodapé, no Perfil e no Cadastro; fora do header, para manter o menu enxuto.

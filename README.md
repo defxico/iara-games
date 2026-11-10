@@ -7,8 +7,47 @@ Projeto acadêmico desenvolvido na FIAP.
 Amanda Ayumi Guedes Ueno · Ana Rubia de Oliveira Freire · Francisco Caetano Bernardes · Giovana Camargo Budin
 
 **Página publicada:** https://defxico.github.io/iara-games/
+**Área de Endereço (Sprint 7):** https://defxico.github.io/iara-games/pages/endereco.html
 **Biblioteca publicada:** https://defxico.github.io/iara-games/pages/biblioteca.html
-**PDF da entrega:** [`pdf/iara-games-sprint-06.pdf`](./pdf/iara-games-sprint-06.pdf)
+**PDF da entrega:** [`pdf/iara-games-sprint-07.pdf`](./pdf/iara-games-sprint-07.pdf)
+
+---
+
+## Sprint 7 (Fase 7) — Área Endereço com a API ViaCEP
+
+A Fase 7 encerra a jornada da plataforma com uma área em React que consome uma API real. A nova área **Endereço** (`pages/endereco.html`) usa a API pública [ViaCEP](https://viacep.com.br/): a pessoa digita o CEP e rua, bairro, cidade e UF são preenchidos automaticamente. O endereço salvo aparece no **Perfil**, e o mesmo campo de CEP preenche Cidade e Estado no **Cadastro**. O endereço fica no `localStorage` do navegador (demonstração acadêmica, sem backend).
+
+### Como acessar "Adicionar endereço"
+
+1. Abra https://defxico.github.io/iara-games/ e clique em **Entrar** no canto superior direito. O botão leva ao Perfil de demonstração (`pages/perfil.html`).
+2. No Perfil, na faixa de informações abaixo da biografia (entre "São Paulo, SP" e "Membro desde Janeiro 2024"), clique em **Adicionar endereço**.
+3. Na página Endereço, digite o CEP (exemplo: `01310-100`). A consulta começa sozinha ao completar 8 números e preenche rua, bairro, cidade e UF.
+4. Informe o **Número** (o cursor já vai para ele) e clique em **Salvar endereço**.
+5. Clique em **Ver no perfil**: o link agora mostra o endereço salvo.
+
+Atalhos: abrir direto [`pages/perfil.html`](https://defxico.github.io/iara-games/pages/perfil.html), usar o link **Endereço** do rodapé ou, depois de criar uma conta no Cadastro, clicar em **Cadastrar meu endereço**.
+
+### Como a API funciona
+
+- Requisição: `GET https://viacep.com.br/ws/{cep}/json/` (sem chave, chamada direta do navegador).
+- Campos usados da resposta: `logradouro`, `bairro`, `localidade` e `uf`.
+- Erros tratados: CEP incompleto (sem chamada), CEP inexistente (`{ "erro": true }`), falha de rede ou limite de 8 s (botão "Tentar novamente") e resposta atrasada (descartada). O erro nunca bloqueia o formulário: os campos continuam editáveis.
+
+### Organização do código
+
+- `src/services/viacep.js`: chamada à API, validação do CEP e erros tipados (`CEP_INVALIDO`, `NAO_ENCONTRADO`, `REDE`).
+- `src/hooks/useCep.js`: estado da busca (`idle`, `loading`, `success`, `error`) com cancelamento via `AbortController`.
+- `src/components/CepField.jsx`: campo de CEP com máscara `00000-000` e mensagens acessíveis.
+- `src/services/enderecoStorage.js`: leitura, gravação e remoção do endereço salvo.
+- `src/pages/Address.jsx`: página Endereço. `Signup.jsx` e `Profile.jsx` reaproveitam o campo e o endereço salvo.
+
+### Testes
+
+```bash
+npm test
+```
+
+16 testes automatizados (Vitest) cobrem o serviço da ViaCEP, o hook de busca e o armazenamento do endereço. A documentação completa, com capturas de tela, está em [`pdf/iara-games-sprint-07.pdf`](./pdf/iara-games-sprint-07.pdf).
 
 ---
 
@@ -41,6 +80,7 @@ O fluxo em `.github/workflows/deploy.yml` publica o conteúdo de `dist` no GitHu
 
 - `src/pages/`: componentes das páginas da plataforma.
 - `src/shared/`: cabeçalho e rodapé compartilhados.
+- `src/components/`, `src/hooks/`, `src/services/`: campo de CEP, hook de busca e serviços da Sprint 7.
 - `src/main.jsx`: escolhe a página para a rota HTML atual.
 - `src/library.css`: estilos responsivos da Biblioteca.
 - `pages/*.html` e `index.html`: pontos de entrada do Vite.

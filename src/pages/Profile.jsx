@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { readEndereco } from '../services/enderecoStorage.js';
 
 export default function Profile() {
+  const [endereco] = useState(readEndereco);
   return (
 <main className="internal-main profile-dashboard-main">
     <div className="container profile-dashboard-shell">
@@ -31,6 +33,10 @@ export default function Profile() {
               <img src="../assets/img/perfil-page-icons/localizacao-icon.svg" alt="" aria-hidden="true" className="profile-meta-icon" />
               São Paulo, SP
             </span>
+            <a className="profile-meta-item" href="./endereco.html">
+              <img src="../assets/img/perfil-page-icons/localizacao-icon.svg" alt="" aria-hidden="true" className="profile-meta-icon" />
+              {endereco ? `${endereco.logradouro}, ${endereco.numero} — ${endereco.localidade}/${endereco.uf}` : 'Adicionar endereço'}
+            </a>
             <span className="profile-meta-item">
               <img src="../assets/img/perfil-page-icons/calendario-icon.svg" alt="" aria-hidden="true" className="profile-meta-icon" />
               Membro desde Janeiro 2024

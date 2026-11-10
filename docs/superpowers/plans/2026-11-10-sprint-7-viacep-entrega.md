@@ -1,8 +1,8 @@
-# Sprint 7 — Área "Entrega" com ViaCEP Implementation Plan
+# Sprint 7 — Área "Endereço" com ViaCEP Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Entregar a área "Entrega" (React) que consulta a API ViaCEP, reaproveitar o campo de CEP no Cadastro, publicar no GitHub Pages e gerar o PDF da Sprint 7.
+**Goal:** Entregar a área "Endereço" (React) que consulta a API ViaCEP, reaproveitar o campo de CEP no Cadastro, publicar no GitHub Pages e gerar o PDF da Sprint 7.
 
 **Architecture:** `viacep.js` (serviço puro, `fetch`) → `useCep` (hook de estado com `AbortController`) → `CepField` (campo com máscara e mensagens) → páginas `Delivery` e `Signup`. Páginas multi-entrada do Vite, sem roteador, como as cinco existentes.
 
@@ -15,7 +15,7 @@ Spec: `docs/superpowers/specs/2026-11-10-sprint-7-viacep-entrega-design.md`
 - API: `https://viacep.com.br/ws/{cep}/json/`, sem chave, via `fetch` nativo; sem React Query, axios ou proxy.
 - Timeout da consulta: 8 s. Resposta atrasada é descartada com `AbortController`.
 - O erro nunca bloqueia o formulário: campos sempre editáveis à mão (exceto durante `loading`).
-- `localStorage` sempre em `try/catch`; chave `iara-entrega`.
+- `localStorage` sempre em `try/catch`; chave `iara-endereco`.
 - Deploy: GitHub Pages (`base: '/iara-games/'` permanece). Sem Vercel.
 - Sem Testing Library; testes só de `viacep.js` e `useCep`.
 - Fora de escopo: pagamento, frete, login, mapa, backend.
@@ -33,12 +33,12 @@ Spec: `docs/superpowers/specs/2026-11-10-sprint-7-viacep-entrega-design.md`
 | `src/hooks/useCep.js` | Criar | estado da busca e cancelamento |
 | `src/hooks/useCep.test.js` | Criar | testes do hook |
 | `src/components/CepField.jsx` | Criar | campo de CEP com máscara e mensagens |
-| `src/pages/Delivery.jsx` | Criar | página Entrega |
-| `pages/entrega.html` | Criar | ponto de entrada do Vite |
+| `src/pages/Address.jsx` | Criar | página Endereço |
+| `pages/endereco.html` | Criar | ponto de entrada do Vite |
 | `src/main.jsx` | Modificar | rota `entrega` |
-| `src/shared/SiteLayout.jsx` | Modificar | links "Entrega" no header e rodapé |
+| `src/shared/SiteLayout.jsx` | Modificar | links "Endereço" no header e rodapé |
 | `src/pages/Signup.jsx` | Modificar | `CepField` preenchendo Cidade e Estado |
-| `src/delivery.css` | Criar | estilos do resumo e do botão de retry |
+| `src/address.css` | Criar | estilos do resumo e do botão de retry |
 | `docs/sprint-7-documentacao.html`, `pdf/iara-games-sprint-07.pdf`, `docs/screenshots/sprint-7/*` | Criar | entrega em PDF |
 | `README.md` | Modificar | seção "Sprint 7" |
 
@@ -400,11 +400,11 @@ git commit -m "feat: add useCep hook with stale-response guard" -m "Co-Authored-
 
 ---
 
-### Task 3: `CepField` e página Entrega
+### Task 3: `CepField` e página Endereço
 
 **Files:**
 
-- Create: `src/components/CepField.jsx`, `src/pages/Delivery.jsx`, `src/delivery.css`, `pages/entrega.html`
+- Create: `src/components/CepField.jsx`, `src/pages/Address.jsx`, `src/address.css`, `pages/endereco.html`
 - Modify: `src/main.jsx`, `vite.config.js`, `src/shared/SiteLayout.jsx`
 
 **Interfaces:**
@@ -457,13 +457,13 @@ export default function CepField({ id = 'cep', name = 'cep', label = 'CEP', onRe
 
 - [ ] **Step 2: Criar a página `Delivery`**
 
-Create `src/pages/Delivery.jsx`:
+Create `src/pages/Address.jsx`:
 
 ```jsx
 import React, { useEffect, useRef, useState } from 'react';
 import CepField from '../components/CepField.jsx';
 
-const storageKey = 'iara-entrega';
+const storageKey = 'iara-endereco';
 const campos = ['cep', 'logradouro', 'bairro', 'localidade', 'uf', 'numero', 'complemento'];
 const vazio = { logradouro: '', bairro: '', localidade: '', uf: '', numero: '', complemento: '' };
 
@@ -568,7 +568,7 @@ Nota: `numeroRef` é passado via `extra` para o `<input>` (em React 19 `ref` é 
 
 - [ ] **Step 3: Estilos mínimos**
 
-Create `src/delivery.css`:
+Create `src/address.css`:
 
 ```css
 .cep-retry { justify-self: start; }
@@ -579,11 +579,11 @@ Create `src/delivery.css`:
 
 - [ ] **Step 4: Ponto de entrada HTML**
 
-Create `pages/entrega.html` copiando `pages/biblioteca.html` com um único ajuste (`<title>Iara Games | Entrega</title>`):
+Create `pages/endereco.html` copiando `pages/biblioteca.html` com um único ajuste (`<title>Iara Games | Entrega</title>`):
 
 ```bash
-sed 's/Iara Games | Biblioteca/Iara Games | Entrega/' pages/biblioteca.html > pages/entrega.html
-grep -c "Entrega" pages/entrega.html
+sed 's/Iara Games | Biblioteca/Iara Games | Entrega/' pages/biblioteca.html > pages/endereco.html
+grep -c "Endereço" pages/endereco.html
 ```
 
 Expected: `1`.
@@ -593,12 +593,12 @@ Expected: `1`.
 Em `src/main.jsx`:
 
 ```jsx
-import Delivery from './pages/Delivery.jsx';
+import Delivery from './pages/Address.jsx';
 ```
 
 ```jsx
 import './library.css';
-import './delivery.css';
+import './address.css';
 ```
 
 Substitua o bloco que escolhe a página por:
@@ -615,7 +615,7 @@ const bodyClass = { loja: 'shop-page', cadastro: 'signup-page', perfil: 'profile
 document.body.className = page === 'home' ? '' : `internal-page ${bodyClass[page]}`;
 ```
 
-Em `vite.config.js`, na lista `input`, acrescente `entrega: resolve('pages/entrega.html'),` depois de `biblioteca`.
+Em `vite.config.js`, na lista `input`, acrescente `entrega: resolve('pages/endereco.html'),` depois de `biblioteca`.
 
 - [ ] **Step 6: Links no header e no rodapé**
 
@@ -625,14 +625,14 @@ Em `src/shared/SiteLayout.jsx`, no array `nav`, insira depois de `Biblioteca`:
     { name: 'Entrega', href: pageHref('entrega'), icon: 'loja', key: 'entrega' },
 ```
 
-(reaproveita o par de ícones `loja-default/hover.svg`, porque não há ícone dedicado). No `footer-nav`, depois do link `Biblioteca`, acrescente `<a href={`${root}pages/entrega.html`}>Entrega</a>`.
+(reaproveita o par de ícones `loja-default/hover.svg`, porque não há ícone dedicado). No `footer-nav`, depois do link `Biblioteca`, acrescente `<a href={`${root}pages/endereco.html`}>Entrega</a>`.
 
 - [ ] **Step 7: Build e verificação no navegador**
 
 Run: `npm run build`
-Expected: build sem erros e `dist/pages/entrega.html` existe.
+Expected: build sem erros e `dist/pages/endereco.html` existe.
 
-Run: `npm run dev` e abra `http://localhost:5173/iara-games/pages/entrega.html`.
+Run: `npm run dev` e abra `http://localhost:5173/iara-games/pages/endereco.html`.
 Expected: página carrega; CEP `01310-100` preenche Avenida Paulista / Bela Vista / São Paulo / SP e o foco vai para Número; `00000-000` mostra "CEP não encontrado."; com a rede desligada (DevTools → Offline) aparece o botão "Tentar novamente"; salvar e recarregar mantém o resumo.
 
 - [ ] **Step 8: Commit**
@@ -732,7 +732,7 @@ Expected: workflow "Publicar no GitHub Pages" termina verde.
 
 - [ ] **Step 4: Checklist manual na URL pública**
 
-Abra `https://defxico.github.io/iara-games/pages/entrega.html` e confirme os 6 itens do spec:
+Abra `https://defxico.github.io/iara-games/pages/endereco.html` e confirme os 6 itens do spec:
 
 1. `01310-100` preenche o endereço e o foco vai para Número.
 2. `00000-000` mostra "CEP não encontrado." e os campos ficam livres.
@@ -765,13 +765,13 @@ No navegador, largura 1280 px, salve em `docs/screenshots/sprint-7/`:
 
 Copie `docs/sprint-5-documentacao.html` para `docs/sprint-7-documentacao.html` e mantenha intactos o bloco `<style>` (linhas 7–332), a estrutura de página (`.page`, `.bar`, `.content`, `.foot`) e a capa. Ajustes na cópia:
 
-- Capa: `SPRINT 05` → `SPRINT 07`, data `Novembro de 2026`, `.cover-num` → `07`, rodapés `Iara Games — Sprint 07`, e o índice da capa com: `01 Abertura`, `02 A área Entrega`, `03 Como a API funciona`, `04 Arquitetura`, `05 Como testar e publicação`. Mantenha a lista de integrantes da capa e remova a de quem não estiver no grupo desta sprint.
+- Capa: `SPRINT 05` → `SPRINT 07`, data `Novembro de 2026`, `.cover-num` → `07`, rodapés `Iara Games — Sprint 07`, e o índice da capa com: `01 Abertura`, `02 A área Endereço`, `03 Como a API funciona`, `04 Arquitetura`, `05 Como testar e publicação`. Mantenha a lista de integrantes da capa e remova a de quem não estiver no grupo desta sprint.
 - Substitua as páginas de funcionalidade por 5 páginas, usando os mesmos componentes (`eyebrow`, `h2`, `section-note`, `problem`, `impl-item`, `code`):
-  1. **Abertura** — o que a Sprint 7 pede (área em React + API real + deploy) e a solução escolhida (ViaCEP em "Entrega" e no Cadastro).
-  2. **A área Entrega** — problema (endereço digitado à mão gera erro e abandono), fluxo do usuário em 4 passos e as capturas `entrega-preenchida.png` e `cadastro-preenchido.png`.
+  1. **Abertura** — o que a Sprint 7 pede (área em React + API real + deploy) e a solução escolhida (ViaCEP em "Endereço" e no Cadastro).
+  2. **A área Endereço** — problema (endereço digitado à mão gera erro e abandono), fluxo do usuário em 4 passos e as capturas `entrega-preenchida.png` e `cadastro-preenchido.png`.
   3. **Como a API funciona** — endpoint `GET https://viacep.com.br/ws/{cep}/json/`; exemplo de requisição (`/ws/01310100/json/`) e de resposta JSON (`logradouro`, `bairro`, `localidade`, `uf`); tabela de erros (CEP incompleto, `{ "erro": true }`, sem rede/timeout de 8 s, resposta atrasada descartada); capturas `entrega-nao-encontrado.png` e `entrega-erro-rede.png`.
   4. **Arquitetura** — diagrama em caixas `viacep.js → useCep → CepField → Delivery / Signup` e a decisão "o erro nunca bloqueia o formulário".
-  5. **Como testar e publicação** — passos 1 a 6 do checklist, 13 testes automatizados (`npm test`) e, em destaque, o link do deploy: `https://defxico.github.io/iara-games/pages/entrega.html`.
+  5. **Como testar e publicação** — passos 1 a 6 do checklist, 13 testes automatizados (`npm test`) e, em destaque, o link do deploy: `https://defxico.github.io/iara-games/pages/endereco.html`.
 - Imagens com `<img src="screenshots/sprint-7/arquivo.png" alt="…">` e texto alternativo descritivo.
 - Atualize o sumário (`toc-row`) e a numeração `.foot` para refletir as páginas.
 
@@ -788,17 +788,17 @@ Expected: `pdf/iara-games-sprint-07.pdf` criado. Abra o PDF e confira: capa com 
 
 - [ ] **Step 4: README**
 
-No topo de `README.md`, atualize `**PDF da entrega:**` para `[`pdf/iara-games-sprint-07.pdf`](./pdf/iara-games-sprint-07.pdf)`, acrescente `**Área de Entrega publicada:** https://defxico.github.io/iara-games/pages/entrega.html` e insira antes de `## Sprint 6 (Fase 6)`:
+No topo de `README.md`, atualize `**PDF da entrega:**` para `[`pdf/iara-games-sprint-07.pdf`](./pdf/iara-games-sprint-07.pdf)`, acrescente `**Área de Entrega publicada:** https://defxico.github.io/iara-games/pages/endereco.html` e insira antes de `## Sprint 6 (Fase 6)`:
 
 ```markdown
-## Sprint 7 (Fase 7) — Área Entrega com API ViaCEP
+## Sprint 7 (Fase 7) — Área Endereço com API ViaCEP
 
-A nova área **Entrega** (`pages/entrega.html`) consome a API pública [ViaCEP](https://viacep.com.br/): o usuário digita o CEP e rua, bairro, cidade e UF são preenchidos automaticamente. O mesmo campo de CEP preenche Cidade e Estado no Cadastro. O endereço é salvo no `localStorage` do navegador (demonstração acadêmica, sem backend).
+A nova área **Entrega** (`pages/endereco.html`) consome a API pública [ViaCEP](https://viacep.com.br/): o usuário digita o CEP e rua, bairro, cidade e UF são preenchidos automaticamente. O mesmo campo de CEP preenche Cidade e Estado no Cadastro. O endereço é salvo no `localStorage` do navegador (demonstração acadêmica, sem backend).
 
 - `src/services/viacep.js`: consulta a API, valida o CEP e trata erros (`CEP_INVALIDO`, `NAO_ENCONTRADO`, `REDE`, timeout de 8 s).
 - `src/hooks/useCep.js`: estado da busca e descarte de respostas atrasadas.
 - `src/components/CepField.jsx`: campo com máscara e mensagens acessíveis.
-- `src/pages/Delivery.jsx`: página Entrega.
+- `src/pages/Address.jsx`: página Endereço.
 
 Testes automatizados: `npm test` (Vitest). Documentação completa e capturas de tela: [`pdf/iara-games-sprint-07.pdf`](./pdf/iara-games-sprint-07.pdf).
 
@@ -822,8 +822,8 @@ Peça autorização antes do `git push origin main`; depois do push, confirme qu
 - Arquitetura (5 unidades) → Tasks 1–4. Integração em `main.jsx`/`vite.config.js`/header/rodapé → Task 3. Cadastro → Task 4.
 - Fluxo e foco em Número → Task 3 (efeito em `Delivery` após o re-render, para o campo já estar habilitado).
 - Erros (tabela de 4 linhas) → Task 1 (serviço) e Task 2 (descarte); mensagens → `CepField`; "nunca bloqueia" → campos só desabilitados em `loading`.
-- Persistência `iara-entrega` com `try/catch` → Task 3.
+- Persistência `iara-endereco` com `try/catch` → Task 3.
 - Testes automatizados do serviço e do hook → Tasks 1–2. Checklist manual com 6 itens e verificação na URL pública → Tasks 3, 4 e 5.
 - PDF, README, versão `7.0.0`, capturas → Tasks 5–6.
 - Desvio assumido: `jsdom` entra como `devDependency` junto do Vitest para testar o hook sem Testing Library.
-- Nomes consistentes: `buscarCep`, `normalizarCep`, `formatarCep`, `CepError`, `useCep`, `CepField`, `onResolved`, `onStatusChange`, `iara-entrega`.
+- Nomes consistentes: `buscarCep`, `normalizarCep`, `formatarCep`, `CepError`, `useCep`, `CepField`, `onResolved`, `onStatusChange`, `iara-endereco`.

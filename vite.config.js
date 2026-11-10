@@ -14,6 +14,10 @@ export default defineConfig({
       },
     },
   ],
+  test: {
+    environment: 'node',
+    include: ['src/**/*.test.{js,jsx}'],
+  },
   build: {
     rollupOptions: {
       input: {
@@ -22,6 +26,7 @@ export default defineConfig({
         cadastro: resolve('pages/cadastro.html'),
         perfil: resolve('pages/perfil.html'),
         biblioteca: resolve('pages/biblioteca.html'),
+        endereco: resolve('pages/endereco.html'),
       },
     },
   },

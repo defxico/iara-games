@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iara Games — Sprint 07</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --gold: #ba9130;
+    --gold-light: #dcb24c;
+    --teal: #3c5d66;
+    --ink: #192728;
+    --ink-soft: #3b4a4b;
+    --muted: #6b7778;
+    --cream: #f2efe8;
+    --card: #e9e1d4;
+    --card-border: #d8cfbf;
+    --dark: #22363a;
+    --code: #1c2a2b;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; background: #66666a; font-family: "Segoe UI", "Inter", Arial, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+  .page { width: 210mm; height: 297mm; margin: 0 auto 8mm; background: var(--cream); position: relative; overflow: hidden; page-break-after: always; break-after: page; }
+  @media print { body { background: none; } .page { margin: 0; } }
+
+  /* Capa */
+  .cover { background: var(--cream); }
+  .cover-gold { background: var(--gold); height: 176mm; position: relative; color: var(--cream); padding: 12mm 14mm; overflow: hidden; }
+  .cover-gold .big { position: absolute; right: 8mm; bottom: -14mm; font-size: 240pt; font-weight: 800; color: rgba(242,239,232,.14); line-height: 1; letter-spacing: -5mm; }
+  .cover-meta { position: absolute; top: 9mm; right: 14mm; width: 100mm; text-align: right; font-size: 8.5pt; white-space: nowrap; }
+  .cover-meta .fiap { font-weight: 700; margin-bottom: 3mm; }
+  .cover-meta .sprint { font-weight: 700; }
+  .cover-meta .date { font-size: 10pt; margin-bottom: 4mm; padding-bottom: 4mm; border-bottom: 1px solid rgba(242,239,232,.5); }
+  .cover-meta .team { line-height: 1.7; opacity: .95; }
+  .cover-title { position: absolute; left: 14mm; top: 40mm; width: 76mm; }
+  .cover-title h1 { font-size: 28pt; line-height: 1.15; margin: 0 0 4mm; font-weight: 700; }
+  .cover-title p { font-size: 12.5pt; margin: 0; }
+  .cover-logo { position: absolute; left: 14mm; bottom: 14mm; height: 22mm; }
+  .cover-lower { padding: 13mm 14mm; }
+  .eyebrow { font-size: 8pt; letter-spacing: .22em; text-transform: uppercase; font-weight: 700; color: var(--teal); }
+  .toc li { list-style: none; display: flex; gap: 8mm; padding: 4.2mm 0; border-bottom: 1px solid #d6d1c5; font-size: 11pt; }
+  .toc ol { margin: 5mm 0 0; padding: 0; }
+  .toc b { color: var(--teal); width: 8mm; }
+
+  /* Páginas internas */
+  .bar { height: 15mm; background: var(--teal); border-bottom: 1.2mm solid var(--gold); display: flex; align-items: center; justify-content: space-between; padding: 0 14mm; color: var(--cream); font-weight: 700; font-size: 9pt; }
+  .bar img { height: 8mm; }
+  .content { padding: 8mm 14mm 0; }
+  h1.title { font-size: 27pt; line-height: 1.15; color: var(--teal); margin: 2mm 0 4mm; font-weight: 700; }
+  .lead { margin: 0 0 5mm; font-size: 11pt; }
+  .label { margin: 6mm 0 3mm; }
+  .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 4mm; padding: 4.5mm 5mm; }
+  .card h3 { margin: 0 0 1.5mm; font-size: 11pt; color: var(--teal); }
+  .card p { margin: 0; font-size: 9.5pt; color: var(--ink-soft); }
+  .card.highlight h3 { color: var(--gold); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .flow { display: grid; grid-template-columns: 1fr 5mm 1fr 5mm 1fr 5mm 1fr; align-items: center; gap: 1mm; }
+  .flow .arrow { color: var(--teal); font-weight: 700; text-align: center; }
+  .dark { background: var(--dark); color: var(--cream); border-radius: 4mm; padding: 4mm 4.5mm; font-size: 8.8pt; }
+  .dark b { display: block; color: var(--gold-light); font-size: 7.8pt; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1.5mm; }
+  .dark.big { padding: 5mm 6mm; }
+  .dark.big b { font-size: 11pt; text-transform: none; letter-spacing: 0; }
+  .dark.big p { margin: 0; font-size: 9.5pt; }
+  pre.code { background: var(--code); color: #d7ecd2; border-radius: 3.5mm; padding: 4mm 5mm; margin: 0; font: 8.6pt/1.5 Consolas, "Courier New", monospace; white-space: pre-wrap; }
+  table.errs { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  table.errs th { text-align: left; color: var(--teal); font-size: 7.8pt; letter-spacing: .1em; text-transform: uppercase; padding: 0 3mm 2mm 0; }
+  table.errs td { padding: 2.6mm 3mm 2.6mm 0; border-top: 1px solid #d6d1c5; vertical-align: top; }
+  table.errs td:first-child { font-weight: 700; color: var(--teal); white-space: nowrap; }
+  .num { color: var(--gold); font-weight: 700; margin-right: 3mm; }
+  .item { padding: 3mm 0; border-bottom: 1px solid #d6d1c5; }
+  .item b { color: var(--teal); }
+  .item span { display: block; margin-left: 9mm; font-size: 9.5pt; color: var(--ink-soft); }
+
+  /* Passos */
+  .step { display: grid; grid-template-columns: 8mm 1fr; gap: 3mm; margin-bottom: 3mm; }
+  .step .n { width: 7mm; height: 7mm; border-radius: 50%; background: var(--gold-light); color: var(--ink); font-weight: 700; font-size: 9.5pt; text-align: center; line-height: 7mm; margin-top: .5mm; }
+  .step h4 { margin: 0; font-size: 10.5pt; color: var(--teal); }
+  .step p { margin: .5mm 0 0; font-size: 9.5pt; color: var(--ink-soft); }
+  .shot { margin: 2.5mm 0 4mm; border-radius: 2.5mm; overflow: hidden; border: 1px solid var(--card-border); background: var(--dark); }
+  .shot img { display: block; width: 100%; }
+  .shot.crop img { object-fit: cover; object-position: top; }
+  .shot figcaption { background: var(--card); padding: 1.8mm 3mm; font-size: 8.3pt; color: var(--ink-soft); }
+  .shot { margin-left: 0; margin-right: 0; }
+  .callout { background: var(--card); border: 1px solid var(--card-border); border-left: 1.6mm solid var(--gold); border-radius: 2.5mm; padding: 3.5mm 4.5mm; margin: 0 0 4mm; font-size: 9.5pt; }
+  .callout b { color: var(--teal); }
+  .url { font-family: Consolas, "Courier New", monospace; color: var(--teal); font-weight: 700; word-break: break-all; }
+  .team { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 8mm; font-size: 9.5pt; }
+  .team div { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d1c5; padding-bottom: 1.6mm; }
+  .team i { font-style: normal; color: var(--muted); }
+  .foot { position: absolute; left: 14mm; right: 14mm; bottom: 8mm; border-top: 1px solid #d6d1c5; padding-top: 3mm; display: flex; justify-content: space-between; font-size: 8pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- 1. CAPA -->
+<div class="page cover">
+  <div class="cover-gold">
+    <div class="cover-meta">
+      <div class="fiap">FIAP</div>
+      <div class="sprint">SPRINT 07</div>
+      <div class="date">Novembro de 2026</div>
+      <div class="team">Amanda Ayumi Guedes Ueno - RM573609<br />Ana Rubia de Oliveira Freire - RM573171<br />Francisco Caetano Bernardes - RM571399<br />Giovana Camargo Budin - RM571861</div>
+    </div>
+    <div class="cover-title">
+      <h1>Seu endereço, direto da API ViaCEP</h1>
+      <p>Consulta de CEP, área Endereço e publicação</p>
+    </div>
+    <div class="big">07</div>
+    <img class="cover-logo" src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" />
+  </div>
+  <div class="cover-lower toc">
+    <div class="eyebrow">Conteúdo</div>
+    <ol>
+      <li><b>01</b> Abertura e objetivo da sprint</li>
+      <li><b>02</b> Como a API funciona</li>
+      <li><b>03</b> Como acessar "Adicionar endereço"</li>
+      <li><b>04</b> Cadastro, erros e arquitetura</li>
+      <li><b>05</b> Repositório, publicação e escopo</li>
+    </ol>
+  </div>
+  <div class="foot"><span>Iara Games - Projeto academico FIAP - 2026</span><span>1</span></div>
+</div>
+
+<!-- 2. ABERTURA -->
+<div class="page">
+  <div class="bar"><img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" /><span>FIAP</span></div>
+  <div class="content">
+    <div class="eyebrow">Abertura</div>
+    <h1 class="title">Uma área real, conectada a uma API real</h1>
+    <p class="lead">A Sprint 7 encerra a jornada da Iara Games com uma nova área em React que consome a API pública ViaCEP: a pessoa digita o CEP e o endereço completo é preenchido sozinho, aparece no Perfil e agiliza o Cadastro.</p>
+
+    <div class="eyebrow label">Objetivo</div>
+    <div class="card highlight">
+      <h3>Dados dinâmicos, sem digitar o endereço inteiro</h3>
+      <p>Conectar o que foi construído até aqui a uma fonte externa. A área <b>Endereço</b> consulta a ViaCEP, trata os erros sem travar o formulário, guarda o resultado no navegador e o exibe no Perfil.</p>
+    </div>
+
+    <div class="eyebrow label">Fluxo da pessoa usuária</div>
+    <div class="flow">
+      <div class="dark"><b>1 · Digita</b>CEP no campo, com máscara 00000-000</div><div class="arrow">&gt;</div>
+      <div class="dark"><b>2 · Consulta</b>API ViaCEP ao completar 8 números</div><div class="arrow">&gt;</div>
+      <div class="dark"><b>3 · Preenche</b>rua, bairro, cidade e UF</div><div class="arrow">&gt;</div>
+      <div class="dark"><b>4 · Salva</b>endereço exibido no Perfil</div>
+    </div>
+
+    <div class="eyebrow label">Onde a API aparece</div>
+    <div class="grid3">
+      <div class="card"><h3>Endereço</h3><p>Address.jsx · página nova, com todos os campos e o resumo salvo.</p></div>
+      <div class="card"><h3>Cadastro</h3><p>Signup.jsx · o CEP preenche Cidade e Estado; ao concluir, leva ao Endereço.</p></div>
+      <div class="card"><h3>Perfil</h3><p>Profile.jsx · mostra o endereço salvo ou o link "Adicionar endereço".</p></div>
+      <div class="card"><h3>Campo de CEP</h3><p>CepField.jsx · máscara, mensagens e botão "Tentar novamente".</p></div>
+      <div class="card"><h3>Estado da busca</h3><p>useCep.js · carregando, sucesso, erro e descarte de resposta atrasada.</p></div>
+      <div class="card"><h3>Serviço</h3><p>viacep.js · chamada à API e erros tipados.</p></div>
+    </div>
+
+    <div class="eyebrow label">Build</div>
+    <p style="margin:0;font-size:10pt">O Vite gera as páginas estáticas na pasta dist, incluindo <span class="url" style="font-size:9pt">pages/endereco.html</span>. O workflow do GitHub Pages publica o resultado a partir da branch main.</p>
+  </div>
+  <div class="foot"><span>Iara Games - Sprint 07</span><span>2</span></div>
+</div>
+
+<!-- 3. A API -->
+<div class="page">
+  <div class="bar"><img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" /><span>FIAP</span></div>
+  <div class="content">
+    <div class="eyebrow">A API</div>
+    <h1 class="title">Como a ViaCEP responde</h1>
+    <p class="lead">A <a class="url" href="https://viacep.com.br/">ViaCEP</a> é pública, não pede chave e aceita chamadas diretas do navegador. A aplicação faz uma requisição GET por CEP e usa quatro campos da resposta.</p>
+
+    <div class="eyebrow label">Requisição</div>
+<pre class="code">GET https://viacep.com.br/ws/01310100/json/</pre>
+
+    <div class="eyebrow label">Resposta (CEP encontrado)</div>
+<pre class="code">{
+  "cep": "01310-100",
+  "logradouro": "Avenida Paulista",
+  "bairro": "Bela Vista",
+  "localidade": "São Paulo",
+  "uf": "SP"
+}</pre>
+    <p style="margin:2.5mm 0 0;font-size:9.5pt;color:var(--ink-soft)">Campos usados: <b>logradouro</b> (rua ou avenida), <b>bairro</b>, <b>localidade</b> (cidade) e <b>uf</b>. O número e o complemento são digitados pela pessoa, porque a API não os conhece.</p>
+
+    <div class="eyebrow label">Respostas e erros tratados</div>
+    <table class="errs">
+      <tr><th>Situação</th><th>O que a API ou o navegador devolve</th><th>O que a pessoa vê</th></tr>
+      <tr><td>CEP incompleto</td><td>Nenhuma chamada é feita (menos de 8 números)</td><td>Dica "Digite os 8 números do CEP."</td></tr>
+      <tr><td>CEP inexistente</td><td>Resposta <span class="url" style="font-size:8.5pt">{ "erro": true }</span></td><td>"CEP não encontrado. Confira os números."</td></tr>
+      <tr><td>Sem rede ou lenta</td><td>Falha do fetch ou limite de 8 segundos</td><td>Aviso e botão "Tentar novamente"</td></tr>
+      <tr><td>Resposta atrasada</td><td>CEP trocado durante a busca</td><td>Nada: a resposta antiga é descartada</td></tr>
+    </table>
+
+    <div class="eyebrow label">Princípio</div>
+    <div class="dark big"><b>O erro nunca bloqueia o formulário</b><p>A API é um atalho, não um requisito. Em qualquer falha, rua, bairro, cidade e UF continuam editáveis e a pessoa pode preencher à mão.</p></div>
+  </div>
+  <div class="foot"><span>Iara Games - Sprint 07</span><span>3</span></div>
+</div>
+
+<!-- 4. COMO ACESSAR (1/2) -->
+<div class="page">
+  <div class="bar"><img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" /><span>FIAP</span></div>
+  <div class="content">
+    <div class="eyebrow">Passo a passo · parte 1</div>
+    <h1 class="title">Como chegar em "Adicionar endereço"</h1>
+    <p class="lead" style="margin-bottom:3mm">O caminho abaixo parte do site publicado. Os números nos prints correspondem aos números dos passos.</p>
+
+    <div class="step"><div class="n">1</div><div>
+      <h4>Abra o site e clique em "Entrar"</h4>
+      <p>Acesse <span class="url">https://defxico.github.io/iara-games/</span>. No canto superior direito do cabeçalho, clique em <b>Entrar</b>. O botão leva ao Perfil de demonstração (<span class="url" style="font-size:8.5pt">pages/perfil.html</span>).</p>
+    </div></div>
+    <figure class="shot crop"><img src="screenshots/sprint-7/header-entrar.jpg" alt="Cabeçalho da Loja com o botão Entrar destacado e numerado com 1" /><figcaption>Passo 1 — botão <b>Entrar</b> no cabeçalho de qualquer página pública.</figcaption></figure>
+
+    <div class="step"><div class="n">2</div><div>
+      <h4>No Perfil, clique em "Adicionar endereço"</h4>
+      <p>Na faixa de informações logo abaixo da biografia ("Apaixonado por jogos indie brasileiros…"), entre <b>São Paulo, SP</b> e <b>Membro desde Janeiro 2024</b>, clique em <b>Adicionar endereço</b> (ícone de pino, texto sublinhado). Você vai para a página Endereço.</p>
+    </div></div>
+    <figure class="shot"><img src="screenshots/sprint-7/perfil-adicionar-endereco.jpg" style="height:104mm;object-fit:cover;object-position:top" alt="Página de Perfil com o link Adicionar endereço destacado e numerado com 2" /><figcaption>Passo 2 — <b>Adicionar endereço</b> na faixa de informações do Perfil.</figcaption></figure>
+
+    <div class="callout"><b>Atalhos para a mesma página.</b> Abra direto <span class="url" style="font-size:8.5pt">https://defxico.github.io/iara-games/pages/perfil.html</span>; ou clique em <b>Endereço</b> no rodapé de qualquer página; ou, ao criar uma conta no Cadastro, clique em <b>Cadastrar meu endereço</b> na mensagem de sucesso.</div>
+  </div>
+  <div class="foot"><span>Iara Games - Sprint 07</span><span>4</span></div>
+</div>
+
+<!-- 5. COMO ACESSAR (2/2) -->
+<div class="page">
+  <div class="bar"><img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" /><span>FIAP</span></div>
+  <div class="content">
+    <div class="eyebrow">Passo a passo · parte 2</div>
+    <h1 class="title">Preencher com o CEP e salvar</h1>
+
+    <div class="step"><div class="n">3</div><div>
+      <h4>Digite o CEP</h4>
+      <p>No campo <b>CEP</b>, digite os 8 números (exemplo: <b>01310-100</b>). A máscara coloca o hífen e a consulta à ViaCEP começa sozinha ao completar o CEP, sem botão de busca. Rua, bairro, cidade e UF são preenchidos e aparece "Endereço encontrado."</p>
+    </div></div>
+    <div class="step"><div class="n">4</div><div>
+      <h4>Informe o número</h4>
+      <p>O cursor vai direto para <b>Número</b>, o único dado que a API não fornece (exemplo: <b>1578</b>). O complemento é opcional.</p>
+    </div></div>
+    <figure class="shot"><img src="screenshots/sprint-7/endereco-preenchido.jpg" style="height:74mm;object-fit:cover;object-position:bottom" alt="Página Endereço com CEP 01310-100 preenchido e endereço da Avenida Paulista carregado" /><figcaption>Passos 3 e 4 — CEP no topo e Número, destacados; o resto veio da API.</figcaption></figure>
+
+    <div class="grid2" style="margin-top:2mm">
+      <div>
+        <div class="step"><div class="n">5</div><div>
+          <h4>Salve e abra o Perfil</h4>
+          <p>Clique em <b>Salvar endereço</b>. Aparece o resumo "Endereço salvo neste navegador"; clique em <b>Ver no perfil</b>. Se rua, cidade, UF ou número estiverem vazios, a página avisa qual é e leva o foco até ele.</p>
+        </div></div>
+        <figure class="shot" style="margin:0"><img src="screenshots/sprint-7/endereco-salvo.jpg" style="height:40mm;object-fit:cover;object-position:bottom" alt="Resumo do endereço salvo com o botão Ver no perfil destacado e numerado com 5" /><figcaption>Passo 5 — resumo salvo e botão <b>Ver no perfil</b>.</figcaption></figure>
+      </div>
+      <div>
+        <div class="step"><div class="n">6</div><div>
+          <h4>Confira o endereço no Perfil</h4>
+          <p>O link que dizia "Adicionar endereço" agora mostra o endereço salvo. Clique nele para editar, ou use <b>Remover endereço</b> na página Endereço para apagá-lo.</p>
+        </div></div>
+        <figure class="shot" style="margin:0"><img src="screenshots/sprint-7/perfil-com-endereco.jpg" style="height:40mm;object-fit:cover;object-position:top" alt="Perfil exibindo Avenida Paulista, 1578 — São Paulo/SP, destacado e numerado com 6" /><figcaption>Passo 6 — endereço salvo exibido no Perfil.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Iara Games - Sprint 07</span><span>5</span></div>
+</div>
+
+<!-- 6. CADASTRO, ERROS E ARQUITETURA -->
+<div class="page">
+  <div class="bar"><img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" /><span>FIAP</span></div>
+  <div class="content">
+    <div class="eyebrow">Cadastro e erros</div>
+    <h1 class="title">O mesmo campo em dois lugares</h1>
+    <p class="lead" style="margin-bottom:3mm">O componente <b>CepField</b> é usado na página Endereço e no Cadastro. No Cadastro, o CEP é opcional e preenche Cidade e Estado, que continuam editáveis.</p>
+
+    <div class="grid2">
+      <figure class="shot" style="margin:0"><img src="screenshots/sprint-7/cadastro-preenchido.jpg" alt="Cadastro com CEP 01310-100 e Cidade e Estado preenchidos como São Paulo" /><figcaption>Cadastro: o CEP preenche Cidade e Estado.</figcaption></figure>
+      <figure class="shot" style="margin:0"><img src="screenshots/sprint-7/cadastro-sucesso.jpg" alt="Mensagem Conta criada com sucesso com o botão Cadastrar meu endereço" /><figcaption>Ao concluir, o botão leva ao Endereço.</figcaption></figure>
+    </div>
+
+    <div class="eyebrow label">Quando a consulta não funciona</div>
+    <div class="grid2">
+      <figure class="shot" style="margin:0"><img src="screenshots/sprint-7/endereco-nao-encontrado.jpg" alt="CEP 00000-000 com a mensagem CEP não encontrado" /><figcaption>CEP inexistente: mensagem clara, campos livres.</figcaption></figure>
+      <figure class="shot" style="margin:0"><img src="screenshots/sprint-7/endereco-erro-rede.jpg" alt="Mensagem de falha na consulta com o botão Tentar novamente" /><figcaption>Sem rede: aviso e botão Tentar novamente.</figcaption></figure>
+    </div>
+
+    <div class="eyebrow label">Arquitetura</div>
+    <div class="flow">
+      <div class="dark"><b>Serviço</b>src/services/<br />viacep.js</div><div class="arrow">&gt;</div>
+      <div class="dark"><b>Estado</b>src/hooks/<br />useCep.js</div><div class="arrow">&gt;</div>
+      <div class="dark"><b>Campo</b>src/components/<br />CepField.jsx</div><div class="arrow">&gt;</div>
+      <div class="dark"><b>Páginas</b>Address.jsx<br />Signup.jsx</div>
+    </div>
+    <p style="margin:3mm 0 0;font-size:9.5pt;color:var(--ink-soft)">O endereço salvo é lido e gravado por <b>enderecoStorage.js</b>, usado pela página Endereço e pelo Perfil. Cada camada tem uma função: chamar a API, controlar o estado da busca, mostrar o campo e compor a página.</p>
+  </div>
+  <div class="foot"><span>Iara Games - Sprint 07</span><span>6</span></div>
+</div>
+
+<!-- 7. ENTREGA TÉCNICA -->
+<div class="page">
+  <div class="bar"><img src="../assets/img/accessibility-update/logotipo/logowordmark-areia.svg" alt="Iara Games" /><span>FIAP</span></div>
+  <div class="content">
+    <div class="eyebrow">Entrega técnica</div>
+    <h1 class="title">Código, publicação e escopo</h1>
+    <p class="lead">A área pode ser explorada pelo site publicado ou pelo repositório público. A entrega roda como demonstração acadêmica, sem serviços de conta ou compra.</p>
+
+    <div class="grid2" style="margin-top:6mm">
+      <div class="card" style="grid-column:1 / -1"><h3 style="color:var(--gold);font-size:8.5pt;letter-spacing:.06em;text-transform:uppercase">Link do deploy</h3><p>Plataforma Iara Games publicada no GitHub Pages, com a área Endereço.</p><p class="url" style="margin-top:3mm;font-size:8.6pt"><a href="https://defxico.github.io/iara-games/pages/perfil.html">defxico.github.io/iara-games/pages/perfil.html</a></p><p class="url" style="margin-top:1.5mm;font-size:8.6pt"><a href="https://defxico.github.io/iara-games/pages/endereco.html">defxico.github.io/iara-games/pages/endereco.html</a></p></div>
+      <div class="card" style="grid-column:1 / -1"><h3 style="color:var(--gold);font-size:8.5pt;letter-spacing:.06em;text-transform:uppercase">Repositório público</h3><p>Código-fonte, componentes React, testes e workflow de publicação.</p><p class="url" style="margin-top:3mm;font-size:8.6pt"><a href="https://github.com/defxico/iara-games">github.com/defxico/iara-games</a></p></div>
+    </div>
+
+    <div class="eyebrow label">Validação da sprint</div>
+    <div class="item"><b><span class="num" style="display:inline;margin-left:0">01</span>Testes automatizados</b><span>16 testes (Vitest) cobrem o serviço da ViaCEP, o hook de busca e o armazenamento do endereço: npm test passou.</span></div>
+    <div class="item"><b><span class="num" style="display:inline;margin-left:0">02</span>API real</b><span>Consulta feita à ViaCEP com o serviço da aplicação: 01310-100 retornou Avenida Paulista; 00000-000 retornou "não encontrado".</span></div>
+    <div class="item"><b><span class="num" style="display:inline;margin-left:0">03</span>Build e fluxo no navegador</b><span>npm run build concluiu sem erros, e os prints deste documento foram gerados a partir do fluxo Perfil, Endereço, Perfil, Cadastro e erros.</span></div>
+
+    <div class="eyebrow label">Escopo da demonstração</div>
+    <div class="dark big"><b>Dados locais ao navegador</b><p>O endereço fica no localStorage deste navegador, sem backend, autenticação, compras ou cálculo de frete. O usuário do Perfil é uma demonstração. A ViaCEP é a única chamada externa.</p></div>
+
+    <div class="eyebrow label">Equipe</div>
+    <div class="team">
+      <div>Amanda Ayumi Guedes Ueno <i>RM573609</i></div>
+      <div>Ana Rubia de Oliveira Freire <i>RM573171</i></div>
+      <div>Francisco Caetano Bernardes <i>RM571399</i></div>
+      <div>Giovana Camargo Budin <i>RM571861</i></div>
+    </div>
+  </div>
+  <div class="foot"><span>Iara Games - Sprint 07</span><span>7</span></div>
+</div>
+
+</body>
+</html>
