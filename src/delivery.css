@@ -1,0 +1,4 @@
+.cep-retry { justify-self: start; }
+.delivery-summary { margin-top: 1.5rem; }
+.delivery-summary p { margin: .5rem 0 1rem; line-height: 1.6; }
+.signup-card input:disabled { opacity: .65; cursor: progress; }
